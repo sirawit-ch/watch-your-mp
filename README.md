@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Politigraph Thailand - Next.js Visual Analytics
 
-## Getting Started
+โปรเจคนี้เป็น Visual Analytics Prototype สำหรับติดตามและวิเคราะห์การทำงานของสมาชิกสภาผู้แทนราษฎร (ส.ส.) ในประเทศไทยสำหรับปี 2025 
 
-First, run the development server:
+สร้างด้วย **Next.js 15**, **TypeScript**, **Tailwind CSS**, และ **D3.js**
 
-```bash
+## 🚀 Quick Start
+
+\`\`\`bash
+# ติดตั้ง dependencies
+npm install
+
+# รัน development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# เปิด browser: http://localhost:3000
+\`\`\`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Visualization**: D3.js v7
+- **Font**: Sarabun (Google Fonts)
+- **API**: Politigraph GraphQL API (WeVis)
 
-## Learn More
+## ✨ Main Features
 
-To learn more about Next.js, take a look at the following resources:
+1. **Interactive Thailand Map** - D3.js visualization with hover & click
+2. **Bill Selector** - Real-time heatmap updates
+3. **MP Information Panel** - Province-based MP listings
+4. **Statistics Dashboard** - Overview metrics
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📊 Key Insights Discoverable
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Geographical Voting Patterns
+2. MP Activity by Province
+3. Party Voting Alignment
+4. Regional Representation
+5. Legislative Timeline
 
-## Deploy on Vercel
+_รายละเอียดเพิ่มเติมดูใน documentation_
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🎨 Tech Highlights
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **TypeScript**: Full type safety
+- **React Hooks**: Modern state management
+- **Tailwind CSS**: Utility-first styling
+- **D3.js**: Data-driven visualizations
+- **Next.js App Router**: Future-ready architecture
+
+## 🔧 Development Commands
+
+\`\`\`bash
+npm run dev      # Development server
+npm run build    # Production build
+npm start        # Production server
+npm run lint     # ESLint
+\`\`\`
+
+## 📝 License
+
+สร้างขึ้นเพื่อการศึกษาในรายวิชา Data Information Visualization
+
+---
+
+**Built with Next.js + TypeScript + Tailwind CSS + D3.js**

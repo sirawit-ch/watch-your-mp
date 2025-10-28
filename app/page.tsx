@@ -1,64 +1,277 @@
-import Image from "next/image";
+"use client";
+
+import React, { useState, useEffect } from "react";
+import ThailandMap from "@/components/ThailandMap";
+import InfoPanel from "@/components/InfoPanel";
+import Statistics from "@/components/Statistics";
+import {
+  Politician,
+  Bill,
+  fetchPoliticians,
+  fetchBills,
+  fetchVotingByBill,
+  calculateVotingStatsByProvince,
+  fetchAllVotings2025,
+  calculateTotalVotesByProvince,
+  VotingStats,
+} from "@/lib/api";
 
 export default function Home() {
+  const [politicians, setPoliticians] = useState<Politician[]>([]);
+  const [bills, setBills] = useState<Bill[]>([]);
+  const [selectedProvince, setSelectedProvince] = useState<string | null>(null);
+  const [selectedMPs, setSelectedMPs] = useState<Politician[]>([]);
+  const [selectedBillId, setSelectedBillId] = useState<string>("");
+  const [votingStats, setVotingStats] = useState<Record<
+    string,
+    VotingStats
+  > | null>(null);
+  const [totalVotes2025, setTotalVotes2025] = useState<Record<
+    string,
+    number
+  > | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [lastUpdated, setLastUpdated] = useState("");
+
+  useEffect(() => {
+    async function loadData() {
+      setLoading(true);
+      try {
+        const [politiciansData, billsData] = await Promise.all([
+          fetchPoliticians(),
+          fetchBills(),
+        ]);
+
+        setPoliticians(politiciansData);
+        setBills(billsData);
+
+        // โหลดข้อมูลการลงคะแนนรวมทั้งหมดในปี 2025
+        const allVotings = await fetchAllVotings2025();
+        const totalVotes = calculateTotalVotesByProvince(allVotings);
+        setTotalVotes2025(totalVotes);
+
+        const now = new Date().toLocaleDateString("th-TH", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+        setLastUpdated(now);
+      } catch (error) {
+        console.error("Error loading data:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadData();
+  }, []);
+
+  const handleProvinceSelected = (province: string, mps: Politician[]) => {
+    setSelectedProvince(province);
+    setSelectedMPs(mps);
+  };
+
+  const handleBillSelected = async (billId: string) => {
+    setSelectedBillId(billId);
+
+    if (!billId) {
+      setVotingStats(null);
+      return;
+    }
+
+    try {
+      const votings = await fetchVotingByBill(billId);
+      const stats = calculateVotingStatsByProvince(votings);
+      console.log("🗳️ Bill ID:", billId);
+      console.log("📊 Voting Stats:", stats);
+      console.log(
+        "📍 Sample province:",
+        Object.keys(stats)[0],
+        stats[Object.keys(stats)[0]]
+      );
+      setVotingStats(stats);
+    } catch (error) {
+      console.error("Error loading voting data:", error);
+    }
+  };
+
+  const totalProposals = bills.reduce((sum, bill) => {
+    return sum + (bill.proposedBy?.length || 0);
+  }, 0);
+
+  const latestBill = bills[0];
+  const latestVoting =
+    latestBill && latestBill.proposedOn
+      ? new Date(latestBill.proposedOn).toLocaleDateString("th-TH", {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        })
+      : "-";
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+          <p className="text-gray-600">กำลังโหลดข้อมูล...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b border-gray-200">
+        <div className="container mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">
+                Politigraph Thailand
+              </h1>
+              <p className="text-sm text-gray-600 mt-1">
+                ติดตามการทำงานของสมาชิกสภาผู้แทนราษฎร ปี 2025
+              </p>
+            </div>
+            <div className="text-right">
+              <div className="text-sm text-gray-500">อัพเดทล่าสุด</div>
+              <div className="text-sm font-semibold text-gray-700">
+                {lastUpdated}
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-6 py-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Map Section */}
+          <div className="lg:col-span-2">
+            <div className="bg-white rounded-lg shadow-sm p-6">
+              <div className="mb-4">
+                <h2 className="text-xl font-semibold text-gray-900 mb-2">
+                  แผนที่ประเทศไทย
+                </h2>
+                <div className="flex items-center gap-4">
+                  <label
+                    htmlFor="bill-select"
+                    className="text-sm font-medium text-gray-700"
+                  >
+                    เลือกร่างกฎหมาย:
+                  </label>
+                  <select
+                    id="bill-select"
+                    value={selectedBillId}
+                    onChange={(e) => handleBillSelected(e.target.value)}
+                    className="flex-1 max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  >
+                    <option value="">-- ดูภาพรวม --</option>
+                    {bills.map((bill) => (
+                      <option key={bill.id} value={bill.id}>
+                        {bill.nickname || bill.title}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <ThailandMap
+                politicians={politicians}
+                selectedBillId={selectedBillId}
+                votingStats={votingStats}
+                totalVotes2025={totalVotes2025}
+                onProvinceSelected={handleProvinceSelected}
+              />
+
+              {/* Legend */}
+              {selectedBillId ? (
+                <div className="mt-4">
+                  <div className="flex items-center gap-4 text-sm flex-wrap">
+                    <span className="font-medium text-gray-700">
+                      การลงคะแนน:
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-4 h-4 rounded"
+                        style={{ backgroundColor: "#22c55e" }}
+                      ></div>
+                      <span>เห็นด้วย</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-4 h-4 rounded"
+                        style={{ backgroundColor: "#ef4444" }}
+                      ></div>
+                      <span>ไม่เห็นด้วย</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-4 h-4 rounded"
+                        style={{ backgroundColor: "#fbbf24" }}
+                      ></div>
+                      <span>งดออกเสียง</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-4 h-4 rounded"
+                        style={{ backgroundColor: "#d1d5db" }}
+                      ></div>
+                      <span>ไม่มีข้อมูล</span>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="mt-4">
+                  <div className="flex items-center gap-4 text-sm flex-wrap">
+                    <span className="font-medium text-gray-700">
+                      จำนวนการลงคะแนนรวม (ทุก พรบ. ในปี 2025):
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-4 h-4 rounded"
+                        style={{ backgroundColor: "#1e40af" }}
+                      ></div>
+                      <span>น้อย</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-4 h-4 rounded"
+                        style={{ backgroundColor: "#3b82f6" }}
+                      ></div>
+                      <span>ปานกลาง</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div
+                        className="w-4 h-4 rounded"
+                        style={{ backgroundColor: "#93c5fd" }}
+                      ></div>
+                      <span>มาก</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Info Panel */}
+          <div className="lg:col-span-1">
+            <div className="sticky top-6">
+              <InfoPanel province={selectedProvince} mps={selectedMPs} />
+            </div>
+          </div>
+        </div>
+
+        {/* Statistics */}
+        <Statistics
+          totalMPs={politicians.length}
+          totalBills={bills.length}
+          totalProposals={totalProposals}
+          latestVoting={latestVoting}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
       </main>
     </div>
   );
