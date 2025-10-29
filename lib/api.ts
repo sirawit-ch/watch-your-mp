@@ -14,7 +14,6 @@ export interface Politician {
     name: string;
     color: string;
   };
-  educationLevel?: string;
 }
 
 export interface Bill {
@@ -120,17 +119,6 @@ export async function fetchPoliticians(): Promise<Politician[]> {
     "เพชรรัตน์",
   ];
 
-  const educations = [
-    "ปริญญาตรี นิติศาสตร์",
-    "ปริญญาโท รัฐศาสตร์",
-    "ปริญญาเอก เศรษฐศาสตร์",
-    "ปริญญาตรี บริหารธุรกิจ",
-    "ปริญญาโท การจัดการ",
-    "ปริญญาตรี วิศวกรรมศาสตร์",
-    "ปริญญาโท นิเทศศาสตร์",
-  ];
-
-  // สร้าง mock politicians
   const mockPoliticians: Politician[] = [];
   let id = 1;
 
@@ -146,8 +134,6 @@ export async function fetchPoliticians(): Promise<Politician[]> {
         province: province,
         title: Math.random() > 0.5 ? "นาย" : "นาง",
         party: parties[Math.floor(Math.random() * parties.length)],
-        educationLevel:
-          educations[Math.floor(Math.random() * educations.length)],
       });
     }
   });
@@ -209,111 +195,65 @@ export async function fetchBills(): Promise<Bill[]> {
  * ดึงข้อมูลการลงคะแนนสำหรับร่างกฎหมายที่ระบุ (ใช้ Mock Data)
  */
 export async function fetchVotingByBill(billId: string): Promise<Voting[]> {
-  // จำลองข้อมูลการลงคะแนนตามจังหวัด
-  const provinces = [
-    "กรุงเทพมหานคร",
-    "เชียงใหม่",
-    "นครราชสีมา",
-    "ขอนแก่น",
-    "สงขลา",
-    "ชลบุรี",
-    "ภูเก็ต",
-    "อุบลราชธานี",
-    "เชียงราย",
-    "นครศรีธรรมราช",
-    "กาญจนบุรี",
-    "อุดรธานี",
-    "สุราษฎร์ธานี",
-    "ระยอง",
-    "ลำปาง",
-    "นครสวรรค์",
-    "พิษณุโลก",
-    "ตรัง",
-    "สุรินทร์",
-    "ศรีสะเกษ",
-  ];
-
-  const voteOptions = ["เห็นด้วย", "ไม่เห็นด้วย", "งดออกเสียง"];
+  // ดึงข้อมูล politicians ที่มีอยู่จริง
+  const allPoliticians = await fetchPoliticians();
 
   const mockVotings: Voting[] = [];
-  let votingId = 1;
 
-  // สร้างข้อมูลการลงคะแนนสำหรับแต่ละจังหวัด
-  provinces.forEach((province) => {
-    const mpCount = Math.floor(Math.random() * 6) + 3; // 3-8 ส.ส. ต่อจังหวัด
-
-    for (let i = 0; i < mpCount; i++) {
-      // สร้างรูปแบบการลงคะแนนที่แตกต่างกันตาม bill
-      let voteOption: string;
-
-      if (billId === "bill-1") {
-        // Bill 1: ส่วนใหญ่ไม่เห็นด้วยอย่างหนัก (85%)
-        const rand = Math.random();
-        voteOption =
-          rand < 0.85 ? "ไม่เห็นด้วย" : rand < 0.93 ? "งดออกเสียง" : "เห็นด้วย";
-      } else if (billId === "bill-2") {
-        // Bill 2: แบ่งขั้วชัดเจน - บางจังหวัดไม่เห็นด้วยมากๆ
-        const strongOpposition = [
-          "สงขลา",
-          "ภูเก็ต",
-          "นครศรีธรรมราช",
-          "ตรัง",
-          "ขอนแก่น",
-          "อุบลราชธานี",
-          "อุดรธานี",
-          "สุรินทร์",
-          "ศรีสะเกษ",
-        ];
-        if (strongOpposition.includes(province)) {
-          voteOption = Math.random() < 0.9 ? "ไม่เห็นด้วย" : "เห็นด้วย";
-        } else {
-          voteOption = Math.random() < 0.65 ? "ไม่เห็นด้วย" : "เห็นด้วย";
-        }
-      } else if (billId === "bill-3") {
-        // Bill 3: ไม่เห็นด้วยเกือบทั้งหมด (80%)
-        const rand = Math.random();
-        voteOption =
-          rand < 0.8 ? "ไม่เห็นด้วย" : rand < 0.9 ? "งดออกเสียง" : "เห็นด้วย";
-      } else if (billId === "bill-4") {
-        // Bill 4: ไม่เห็นด้วยทั่วประเทศ (90%)
-        const rand = Math.random();
-        voteOption =
-          rand < 0.9 ? "ไม่เห็นด้วย" : rand < 0.95 ? "งดออกเสียง" : "เห็นด้วย";
-      } else if (billId === "bill-5") {
-        // Bill 5: กทม.และปริมณฑลไม่เห็นด้วยมากๆ, ต่างจังหวัดก็ไม่เห็นด้วยส่วนใหญ่
-        const centralProvinces = [
-          "กรุงเทพมหานคร",
-          "นนทบุรี",
-          "ปทุมธานี",
-          "สมุทรปราการ",
-        ];
-        if (centralProvinces.includes(province)) {
-          voteOption = Math.random() < 0.95 ? "ไม่เห็นด้วย" : "เห็นด้วย";
-        } else {
-          voteOption = Math.random() < 0.75 ? "ไม่เห็นด้วย" : "เห็นด้วย";
-        }
-      } else {
-        // Bills อื่นๆ: ส่วนใหญ่ไม่เห็นด้วย
-        const rand = Math.random();
-        voteOption =
-          rand < 0.7 ? "ไม่เห็นด้วย" : rand < 0.85 ? "งดออกเสียง" : "เห็นด้วย";
-      }
-
-      mockVotings.push({
-        id: `voting-${votingId++}`,
-        date: "2025-10-25",
-        title: `การลงคะแนนร่างกฎหมาย ${billId}`,
-        voteOption: voteOption,
-        participatedBy: [
-          {
-            id: `mp-${votingId}`,
-            firstname: "Mock",
-            lastname: "MP",
-            province: province,
-          },
-        ],
-      });
+  // สร้างฟังก์ชัน seeded random เพื่อให้ผลลัพธ์เหมือนเดิมทุกครั้ง
+  const seededRandom = (seed: string): number => {
+    let hash = 0;
+    for (let i = 0; i < seed.length; i++) {
+      const char = seed.charCodeAt(i);
+      hash = (hash << 5) - hash + char;
+      hash = hash & hash; // Convert to 32bit integer
     }
+    const x = Math.sin(Math.abs(hash)) * 10000;
+    return x - Math.floor(x);
+  };
+
+  // สร้างข้อมูลการลงคะแนนสำหรับแต่ละ politician
+  allPoliticians.forEach((politician) => {
+    // สร้างรูปแบบการลงคะแนนที่แตกต่างกันตาม bill
+    let voteOption: string;
+
+    // ใช้ politician.id + billId เป็น seed เพื่อให้ได้ random แบบเดิมทุกครั้ง
+    const seed = `${politician.id}-${billId}`;
+    const rand = seededRandom(seed);
+
+    if (billId === "bill-1") {
+      // Bill 1: ส่วนใหญ่ไม่เห็นด้วยอย่างหนัก (95%)
+      voteOption =
+        rand < 0.95 ? "ไม่เห็นด้วย" : rand < 0.97 ? "งดออกเสียง" : "เห็นด้วย";
+    } else if (billId === "bill-2") {
+      // Bill 2: ไม่เห็นด้วยทั่วประเทศ (92%)
+      voteOption =
+        rand < 0.92 ? "ไม่เห็นด้วย" : rand < 0.96 ? "งดออกเสียง" : "เห็นด้วย";
+    } else if (billId === "bill-3") {
+      // Bill 3: ไม่เห็นด้วยเกือบทั้งหมด (88%)
+      voteOption =
+        rand < 0.88 ? "ไม่เห็นด้วย" : rand < 0.94 ? "งดออกเสียง" : "เห็นด้วย";
+    } else if (billId === "bill-4") {
+      // Bill 4: ไม่เห็นด้วยทั่วประเทศ (96%)
+      voteOption =
+        rand < 0.96 ? "ไม่เห็นด้วย" : rand < 0.98 ? "งดออกเสียง" : "เห็นด้วย";
+    } else if (billId === "bill-5") {
+      // Bill 5: ไม่เห็นด้วยทุกจังหวัด (94%)
+      voteOption =
+        rand < 0.94 ? "ไม่เห็นด้วย" : rand < 0.97 ? "งดออกเสียง" : "เห็นด้วย";
+    } else {
+      // Bills อื่นๆ: ส่วนใหญ่ไม่เห็นด้วย (90%)
+      voteOption =
+        rand < 0.9 ? "ไม่เห็นด้วย" : rand < 0.95 ? "งดออกเสียง" : "เห็นด้วย";
+    }
+
+    mockVotings.push({
+      id: `voting-${politician.id}-${billId}`,
+      date: "2025-10-25",
+      title: `การลงคะแนนร่างกฎหมาย ${billId}`,
+      voteOption: voteOption,
+      participatedBy: [politician],
+    });
   });
 
   return mockVotings;

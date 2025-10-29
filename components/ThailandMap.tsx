@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import { Politician, groupPoliticiansByProvince, VotingStats } from "@/lib/api";
 import { englishToThai } from "@/lib/provinceMapping";
+import MapTooltip from "./MapTooltip";
 
 interface GeoFeature {
   type: string;
@@ -38,8 +39,22 @@ export default function ThailandMap({
   onProvinceSelected,
 }: ThailandMapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
-  const tooltipRef = useRef<HTMLDivElement>(null);
   const [geoData, setGeoData] = useState<GeoData | null>(null);
+  const [tooltip, setTooltip] = useState<{
+    isVisible: boolean;
+    position: { x: number; y: number };
+    provinceName: string;
+    mps: Politician[];
+    votingStats?: VotingStats | null;
+    totalVotes: number;
+  }>({
+    isVisible: false,
+    position: { x: 0, y: 0 },
+    provinceName: "",
+    mps: [],
+    votingStats: null,
+    totalVotes: 0,
+  });
 
   // โหลด GeoJSON
   useEffect(() => {
@@ -56,7 +71,6 @@ export default function ThailandMap({
     const width = 800;
     const height = 600;
     const svg = d3.select(svgRef.current);
-    const tooltip = d3.select(tooltipRef.current);
 
     // Clear existing
     svg.selectAll("*").remove();
@@ -99,11 +113,9 @@ export default function ThailandMap({
       const totalVotes = totalVotes2025?.[thaiProvinceName] || 0;
       if (totalVotes === 0) return "#e5e7eb";
 
-      const maxVotes = Math.max(
-        ...Object.values(totalVotes2025 || {})
-      );
+      const maxVotes = Math.max(...Object.values(totalVotes2025 || {}));
       const colorScale = d3
-        .scaleSequential(d3.interpolateBlues)
+        .scaleSequential(d3.interpolateRdYlGn)
         .domain([0, maxVotes]);
 
       return colorScale(totalVotes);
@@ -139,41 +151,37 @@ export default function ThailandMap({
         const provinceName = d.properties.name;
         const thaiProvinceName = englishToThai(provinceName);
         const mps = politiciansByProvince[thaiProvinceName] || [];
+        const totalVotes = totalVotes2025?.[thaiProvinceName] || 0;
+        const stats = votingStats?.[thaiProvinceName] || null;
 
-        let html = `<div class="font-semibold text-lg mb-2">${thaiProvinceName}</div>`;
+        // Get the position relative to the SVG container
+        const svgRect = svgRef.current?.getBoundingClientRect();
+        const x = event.clientX - (svgRect?.left || 0);
+        const y = event.clientY - (svgRect?.top || 0);
 
-        if (selectedBillId && votingStats) {
-          const stats = votingStats[thaiProvinceName];
-          if (stats) {
-            html += `
-              <div class="text-sm space-y-1">
-                <div>เห็นด้วย: <span class="font-semibold text-green-600">${stats.approve}</span></div>
-                <div>ไม่เห็นด้วย: <span class="font-semibold text-red-600">${stats.disapprove}</span></div>
-                <div>งดออกเสียง: <span class="font-semibold text-yellow-600">${stats.abstain}</span></div>
-              </div>
-            `;
-          } else {
-            html += `<div class="text-sm text-gray-500">ไม่มีข้อมูลการลงคะแนน</div>`;
-          }
-        } else {
-          const totalVotes = totalVotes2025?.[thaiProvinceName] || 0;
-          html += `<div class="text-sm mb-2">จำนวนการลงคะแนนรวม (2025): <span class="font-semibold">${totalVotes}</span> ครั้ง</div>`;
-          html += `<div class="text-sm mb-2">จำนวน ส.ส.: <span class="font-semibold">${mps.length}</span> คน</div>`;
-          if (mps.length > 0) {
-            html += `<div class="text-xs text-gray-600">คลิกเพื่อดูรายละเอียด</div>`;
-          }
-        }
-
-        tooltip.html(html).classed("hidden", false);
+        setTooltip({
+          isVisible: true,
+          position: { x, y },
+          provinceName: thaiProvinceName,
+          mps,
+          votingStats: stats,
+          totalVotes,
+        });
       })
       .on("mousemove", function (event: MouseEvent) {
-        tooltip
-          .style("left", event.pageX + 15 + "px")
-          .style("top", event.pageY - 10 + "px");
+        // Get the position relative to the SVG container
+        const svgRect = svgRef.current?.getBoundingClientRect();
+        const x = event.clientX - (svgRect?.left || 0);
+        const y = event.clientY - (svgRect?.top || 0);
+
+        setTooltip((prev) => ({
+          ...prev,
+          position: { x, y },
+        }));
       })
       .on("mouseout", function () {
         d3.select(this).style("opacity", 1);
-        tooltip.classed("hidden", true);
+        setTooltip((prev) => ({ ...prev, isVisible: false }));
       })
       .on("click", function (event: MouseEvent, d: GeoFeature) {
         const provinceName = d.properties.name;
@@ -181,14 +189,26 @@ export default function ThailandMap({
         const mps = politiciansByProvince[thaiProvinceName] || [];
         onProvinceSelected(thaiProvinceName, mps);
       });
-  }, [geoData, politicians, selectedBillId, votingStats, totalVotes2025, onProvinceSelected]);
+  }, [
+    geoData,
+    politicians,
+    selectedBillId,
+    votingStats,
+    totalVotes2025,
+    onProvinceSelected,
+  ]);
 
   return (
     <div className="relative">
       <svg ref={svgRef} width="100%" height="600" />
-      <div
-        ref={tooltipRef}
-        className="hidden absolute pointer-events-none bg-white border border-gray-200 rounded-lg p-3 shadow-lg z-50 max-w-sm"
+      <MapTooltip
+        provinceName={tooltip.provinceName}
+        mps={tooltip.mps}
+        selectedBillId={selectedBillId}
+        votingStats={tooltip.votingStats}
+        totalVotes={tooltip.totalVotes}
+        position={tooltip.position}
+        isVisible={tooltip.isVisible}
       />
     </div>
   );

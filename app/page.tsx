@@ -7,6 +7,7 @@ import Statistics from "@/components/Statistics";
 import {
   Politician,
   Bill,
+  Voting,
   fetchPoliticians,
   fetchBills,
   fetchVotingByBill,
@@ -26,6 +27,7 @@ export default function Home() {
     string,
     VotingStats
   > | null>(null);
+  const [selectedBillVotings, setSelectedBillVotings] = useState<Voting[]>([]);
   const [totalVotes2025, setTotalVotes2025] = useState<Record<
     string,
     number
@@ -78,6 +80,7 @@ export default function Home() {
 
     if (!billId) {
       setVotingStats(null);
+      setSelectedBillVotings([]);
       return;
     }
 
@@ -92,6 +95,7 @@ export default function Home() {
         stats[Object.keys(stats)[0]]
       );
       setVotingStats(stats);
+      setSelectedBillVotings(votings);
     } catch (error) {
       console.error("Error loading voting data:", error);
     }
@@ -233,21 +237,21 @@ export default function Home() {
                     <div className="flex items-center gap-2">
                       <div
                         className="w-4 h-4 rounded"
-                        style={{ backgroundColor: "#1e40af" }}
+                        style={{ backgroundColor: "#d73027" }}
                       ></div>
                       <span>น้อย</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div
                         className="w-4 h-4 rounded"
-                        style={{ backgroundColor: "#3b82f6" }}
+                        style={{ backgroundColor: "#fee08b" }}
                       ></div>
                       <span>ปานกลาง</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div
                         className="w-4 h-4 rounded"
-                        style={{ backgroundColor: "#93c5fd" }}
+                        style={{ backgroundColor: "#1a9850" }}
                       ></div>
                       <span>มาก</span>
                     </div>
@@ -260,7 +264,12 @@ export default function Home() {
           {/* Info Panel */}
           <div className="lg:col-span-1">
             <div className="sticky top-6">
-              <InfoPanel province={selectedProvince} mps={selectedMPs} />
+              <InfoPanel
+                province={selectedProvince}
+                mps={selectedMPs}
+                selectedBillId={selectedBillId}
+                votings={selectedBillVotings}
+              />
             </div>
           </div>
         </div>
