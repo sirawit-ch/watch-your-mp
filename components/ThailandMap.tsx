@@ -3,25 +3,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import { Politician, groupPoliticiansByProvince, VotingStats } from "@/lib/api";
-import { englishToThai } from "@/lib/provinceMapping";
+import { provinceGridLayout } from "@/lib/provinceGridSimple";
 import MapTooltip from "./MapTooltip";
-
-interface GeoFeature {
-  type: string;
-  properties: {
-    name: string;
-    name_en: string;
-  };
-  geometry: {
-    type: string;
-    coordinates: number[][][];
-  };
-}
-
-interface GeoData {
-  type: string;
-  features: GeoFeature[];
-}
 
 interface ThailandMapProps {
   politicians: Politician[];
@@ -39,7 +22,6 @@ export default function ThailandMap({
   onProvinceSelected,
 }: ThailandMapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
-  const [geoData, setGeoData] = useState<GeoData | null>(null);
   const [tooltip, setTooltip] = useState<{
     isVisible: boolean;
     position: { x: number; y: number };
@@ -56,41 +38,27 @@ export default function ThailandMap({
     totalVotes: 0,
   });
 
-  // โหลด GeoJSON
+  // วาดแผนที่แบบ Tile Grid
   useEffect(() => {
-    fetch("/thailand-provinces.json")
-      .then((res) => res.json())
-      .then((data) => setGeoData(data))
-      .catch((error) => console.error("Error loading GeoJSON:", error));
-  }, []);
+    if (!svgRef.current) return;
 
-  // วาดแผนที่
-  useEffect(() => {
-    if (!svgRef.current || !geoData) return;
+    const tileSize = 35; // ขนาดของแต่ละสี่เหลี่ยม (ลดลงเพิ่ม)
+    const tileSpacing = 3; // ระยะห่างระหว่างสี่เหลี่ยม (ลดลงเพิ่ม)
+    const totalTileSize = tileSize + tileSpacing;
+    const marginLeft = 20; // margin ซ้าย (ลดลงเพิ่ม)
+    const marginTop = 20; // margin บน (ลดลงเพิ่ม)
 
-    const width = 800;
-    const height = 600;
     const svg = d3.select(svgRef.current);
 
     // Clear existing
     svg.selectAll("*").remove();
 
-    // Setup projection - ใช้ fitSize เพื่อให้แสดงทั้งประเทศ
-    const projection = d3.geoMercator();
-    const path = d3.geoPath().projection(projection);
-
-    // คำนวณ bounds และ fit ให้พอดีกับ SVG
-    projection.fitSize([width, height], geoData as any);
-
     const politiciansByProvince = groupPoliticiansByProvince(politicians);
 
     // Helper function to get fill color
     const getProvinceFill = (provinceName: string): string => {
-      // Convert English name from GeoJSON to Thai name for matching
-      const thaiProvinceName = englishToThai(provinceName);
-
       if (selectedBillId && votingStats) {
-        const stats = votingStats[thaiProvinceName];
+        const stats = votingStats[provinceName];
 
         if (!stats) return "#e5e7eb";
 
@@ -110,7 +78,7 @@ export default function ThailandMap({
       }
 
       // โหมดแสดงจำนวนการลงคะแนนรวมทั้งหมดในปี 2025
-      const totalVotes = totalVotes2025?.[thaiProvinceName] || 0;
+      const totalVotes = totalVotes2025?.[provinceName] || 0;
       if (totalVotes === 0) return "#e5e7eb";
 
       const maxVotes = Math.max(...Object.values(totalVotes2025 || {}));
@@ -122,75 +90,109 @@ export default function ThailandMap({
     };
 
     // Draw provinces
-    const g = svg.append("g");
+    const g = svg.append("g").attr("class", "provinces-group");
 
     // เพิ่ม zoom behavior
     const zoom = d3
       .zoom<SVGSVGElement, unknown>()
       .scaleExtent([1, 8]) // จำกัด zoom ระหว่าง 1x ถึง 8x
       .on("zoom", (event) => {
-        g.attr("transform", event.transform);
+        const transform = event.transform;
+
+        // ถ้า zoom = 1 (zoom out สุด) ให้ล็อคตำแหน่งไว้ที่กลาง
+        if (transform.k === 1) {
+          g.attr("transform", `translate(0,0) scale(1)`);
+        } else {
+          g.attr("transform", transform);
+        }
       });
 
     svg.call(zoom);
 
-    g.selectAll("path")
-      .data(geoData.features)
-      .enter()
-      .append("path")
-      .attr("d", (d) => path(d as any) || "")
-      .attr("class", "province-path")
-      .attr("fill", (d: GeoFeature) => getProvinceFill(d.properties.name))
-      .attr("stroke", "#ffffff")
-      .attr("stroke-width", 1)
-      .style("cursor", "pointer")
-      .style("transition", "all 0.3s ease")
-      .on("mouseover", function (event: MouseEvent, d: GeoFeature) {
-        d3.select(this).style("opacity", 0.7);
+    // วาด tile สำหรับแต่ละจังหวัด
+    Object.entries(provinceGridLayout).forEach(([provinceName, position]) => {
+      const { row, col, abbr } = position;
 
-        const provinceName = d.properties.name;
-        const thaiProvinceName = englishToThai(provinceName);
-        const mps = politiciansByProvince[thaiProvinceName] || [];
-        const totalVotes = totalVotes2025?.[thaiProvinceName] || 0;
-        const stats = votingStats?.[thaiProvinceName] || null;
+      const x = col * totalTileSize + marginLeft;
+      const y = row * totalTileSize + marginTop;
 
-        // Get the position relative to the SVG container
-        const svgRect = svgRef.current?.getBoundingClientRect();
-        const x = event.clientX - (svgRect?.left || 0);
-        const y = event.clientY - (svgRect?.top || 0);
+      // สร้าง group สำหรับแต่ละจังหวัด
+      const provinceGroup = g
+        .append("g")
+        .attr("class", "province-tile")
+        .attr("data-province", provinceName)
+        .style("cursor", "pointer");
 
-        setTooltip({
-          isVisible: true,
-          position: { x, y },
-          provinceName: thaiProvinceName,
-          mps,
-          votingStats: stats,
-          totalVotes,
+      // วาดสี่เหลี่ยม
+      provinceGroup
+        .append("rect")
+        .attr("x", x)
+        .attr("y", y)
+        .attr("width", tileSize)
+        .attr("height", tileSize)
+        .attr("rx", 4) // มุมโค้ง
+        .attr("fill", getProvinceFill(provinceName))
+        .attr("stroke", "#ffffff")
+        .attr("stroke-width", 2)
+        .style("transition", "all 0.3s ease");
+
+      // เพิ่มตัวย่อจังหวัด
+      provinceGroup
+        .append("text")
+        .attr("x", x + tileSize / 2)
+        .attr("y", y + tileSize / 2)
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "middle")
+        .attr("font-size", "10px") // ลดขนาดฟอนต์เพิ่ม
+        .attr("font-weight", "bold")
+        .attr("fill", "#1f2937")
+        .attr("pointer-events", "none") // ไม่รับ mouse events
+        .text(abbr);
+
+      // เพิ่ม event handlers
+      provinceGroup
+        .on("mouseover", function (event: MouseEvent) {
+          d3.select(this).select("rect").style("opacity", 0.7);
+
+          const mps = politiciansByProvince[provinceName] || [];
+          const totalVotes = totalVotes2025?.[provinceName] || 0;
+          const stats = votingStats?.[provinceName] || null;
+
+          // Get the position relative to the SVG container
+          const svgRect = svgRef.current?.getBoundingClientRect();
+          const mouseX = event.clientX - (svgRect?.left || 0);
+          const mouseY = event.clientY - (svgRect?.top || 0);
+
+          setTooltip({
+            isVisible: true,
+            position: { x: mouseX, y: mouseY },
+            provinceName,
+            mps,
+            votingStats: stats,
+            totalVotes,
+          });
+        })
+        .on("mousemove", function (event: MouseEvent) {
+          // Get the position relative to the SVG container
+          const svgRect = svgRef.current?.getBoundingClientRect();
+          const mouseX = event.clientX - (svgRect?.left || 0);
+          const mouseY = event.clientY - (svgRect?.top || 0);
+
+          setTooltip((prev) => ({
+            ...prev,
+            position: { x: mouseX, y: mouseY },
+          }));
+        })
+        .on("mouseout", function () {
+          d3.select(this).select("rect").style("opacity", 1);
+          setTooltip((prev) => ({ ...prev, isVisible: false }));
+        })
+        .on("click", function () {
+          const mps = politiciansByProvince[provinceName] || [];
+          onProvinceSelected(provinceName, mps);
         });
-      })
-      .on("mousemove", function (event: MouseEvent) {
-        // Get the position relative to the SVG container
-        const svgRect = svgRef.current?.getBoundingClientRect();
-        const x = event.clientX - (svgRect?.left || 0);
-        const y = event.clientY - (svgRect?.top || 0);
-
-        setTooltip((prev) => ({
-          ...prev,
-          position: { x, y },
-        }));
-      })
-      .on("mouseout", function () {
-        d3.select(this).style("opacity", 1);
-        setTooltip((prev) => ({ ...prev, isVisible: false }));
-      })
-      .on("click", function (event: MouseEvent, d: GeoFeature) {
-        const provinceName = d.properties.name;
-        const thaiProvinceName = englishToThai(provinceName);
-        const mps = politiciansByProvince[thaiProvinceName] || [];
-        onProvinceSelected(thaiProvinceName, mps);
-      });
+    });
   }, [
-    geoData,
     politicians,
     selectedBillId,
     votingStats,
@@ -199,8 +201,14 @@ export default function ThailandMap({
   ]);
 
   return (
-    <div className="relative">
-      <svg ref={svgRef} width="100%" height="600" />
+    <div className="relative w-full h-full">
+      <svg
+        ref={svgRef}
+        width="100%"
+        height="100%"
+        viewBox="0 0 400 700"
+        preserveAspectRatio="xMidYMid meet"
+      />
       <MapTooltip
         provinceName={tooltip.provinceName}
         mps={tooltip.mps}

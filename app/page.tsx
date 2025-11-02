@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import ThailandMap from "@/components/ThailandMap";
 import InfoPanel from "@/components/InfoPanel";
-import Statistics from "@/components/Statistics";
 import {
   Politician,
   Bill,
@@ -127,22 +126,22 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="h-screen bg-gray-50 flex flex-col overflow-hidden">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
-        <div className="container mx-auto px-6 py-4">
+      <header className="bg-white shadow-sm border-b border-gray-200 shrink-0">
+        <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">
+              <h1 className="text-xl font-bold text-gray-900">
                 Politigraph Thailand
               </h1>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-xs text-gray-600">
                 ติดตามการทำงานของสมาชิกสภาผู้แทนราษฎร ปี 2025
               </p>
             </div>
             <div className="text-right">
-              <div className="text-sm text-gray-500">อัพเดทล่าสุด</div>
-              <div className="text-sm font-semibold text-gray-700">
+              <div className="text-xs text-gray-500">อัพเดทล่าสุด</div>
+              <div className="text-xs font-semibold text-gray-700">
                 {lastUpdated}
               </div>
             </div>
@@ -151,136 +150,132 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-6 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Map Section */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-sm p-6">
-              <div className="mb-4">
-                <h2 className="text-xl font-semibold text-gray-900 mb-2">
-                  แผนที่ประเทศไทย
-                </h2>
-                <div className="flex items-center gap-4">
-                  <label
-                    htmlFor="bill-select"
-                    className="text-sm font-medium text-gray-700"
-                  >
-                    เลือกร่างกฎหมาย:
-                  </label>
-                  <select
-                    id="bill-select"
-                    value={selectedBillId}
-                    onChange={(e) => handleBillSelected(e.target.value)}
-                    className="flex-1 max-w-md px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  >
-                    <option value="">-- ดูภาพรวม --</option>
-                    {bills.map((bill) => (
-                      <option key={bill.id} value={bill.id}>
-                        {bill.nickname || bill.title}
-                      </option>
-                    ))}
-                  </select>
+      <main className="container mx-auto px-4 py-3 flex-1 overflow-hidden">
+        <div className="h-full flex gap-4 overflow-hidden">
+          {/* Map Section - Left */}
+          <div className="flex-1 flex flex-col overflow-hidden">
+            <div className="bg-white rounded-lg shadow-sm p-4 flex flex-col h-full overflow-hidden">
+                <div className="mb-3 shrink-0">
+                  <h2 className="text-lg font-semibold text-gray-900 mb-2">
+                    แผนที่ประเทศไทย
+                  </h2>
+                  <div className="flex items-center gap-3">
+                    <label
+                      htmlFor="bill-select"
+                      className="text-sm font-medium text-gray-700"
+                    >
+                      เลือกร่างกฎหมาย:
+                    </label>
+                    <select
+                      id="bill-select"
+                      value={selectedBillId}
+                      onChange={(e) => handleBillSelected(e.target.value)}
+                      className="flex-1 max-w-md px-3 py-1.5 text-sm border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    >
+                      <option value="">-- ดูภาพรวม --</option>
+                      {bills.map((bill) => (
+                        <option key={bill.id} value={bill.id}>
+                          {bill.nickname || bill.title}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
+
+                <div className="flex-1 overflow-hidden flex items-center justify-center">
+                  <ThailandMap
+                    politicians={politicians}
+                    selectedBillId={selectedBillId}
+                    votingStats={votingStats}
+                    totalVotes2025={totalVotes2025}
+                    onProvinceSelected={handleProvinceSelected}
+                  />
+                </div>
+
+                {/* Legend */}
+                {selectedBillId ? (
+                  <div className="mt-2 shrink-0">
+                    <div className="flex items-center gap-3 text-xs flex-wrap">
+                      <span className="font-medium text-gray-700">
+                        การลงคะแนน:
+                      </span>
+                      <div className="flex items-center gap-1.5">
+                        <div
+                          className="w-3 h-3 rounded"
+                          style={{ backgroundColor: "#22c55e" }}
+                        ></div>
+                        <span>เห็นด้วย</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <div
+                          className="w-3 h-3 rounded"
+                          style={{ backgroundColor: "#ef4444" }}
+                        ></div>
+                        <span>ไม่เห็นด้วย</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <div
+                          className="w-3 h-3 rounded"
+                          style={{ backgroundColor: "#fbbf24" }}
+                        ></div>
+                        <span>งดออกเสียง</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <div
+                          className="w-3 h-3 rounded"
+                          style={{ backgroundColor: "#d1d5db" }}
+                        ></div>
+                        <span>ไม่มีข้อมูล</span>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="mt-2 shrink-0">
+                    <div className="flex items-center gap-3 text-xs flex-wrap">
+                      <span className="font-medium text-gray-700">
+                        จำนวนการลงคะแนนรวม (ทุก พรบ. ในปี 2025):
+                      </span>
+                      <div className="flex items-center gap-1.5">
+                        <div
+                          className="w-3 h-3 rounded"
+                          style={{ backgroundColor: "#d73027" }}
+                        ></div>
+                        <span>น้อย</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <div
+                          className="w-3 h-3 rounded"
+                          style={{ backgroundColor: "#fee08b" }}
+                        ></div>
+                        <span>ปานกลาง</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <div
+                          className="w-3 h-3 rounded"
+                          style={{ backgroundColor: "#1a9850" }}
+                        ></div>
+                        <span>มาก</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-
-              <ThailandMap
-                politicians={politicians}
-                selectedBillId={selectedBillId}
-                votingStats={votingStats}
-                totalVotes2025={totalVotes2025}
-                onProvinceSelected={handleProvinceSelected}
-              />
-
-              {/* Legend */}
-              {selectedBillId ? (
-                <div className="mt-4">
-                  <div className="flex items-center gap-4 text-sm flex-wrap">
-                    <span className="font-medium text-gray-700">
-                      การลงคะแนน:
-                    </span>
-                    <div className="flex items-center gap-2">
-                      <div
-                        className="w-4 h-4 rounded"
-                        style={{ backgroundColor: "#22c55e" }}
-                      ></div>
-                      <span>เห็นด้วย</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div
-                        className="w-4 h-4 rounded"
-                        style={{ backgroundColor: "#ef4444" }}
-                      ></div>
-                      <span>ไม่เห็นด้วย</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div
-                        className="w-4 h-4 rounded"
-                        style={{ backgroundColor: "#fbbf24" }}
-                      ></div>
-                      <span>งดออกเสียง</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div
-                        className="w-4 h-4 rounded"
-                        style={{ backgroundColor: "#d1d5db" }}
-                      ></div>
-                      <span>ไม่มีข้อมูล</span>
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <div className="mt-4">
-                  <div className="flex items-center gap-4 text-sm flex-wrap">
-                    <span className="font-medium text-gray-700">
-                      จำนวนการลงคะแนนรวม (ทุก พรบ. ในปี 2025):
-                    </span>
-                    <div className="flex items-center gap-2">
-                      <div
-                        className="w-4 h-4 rounded"
-                        style={{ backgroundColor: "#d73027" }}
-                      ></div>
-                      <span>น้อย</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div
-                        className="w-4 h-4 rounded"
-                        style={{ backgroundColor: "#fee08b" }}
-                      ></div>
-                      <span>ปานกลาง</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <div
-                        className="w-4 h-4 rounded"
-                        style={{ backgroundColor: "#1a9850" }}
-                      ></div>
-                      <span>มาก</span>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
           </div>
 
-          {/* Info Panel */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-6">
-              <InfoPanel
-                province={selectedProvince}
-                mps={selectedMPs}
-                selectedBillId={selectedBillId}
-                votings={selectedBillVotings}
-              />
-            </div>
+          {/* Info Panel - Right */}
+          <div className="w-96 overflow-hidden">
+            <InfoPanel
+              province={selectedProvince}
+              mps={selectedMPs}
+              selectedBillId={selectedBillId}
+              votings={selectedBillVotings}
+              totalMPs={politicians.length}
+              totalBills={bills.length}
+              totalProposals={totalProposals}
+              latestVoting={latestVoting}
+            />
           </div>
         </div>
-
-        {/* Statistics */}
-        <Statistics
-          totalMPs={politicians.length}
-          totalBills={bills.length}
-          totalProposals={totalProposals}
-          latestVoting={latestVoting}
-        />
       </main>
     </div>
   );

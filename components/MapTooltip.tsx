@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useEffect, useMemo } from "react";
 import { Politician, VotingStats } from "@/lib/api";
 
 interface MapTooltipProps {
@@ -22,14 +22,96 @@ export default function MapTooltip({
   position,
   isVisible,
 }: MapTooltipProps) {
+  const tooltipRef = useRef<HTMLDivElement>(null);
+
+  // คำนวณตำแหน่งที่เหมาะสม
+  const adjustedPosition = useMemo(() => {
+    // ระยะห่างจาก cursor
+    const offset = 15;
+    // ประมาณการขนาด tooltip
+    const estimatedWidth = 250;
+    const estimatedHeight = 150;
+
+    // สมมติขนาดพื้นที่แสดงผล (จะถูกปรับในภายหลัง)
+    const viewportWidth =
+      typeof window !== "undefined" ? window.innerWidth : 1920;
+    const viewportHeight =
+      typeof window !== "undefined" ? window.innerHeight : 1080;
+
+    let x = position.x + offset;
+    let y = position.y + offset;
+
+    // ตรวจสอบขอบขวา - ถ้าเกินให้แสดงทางซ้ายของ cursor
+    if (x + estimatedWidth > viewportWidth - 50) {
+      x = position.x - estimatedWidth - offset;
+    }
+
+    // ตรวจสอบขอบล่าง - ถ้าเกินให้แสดงด้านบนของ cursor
+    if (y + estimatedHeight > viewportHeight - 50) {
+      y = position.y - estimatedHeight - offset;
+    }
+
+    // ตรวจสอบขอบซ้าย - ถ้าติดลบให้แสดงทางขวา
+    if (x < 0) {
+      x = position.x + offset;
+    }
+
+    // ตรวจสอบขอบบน - ถ้าติดลบให้แสดงด้านล่าง
+    if (y < 0) {
+      y = position.y + offset;
+    }
+
+    return { x, y };
+  }, [position]);
+
+  // ปรับตำแหน่งจริงๆ หลังจาก render
+  useEffect(() => {
+    if (!tooltipRef.current || !isVisible) return;
+
+    const tooltip = tooltipRef.current;
+    const tooltipRect = tooltip.getBoundingClientRect();
+    const parentRect = tooltip.parentElement?.getBoundingClientRect();
+
+    if (!parentRect) return;
+
+    const offset = 15;
+    let x = position.x + offset;
+    let y = position.y + offset;
+
+    // ตรวจสอบขอบขวา
+    if (x + tooltipRect.width > parentRect.width) {
+      x = position.x - tooltipRect.width - offset;
+    }
+
+    // ตรวจสอบขอบล่าง
+    if (y + tooltipRect.height > parentRect.height) {
+      y = position.y - tooltipRect.height - offset;
+    }
+
+    // ตรวจสอบขอบซ้าย
+    if (x < 0) {
+      x = position.x + offset;
+    }
+
+    // ตรวจสอบขอบบน
+    if (y < 0) {
+      y = position.y + offset;
+    }
+
+    // อัพเดทตำแหน่งโดยตรงผ่าน style
+    tooltip.style.left = `${x}px`;
+    tooltip.style.top = `${y}px`;
+  }, [position, isVisible]);
+
   if (!isVisible) return null;
 
   return (
     <div
+      ref={tooltipRef}
       className="absolute pointer-events-none bg-white border border-gray-200 rounded-lg p-3 shadow-lg z-50 max-w-sm"
       style={{
-        left: `${position.x + 15}px`,
-        top: `${position.y + 15}px`,
+        left: `${adjustedPosition.x}px`,
+        top: `${adjustedPosition.y}px`,
       }}
     >
       <div className="font-semibold text-lg mb-2">{provinceName}</div>
