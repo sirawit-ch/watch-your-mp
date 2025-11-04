@@ -13,7 +13,6 @@ export function getPoliticianImageUrl(
   lastname: string
 ): string {
   const imageName = `${firstname}-${lastname}.webp`;
-  const placeholderUrl = "/politicians/_placeholder.webp";
 
   // ตรวจสอบว่ามีรูปภาพหรือไม่โดยใช้ path
   const imageUrl = `/politicians/${imageName}`;
@@ -126,11 +125,14 @@ export async function fetchPoliticians(): Promise<Politician[]> {
 
         // ต้องมี membership ที่เป็น "แบ่งเขต" และยังดำรงตำแหน่งอยู่
         return person.memberships.some(
-          (m: {
-            province?: string;
-            label?: string;
-            end_date?: string | null;
-          }) => m.province && m.label === "แบ่งเขต" && m.end_date === null
+          (m) => {
+            const membership = m as {
+              province?: string;
+              label?: string;
+              end_date?: string | null;
+            };
+            return membership.province && membership.label === "แบ่งเขต" && membership.end_date === null;
+          }
         );
       })
       .map(
@@ -226,14 +228,17 @@ export async function fetchPartyListMPs(): Promise<Politician[]> {
       .filter((person: { memberships?: unknown[] }) => {
         if (!person.memberships || person.memberships.length === 0)
           return false;
-
+        
         // ต้องมี membership ที่ province = null และยังดำรงตำแหน่งอยู่
         return person.memberships.some(
-          (m: {
-            province?: string | null;
-            label?: string;
-            end_date?: string | null;
-          }) => m.province === null && m.end_date === null
+          (m) => {
+            const membership = m as {
+              province?: string | null;
+              label?: string;
+              end_date?: string | null;
+            };
+            return membership.province === null && membership.end_date === null;
+          }
         );
       })
       .map(

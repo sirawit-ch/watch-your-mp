@@ -2,6 +2,24 @@
 
 import React from "react";
 import { Politician, ProvinceVoteStats } from "@/lib/api";
+import {
+  Paper,
+  Typography,
+  Box,
+  Divider,
+  Card,
+  Avatar,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  Chip,
+} from "@mui/material";
+import MapIcon from "@mui/icons-material/Map";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import ThumbDownIcon from "@mui/icons-material/ThumbDown";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+import EventBusyIcon from "@mui/icons-material/EventBusy";
 
 interface InfoPanelProps {
   province: string | null;
@@ -26,7 +44,6 @@ export default function InfoPanel({
   latestVotingDate,
   provinceVoteStats,
 }: InfoPanelProps) {
-  // Format date to Thai format
   const formatDate = (dateStr: string) => {
     if (!dateStr) return "ไม่มีข้อมูล";
     const date = new Date(dateStr);
@@ -37,175 +54,304 @@ export default function InfoPanel({
     });
   };
 
-  // Empty state - show overall statistics
   if (!province || mps.length === 0) {
     return (
-      <div className="bg-white rounded-lg shadow-sm h-full flex flex-col overflow-hidden">
-        {/* Overall Statistics Section */}
-        <div className="p-3 border-b border-gray-200">
-          <h3 className="text-xs font-semibold text-gray-900 mb-2">
+      <Paper
+        elevation={1}
+        sx={{
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          overflow: "hidden",
+        }}
+      >
+        <Box sx={{ p: 2, borderBottom: 1, borderColor: "divider" }}>
+          <Typography variant="subtitle2" fontWeight="600" gutterBottom>
             ภาพรวมสถิติ
-          </h3>
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <span className="text-xs text-gray-600">ส.ส. ทั้งหมด</span>
-              <span className="text-base font-bold text-blue-600">
-                {totalMPs.toLocaleString()}
-              </span>
-            </div>
-            <div className="h-px bg-gray-200"></div>
-
-            <div>
-              <div className="text-[10px] text-gray-500 mb-1.5">กฎหมาย</div>
-              <div className="space-y-1.5">
-                <div className="flex justify-between items-center">
-                  <span className="text-xs text-gray-600">จำนวนทั้งหมด</span>
-                  <span className="text-sm font-semibold text-gray-900">
-                    {totalBills.toLocaleString()}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-xs text-gray-600">ผ่าน</span>
-                  <span className="text-sm font-semibold text-green-600">
-                    {passedBills.toLocaleString()}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-xs text-gray-600">ไม่ผ่าน</span>
-                  <span className="text-sm font-semibold text-red-600">
-                    {failedBills.toLocaleString()}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-xs text-gray-600">รอตรวจสอบ</span>
-                  <span className="text-sm font-semibold text-yellow-600">
-                    {pendingBills.toLocaleString()}
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="h-px bg-gray-200"></div>
-
-            <div>
-              <div className="text-[10px] text-gray-500 mb-0.5">
-                วันที่ลงมติล่าสุด
-              </div>
-              <div className="text-xs font-medium text-gray-900">
-                {formatDate(latestVotingDate)}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Empty State Message */}
-        <div className="flex-1 flex items-center justify-center p-3">
-          <div className="text-center text-gray-500">
-            <svg
-              className="w-12 h-12 mx-auto mb-2 text-gray-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+          </Typography>
+          <Box sx={{ display: "flex", flexDirection: "column", gap: 1.5 }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
-              ></path>
-            </svg>
-            <p className="text-xs font-medium">เลือกจังหวัดบนแผนที่</p>
-            <p className="text-[10px] mt-0.5">เพื่อดูข้อมูล ส.ส. และการลงมติ</p>
-          </div>
-        </div>
-      </div>
+              <Typography variant="body2" color="text.secondary">
+                ส.ส. ทั้งหมด
+              </Typography>
+              <Typography variant="h6" color="primary" fontWeight="bold">
+                {totalMPs.toLocaleString()}
+              </Typography>
+            </Box>
+            <Divider />
+            <Box>
+              <Typography
+                variant="caption"
+                color="text.secondary"
+                sx={{ mb: 1, display: "block" }}
+              >
+                กฎหมาย
+              </Typography>
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography variant="body2" color="text.secondary">
+                    จำนวนทั้งหมด
+                  </Typography>
+                  <Typography variant="body1" fontWeight="600">
+                    {totalBills.toLocaleString()}
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography variant="body2" color="text.secondary">
+                    ผ่าน
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    fontWeight="600"
+                    color="success.main"
+                  >
+                    {passedBills.toLocaleString()}
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography variant="body2" color="text.secondary">
+                    ไม่ผ่าน
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    fontWeight="600"
+                    color="error.main"
+                  >
+                    {failedBills.toLocaleString()}
+                  </Typography>
+                </Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                  }}
+                >
+                  <Typography variant="body2" color="text.secondary">
+                    รอตรวจสอบ
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    fontWeight="600"
+                    color="warning.main"
+                  >
+                    {pendingBills.toLocaleString()}
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+            <Divider />
+            <Box>
+              <Typography
+                variant="caption"
+                color="text.secondary"
+                sx={{ mb: 0.5, display: "block" }}
+              >
+                วันที่ลงมติล่าสุด
+              </Typography>
+              <Typography variant="body2" fontWeight="500">
+                {formatDate(latestVotingDate)}
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            flex: 1,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            p: 3,
+          }}
+        >
+          <Box sx={{ textAlign: "center", color: "text.secondary" }}>
+            <MapIcon sx={{ fontSize: 48, color: "action.disabled", mb: 2 }} />
+            <Typography variant="body2" fontWeight="500">
+              เลือกจังหวัดบนแผนที่
+            </Typography>
+            <Typography variant="caption" sx={{ mt: 0.5, display: "block" }}>
+              เพื่อดูข้อมูล ส.ส. และการลงมติ
+            </Typography>
+          </Box>
+        </Box>
+      </Paper>
     );
   }
 
-  // Province selected - show province stats and MPs
   return (
-    <div className="bg-white rounded-lg shadow-sm h-full flex flex-col overflow-hidden">
-      {/* Overall Statistics Section - Still Show */}
-      <div className="p-2.5 border-b border-gray-200 shrink-0">
-        <h3 className="text-xs font-semibold text-gray-900 mb-2">
+    <Paper
+      elevation={1}
+      sx={{
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        overflow: "hidden",
+      }}
+    >
+      <Box sx={{ p: 1.5, borderBottom: 1, borderColor: "divider" }}>
+        <Typography variant="subtitle2" fontWeight="600" gutterBottom>
           ภาพรวมสถิติ
-        </h3>
-        <div className="grid grid-cols-2 gap-2">
-          <div className="text-center">
-            <div className="text-[10px] text-gray-500">ส.ส. ทั้งหมด</div>
-            <div className="text-base font-bold text-blue-600">
-              {totalMPs.toLocaleString()}
-            </div>
-          </div>
-          <div className="text-center">
-            <div className="text-[10px] text-gray-500">กฎหมาย</div>
-            <div className="text-base font-bold text-gray-900">
-              {totalBills.toLocaleString()}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Province Header Section */}
-      <div className="p-3 border-b border-gray-200 shrink-0">
-        <h3 className="text-base font-bold text-gray-900 mb-0.5">{province}</h3>
-        <div className="text-xs text-gray-600 mb-2">
+        </Typography>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: 1,
+          }}
+        >
+          <Box>
+            <Box sx={{ textAlign: "center" }}>
+              <Typography variant="caption" color="text.secondary">
+                ส.ส. ทั้งหมด
+              </Typography>
+              <Typography variant="h6" color="primary" fontWeight="bold">
+                {totalMPs.toLocaleString()}
+              </Typography>
+            </Box>
+          </Box>
+          <Box>
+            <Box sx={{ textAlign: "center" }}>
+              <Typography variant="caption" color="text.secondary">
+                กฎหมาย
+              </Typography>
+              <Typography variant="h6" fontWeight="bold">
+                {totalBills.toLocaleString()}
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+      <Box sx={{ p: 2, borderBottom: 1, borderColor: "divider" }}>
+        <Typography variant="h6" fontWeight="bold" gutterBottom>
+          {province}
+        </Typography>
+        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
           ส.ส. จำนวน{" "}
-          <span className="font-semibold text-gray-900">{mps.length}</span> คน
-        </div>
-
-        {/* Province Vote Statistics */}
+          <Box component="span" fontWeight="600" color="text.primary">
+            {mps.length}
+          </Box>{" "}
+          คน
+        </Typography>
         {provinceVoteStats && (
-          <div className="grid grid-cols-2 gap-1.5">
-            <div className="bg-green-50 rounded-lg p-1.5">
-              <div className="flex items-center gap-1">
-                <div className="w-1.5 h-1.5 rounded-full bg-green-500"></div>
-                <span className="text-[10px] text-gray-600">เห็นด้วย</span>
-              </div>
-              <div className="text-base font-bold text-green-600 mt-0.5">
-                {provinceVoteStats.agreeCount}
-              </div>
-            </div>
-            <div className="bg-red-50 rounded-lg p-1.5">
-              <div className="flex items-center gap-1">
-                <div className="w-1.5 h-1.5 rounded-full bg-red-500"></div>
-                <span className="text-[10px] text-gray-600">ไม่เห็นด้วย</span>
-              </div>
-              <div className="text-base font-bold text-red-600 mt-0.5">
-                {provinceVoteStats.disagreeCount}
-              </div>
-            </div>
-            <div className="bg-yellow-50 rounded-lg p-1.5">
-              <div className="flex items-center gap-1">
-                <div className="w-1.5 h-1.5 rounded-full bg-yellow-500"></div>
-                <span className="text-[10px] text-gray-600">งดออกเสียง</span>
-              </div>
-              <div className="text-sm font-semibold text-yellow-600 mt-0.5">
-                {provinceVoteStats.abstainCount}
-              </div>
-            </div>
-            <div className="bg-gray-50 rounded-lg p-1.5">
-              <div className="flex items-center gap-1">
-                <div className="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
-                <span className="text-[10px] text-gray-600">ขาด/ลา</span>
-              </div>
-              <div className="text-sm font-semibold text-gray-600 mt-0.5">
-                {provinceVoteStats.absentCount}
-              </div>
-            </div>
-          </div>
+          <Box
+            sx={{
+              display: "grid",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: 1,
+            }}
+          >
+            <Box>
+              <Card sx={{ bgcolor: "success.lighter", p: 1 }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                  <ThumbUpIcon sx={{ fontSize: 14, color: "success.main" }} />
+                  <Typography variant="caption" color="text.secondary">
+                    เห็นด้วย
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="h6"
+                  color="success.main"
+                  fontWeight="bold"
+                  sx={{ mt: 0.5 }}
+                >
+                  {provinceVoteStats.agreeCount}
+                </Typography>
+              </Card>
+            </Box>
+            <Box>
+              <Card sx={{ bgcolor: "error.lighter", p: 1 }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                  <ThumbDownIcon sx={{ fontSize: 14, color: "error.main" }} />
+                  <Typography variant="caption" color="text.secondary">
+                    ไม่เห็นด้วย
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="h6"
+                  color="error.main"
+                  fontWeight="bold"
+                  sx={{ mt: 0.5 }}
+                >
+                  {provinceVoteStats.disagreeCount}
+                </Typography>
+              </Card>
+            </Box>
+            <Box>
+              <Card sx={{ bgcolor: "warning.lighter", p: 1 }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                  <RemoveCircleOutlineIcon
+                    sx={{ fontSize: 14, color: "warning.main" }}
+                  />
+                  <Typography variant="caption" color="text.secondary">
+                    งดออกเสียง
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="body1"
+                  color="warning.main"
+                  fontWeight="600"
+                  sx={{ mt: 0.5 }}
+                >
+                  {provinceVoteStats.abstainCount}
+                </Typography>
+              </Card>
+            </Box>
+            <Box>
+              <Card sx={{ bgcolor: "grey.100", p: 1 }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                  <EventBusyIcon sx={{ fontSize: 14, color: "grey.600" }} />
+                  <Typography variant="caption" color="text.secondary">
+                    ขาด/ลา
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="body1"
+                  color="text.secondary"
+                  fontWeight="600"
+                  sx={{ mt: 0.5 }}
+                >
+                  {provinceVoteStats.absentCount}
+                </Typography>
+              </Card>
+            </Box>
+          </Box>
         )}
-      </div>
-
-      {/* MP List */}
-      <div className="flex-1 overflow-y-auto p-3">
-        <div className="space-y-1.5">
+      </Box>
+      <Box sx={{ flex: 1, overflow: "auto", p: 2 }}>
+        <List
+          disablePadding
+          sx={{ display: "flex", flexDirection: "column", gap: 1 }}
+        >
           {mps.map((mp) => (
             <MPCard key={mp.id} mp={mp} />
           ))}
-        </div>
-      </div>
-    </div>
+        </List>
+      </Box>
+    </Paper>
   );
 }
 
@@ -214,46 +360,47 @@ function MPCard({ mp }: { mp: Politician }) {
   const partyColor = mp.party?.color || "#6b7280";
 
   return (
-    <div className="border border-gray-200 rounded-lg p-2 hover:bg-gray-50 transition-colors">
-      <div className="flex items-center gap-2">
-        {/* Avatar with Image */}
-        <div className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-xs shrink-0 overflow-hidden bg-gray-200">
-          {mp.imageUrl ? (
-            <img
-              src={mp.imageUrl}
-              alt={fullName}
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                // ถ้าโหลดรูปไม่ได้ ให้แสดง fallback
-                const target = e.target as HTMLImageElement;
-                target.style.display = "none";
-                const parent = target.parentElement;
-                if (parent) {
-                  parent.style.backgroundColor = partyColor;
-                  parent.textContent = mp.firstname.charAt(0);
-                }
-              }}
-            />
-          ) : (
-            <div
-              className="w-full h-full flex items-center justify-center"
-              style={{ backgroundColor: partyColor }}
-            >
-              {mp.firstname.charAt(0)}
-            </div>
-          )}
-        </div>
-
-        {/* Info */}
-        <div className="flex-1 min-w-0">
-          <div className="font-semibold text-xs text-gray-900 truncate">
+    <ListItem
+      sx={{
+        border: 1,
+        borderColor: "divider",
+        borderRadius: 1,
+        p: 1.5,
+        "&:hover": { bgcolor: "action.hover" },
+      }}
+    >
+      <ListItemAvatar>
+        <Avatar
+          src={mp.imageUrl}
+          alt={fullName}
+          sx={{ bgcolor: partyColor, width: 40, height: 40 }}
+        >
+          {!mp.imageUrl && mp.firstname.charAt(0)}
+        </Avatar>
+      </ListItemAvatar>
+      <ListItemText
+        primary={
+          <Typography variant="body2" fontWeight="600" noWrap>
             {fullName}
-          </div>
-          <div className="text-[10px] text-gray-500 truncate">
+          </Typography>
+        }
+        secondary={
+          <Typography variant="caption" color="text.secondary" noWrap>
             {mp.party?.name || "ไม่ระบุพรรค"}
-          </div>
-        </div>
-      </div>
-    </div>
+          </Typography>
+        }
+      />
+      {mp.party && (
+        <Chip
+          size="small"
+          sx={{
+            bgcolor: partyColor,
+            color: "white",
+            height: 20,
+            fontSize: "0.65rem",
+          }}
+        />
+      )}
+    </ListItem>
   );
 }

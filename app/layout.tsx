@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Sarabun } from "next/font/google";
 import "./globals.css";
+import ThemeRegistry from "./ThemeRegistry";
 
 const sarabun = Sarabun({
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["thai", "latin"],
   variable: "--font-sarabun",
 });
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="th">
       <body className={`${sarabun.variable} antialiased`}>
-        {children}
+        <ThemeRegistry>{children}</ThemeRegistry>
       </body>
     </html>
   );

@@ -9,6 +9,14 @@ import {
 } from "@/lib/api";
 import { provinceGridLayout } from "@/lib/provinceGridSimple";
 import MapTooltip from "./MapTooltip";
+import {
+  Paper,
+  Typography,
+  Box,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
 
 interface ThailandMapProps {
   politicians: Politician[];
@@ -200,27 +208,61 @@ export default function ThailandMap({
   return (
     <div className="relative w-full h-full flex flex-col gap-3">
       {/* Party List MPs Block - ขวาบน */}
-      <div className="absolute top-0 right-0 z-10 w-64 bg-white rounded-lg shadow-lg p-3 border-2 border-purple-200">
-        <h3 className="text-sm font-bold text-purple-900 mb-2">
+      <Paper
+        elevation={3}
+        sx={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          zIndex: 10,
+          width: 256,
+          p: 2,
+          border: 2,
+          borderColor: "secondary.main",
+        }}
+      >
+        <Typography
+          variant="subtitle1"
+          fontWeight="bold"
+          color="secondary"
+          gutterBottom
+        >
           ส.ส. บัญชีรายชื่อ
-        </h3>
-        <div className="text-xs text-gray-600 mb-2">
+        </Typography>
+        <Typography
+          variant="caption"
+          color="text.secondary"
+          sx={{ mb: 1.5, display: "block" }}
+        >
           จำนวน {partyListMPs.length} คน
-        </div>
-        <div className="max-h-40 overflow-y-auto space-y-1">
-          {partyListMPs.map((mp) => (
-            <div
-              key={mp.id}
-              className="text-xs p-1.5 bg-purple-50 rounded border border-purple-100"
-            >
-              <div className="font-medium text-gray-900 truncate">
-                {mp.prefix}
-                {mp.firstname} {mp.lastname}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+        </Typography>
+        <Box sx={{ maxHeight: 160, overflowY: "auto" }}>
+          <List disablePadding>
+            {partyListMPs.map((mp) => (
+              <ListItem
+                key={mp.id}
+                sx={{
+                  bgcolor: "secondary.lighter",
+                  borderRadius: 1,
+                  border: 1,
+                  borderColor: "secondary.light",
+                  mb: 0.5,
+                  p: 1,
+                }}
+              >
+                <ListItemText
+                  primary={
+                    <Typography variant="caption" fontWeight="500" noWrap>
+                      {mp.prefix}
+                      {mp.firstname} {mp.lastname}
+                    </Typography>
+                  }
+                />
+              </ListItem>
+            ))}
+          </List>
+        </Box>
+      </Paper>
 
       {/* Map SVG */}
       <div className="flex-1 relative">
