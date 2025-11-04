@@ -2,23 +2,25 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-import { Politician, groupPoliticiansByProvince, VotingStats } from "@/lib/api";
+import {
+  Politician,
+  groupPoliticiansByProvince,
+  ProvinceVoteStats,
+} from "@/lib/api";
 import { provinceGridLayout } from "@/lib/provinceGridSimple";
 import MapTooltip from "./MapTooltip";
 
 interface ThailandMapProps {
   politicians: Politician[];
-  selectedBillId?: string | null;
-  votingStats?: Record<string, VotingStats> | null;
-  totalVotes2025?: Record<string, number> | null;
+  partyListMPs: Politician[];
+  provinceVoteStats: Record<string, ProvinceVoteStats>;
   onProvinceSelected: (province: string, mps: Politician[]) => void;
 }
 
 export default function ThailandMap({
   politicians,
-  selectedBillId,
-  votingStats,
-  totalVotes2025,
+  partyListMPs,
+  provinceVoteStats,
   onProvinceSelected,
 }: ThailandMapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
@@ -27,66 +29,71 @@ export default function ThailandMap({
     position: { x: number; y: number };
     provinceName: string;
     mps: Politician[];
-    votingStats?: VotingStats | null;
-    totalVotes: number;
+    voteStats?: ProvinceVoteStats;
   }>({
     isVisible: false,
     position: { x: 0, y: 0 },
     provinceName: "",
     mps: [],
-    votingStats: null,
-    totalVotes: 0,
+    voteStats: undefined,
   });
 
-  // วาดแผนที่แบบ Tile Grid
+  // วาดแผนที่แบบ Tile Grid พร้อม Heatmap
   useEffect(() => {
     if (!svgRef.current) return;
 
-    const tileSize = 35; // ขนาดของแต่ละสี่เหลี่ยม (ลดลงเพิ่ม)
-    const tileSpacing = 3; // ระยะห่างระหว่างสี่เหลี่ยม (ลดลงเพิ่ม)
+    const tileSize = 35;
+    const tileSpacing = 3;
     const totalTileSize = tileSize + tileSpacing;
-    const marginLeft = 20; // margin ซ้าย (ลดลงเพิ่ม)
-    const marginTop = 20; // margin บน (ลดลงเพิ่ม)
+    const marginLeft = 20;
+    const marginTop = 20;
 
     const svg = d3.select(svgRef.current);
-
-    // Clear existing
     svg.selectAll("*").remove();
 
     const politiciansByProvince = groupPoliticiansByProvince(politicians);
 
-    // Helper function to get fill color
-    const getProvinceFill = (provinceName: string): string => {
-      if (selectedBillId && votingStats) {
-        const stats = votingStats[provinceName];
+    /**
+     * คำนวณสี Heatmap สำหรับแต่ละจังหวัด
+     * - สีเขียว: เห็นด้วยมากกว่า
+     * - สีแดง: ไม่เห็นด้วยมากกว่า
+     * - ความเข้ม: ยิ่งมี ส.ส. มาลงมติมาก (agree + disagree) สียิ่งเข้ม
+     */
+    const getProvinceHeatmapColor = (provinceName: string): string => {
+      const stats = provinceVoteStats[provinceName];
+      const mps = politiciansByProvince[provinceName] || [];
+      const totalMPsInProvince = mps.length;
 
-        if (!stats) return "#e5e7eb";
-
-        const { approve, disapprove, total } = stats;
-        if (total === 0) return "#e5e7eb";
-
-        const approvePercent = approve / total;
-        const disapprovePercent = disapprove / total;
-
-        if (approvePercent > 0.5) {
-          return d3.interpolateGreens(approvePercent);
-        } else if (disapprovePercent > 0.5) {
-          return d3.interpolateReds(disapprovePercent);
-        } else {
-          return "#fbbf24";
-        }
+      // ถ้าไม่มีข้อมูลการลงมติ หรือไม่มี ส.ส. ในจังหวัด
+      if (!stats || totalMPsInProvince === 0) {
+        return "#e5e7eb"; // สีเทาอ่อน
       }
 
-      // โหมดแสดงจำนวนการลงคะแนนรวมทั้งหมดในปี 2025
-      const totalVotes = totalVotes2025?.[provinceName] || 0;
-      if (totalVotes === 0) return "#e5e7eb";
+      const { agreeCount, disagreeCount } = stats;
 
-      const maxVotes = Math.max(...Object.values(totalVotes2025 || {}));
-      const colorScale = d3
-        .scaleSequential(d3.interpolateRdYlGn)
-        .domain([0, maxVotes]);
+      // ถ้าไม่มีการลงมติเลย
+      if (agreeCount === 0 && disagreeCount === 0) {
+        return "#e5e7eb";
+      }
 
-      return colorScale(totalVotes);
+      // คำนวณ participation rate (ผู้ที่มาลงมติเห็นด้วย/ไม่เห็นด้วย)
+      const participationCount = agreeCount + disagreeCount;
+      const participationRate = participationCount / totalMPsInProvince;
+
+      // จำกัด opacity ระหว่าง 0.3 ถึง 0.9 (ไม่ให้จางหรือเข้มเกินไป)
+      const opacity = Math.max(0.3, Math.min(0.9, participationRate));
+
+      // เลือกสีตามเสียงข้างมาก
+      if (agreeCount > disagreeCount) {
+        // สีเขียว (เห็นด้วย) - RGB: 34, 197, 94
+        return `rgba(34, 197, 94, ${opacity})`;
+      } else if (disagreeCount > agreeCount) {
+        // สีแดง (ไม่เห็นด้วย) - RGB: 239, 68, 68
+        return `rgba(239, 68, 68, ${opacity})`;
+      } else {
+        // เท่ากัน - สีเทา
+        return `rgba(156, 163, 175, ${opacity})`;
+      }
     };
 
     // Draw provinces
@@ -95,7 +102,7 @@ export default function ThailandMap({
     // เพิ่ม zoom behavior
     const zoom = d3
       .zoom<SVGSVGElement, unknown>()
-      .scaleExtent([1, 8]) // จำกัด zoom ระหว่าง 1x ถึง 8x
+      .scaleExtent([1, 8])
       .on("zoom", (event) => {
         const transform = event.transform;
 
@@ -130,8 +137,8 @@ export default function ThailandMap({
         .attr("y", y)
         .attr("width", tileSize)
         .attr("height", tileSize)
-        .attr("rx", 4) // มุมโค้ง
-        .attr("fill", getProvinceFill(provinceName))
+        .attr("rx", 4)
+        .attr("fill", getProvinceHeatmapColor(provinceName))
         .attr("stroke", "#ffffff")
         .attr("stroke-width", 2)
         .style("transition", "all 0.3s ease");
@@ -143,10 +150,10 @@ export default function ThailandMap({
         .attr("y", y + tileSize / 2)
         .attr("text-anchor", "middle")
         .attr("dominant-baseline", "middle")
-        .attr("font-size", "10px") // ลดขนาดฟอนต์เพิ่ม
+        .attr("font-size", "10px")
         .attr("font-weight", "bold")
         .attr("fill", "#1f2937")
-        .attr("pointer-events", "none") // ไม่รับ mouse events
+        .attr("pointer-events", "none")
         .text(abbr);
 
       // เพิ่ม event handlers
@@ -155,10 +162,8 @@ export default function ThailandMap({
           d3.select(this).select("rect").style("opacity", 0.7);
 
           const mps = politiciansByProvince[provinceName] || [];
-          const totalVotes = totalVotes2025?.[provinceName] || 0;
-          const stats = votingStats?.[provinceName] || null;
+          const stats = provinceVoteStats[provinceName];
 
-          // Get the position relative to the SVG container
           const svgRect = svgRef.current?.getBoundingClientRect();
           const mouseX = event.clientX - (svgRect?.left || 0);
           const mouseY = event.clientY - (svgRect?.top || 0);
@@ -168,12 +173,10 @@ export default function ThailandMap({
             position: { x: mouseX, y: mouseY },
             provinceName,
             mps,
-            votingStats: stats,
-            totalVotes,
+            voteStats: stats,
           });
         })
         .on("mousemove", function (event: MouseEvent) {
-          // Get the position relative to the SVG container
           const svgRect = svgRef.current?.getBoundingClientRect();
           const mouseX = event.clientX - (svgRect?.left || 0);
           const mouseY = event.clientY - (svgRect?.top || 0);
@@ -192,32 +195,50 @@ export default function ThailandMap({
           onProvinceSelected(provinceName, mps);
         });
     });
-  }, [
-    politicians,
-    selectedBillId,
-    votingStats,
-    totalVotes2025,
-    onProvinceSelected,
-  ]);
+  }, [politicians, provinceVoteStats, onProvinceSelected]);
 
   return (
-    <div className="relative w-full h-full">
-      <svg
-        ref={svgRef}
-        width="100%"
-        height="100%"
-        viewBox="0 0 400 700"
-        preserveAspectRatio="xMidYMid meet"
-      />
-      <MapTooltip
-        provinceName={tooltip.provinceName}
-        mps={tooltip.mps}
-        selectedBillId={selectedBillId}
-        votingStats={tooltip.votingStats}
-        totalVotes={tooltip.totalVotes}
-        position={tooltip.position}
-        isVisible={tooltip.isVisible}
-      />
+    <div className="relative w-full h-full flex flex-col gap-3">
+      {/* Party List MPs Block - ขวาบน */}
+      <div className="absolute top-0 right-0 z-10 w-64 bg-white rounded-lg shadow-lg p-3 border-2 border-purple-200">
+        <h3 className="text-sm font-bold text-purple-900 mb-2">
+          ส.ส. บัญชีรายชื่อ
+        </h3>
+        <div className="text-xs text-gray-600 mb-2">
+          จำนวน {partyListMPs.length} คน
+        </div>
+        <div className="max-h-40 overflow-y-auto space-y-1">
+          {partyListMPs.map((mp) => (
+            <div
+              key={mp.id}
+              className="text-xs p-1.5 bg-purple-50 rounded border border-purple-100"
+            >
+              <div className="font-medium text-gray-900 truncate">
+                {mp.prefix}
+                {mp.firstname} {mp.lastname}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Map SVG */}
+      <div className="flex-1 relative">
+        <svg
+          ref={svgRef}
+          width="100%"
+          height="100%"
+          viewBox="-150 -150 700 1200"
+          preserveAspectRatio="xMidYMid meet"
+        />
+        <MapTooltip
+          provinceName={tooltip.provinceName}
+          mps={tooltip.mps}
+          voteStats={tooltip.voteStats}
+          position={tooltip.position}
+          isVisible={tooltip.isVisible}
+        />
+      </div>
     </div>
   );
 }

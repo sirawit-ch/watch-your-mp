@@ -1,262 +1,556 @@
 /**
  * API Module for Politigraph GraphQL
  * เชื่อมต่อกับ Politigraph API และดึงข้อมูล ส.ส. และการลงคะแนน
- * (ปัจจุบันใช้ Mock Data)
  */
+
+const GRAPHQL_ENDPOINT = "/api/graphql";
+
+/**
+ * แมพรูปภาพนักการเมืองจากชื่อ
+ */
+export function getPoliticianImageUrl(
+  firstname: string,
+  lastname: string
+): string {
+  const imageName = `${firstname}-${lastname}.webp`;
+  const placeholderUrl = "/politicians/_placeholder.webp";
+
+  // ตรวจสอบว่ามีรูปภาพหรือไม่โดยใช้ path
+  const imageUrl = `/politicians/${imageName}`;
+
+  // ใน production จะต้องตรวจสอบว่าไฟล์มีจริงหรือไม่
+  // แต่ใน client-side เราจะใช้ onerror ของ img tag แทน
+  return imageUrl;
+}
 
 export interface Politician {
   id: string;
   firstname: string;
   lastname: string;
   province: string;
-  title?: string;
+  prefix?: string;
   party?: {
     name: string;
     color: string;
   };
+  imageUrl?: string;
 }
 
 export interface Bill {
   id: string;
   title: string;
   nickname?: string;
-  created_at: string;
-  proposedBy?: string[];
-  proposedOn?: string;
+  status?: string;
+  proposal_date?: string;
 }
 
-export interface Voting {
+export interface VoteEvent {
   id: string;
-  date: string;
   title: string;
-  voteOption: string;
-  participatedBy?: Politician[];
+  nickname?: string;
+  start_date: string;
+  result?: string;
+  agree_count?: number;
+  disagree_count?: number;
+  abstain_count?: number;
+  novote_count?: number;
+}
+
+export interface Vote {
+  id: string;
+  option: string;
+  voter?: Politician;
+}
+
+export interface ProvinceVoteStats {
+  province: string;
+  agreeCount: number;
+  disagreeCount: number;
+  abstainCount: number;
+  absentCount: number;
+  totalCount: number;
+}
+
+export interface OverallStatistics {
+  totalMPs: number;
+  totalBills: number;
+  passedBills: number;
+  failedBills: number;
+  pendingBills: number;
+  latestVotingDate?: string;
 }
 
 /**
- * ดึงข้อมูล ส.ส. ทั้งหมด (ใช้ Mock Data)
+ * ดึงข้อมูล ส.ส. ทั้งหมด พร้อมจังหวัด
  */
 export async function fetchPoliticians(): Promise<Politician[]> {
-  // Mock data สำหรับจังหวัดต่างๆ ในไทย
-  const provinces = [
-    "กรุงเทพมหานคร",
-    "เชียงใหม่",
-    "นครราชสีมา",
-    "ขอนแก่น",
-    "สงขลา",
-    "ชลบุรี",
-    "ภูเก็ต",
-    "อุบลราชธานี",
-    "เชียงราย",
-    "นครศรีธรรมราช",
-    "กาญจนบุรี",
-    "อุดรธานี",
-    "สุราษฎร์ธานี",
-    "ระยอง",
-    "ลำปาง",
-    "นครสวรรค์",
-    "พิษณุโลก",
-    "ตรัง",
-    "สุรินทร์",
-    "ศรีสะเกษ",
-  ];
-
-  const parties = [
-    { name: "เพื่อไทย", color: "#FF0000" },
-    { name: "ก้าวไกล", color: "#FF6B00" },
-    { name: "ภูมิใจไทย", color: "#0066CC" },
-    { name: "ประชาธิปัตย์", color: "#00ADEF" },
-    { name: "พลังประชารัฐ", color: "#1E40AF" },
-    { name: "ชาติไทยพัฒนา", color: "#FFA500" },
-    { name: "ไทยสร้างไทย", color: "#800080" },
-  ];
-
-  const firstnames = [
-    "สมชาย",
-    "สมหญิง",
-    "วิชัย",
-    "วิภา",
-    "ประเสริฐ",
-    "ศรีสุดา",
-    "อนุชา",
-    "อรพรรณ",
-    "ธนา",
-    "ธัญญา",
-    "รัตน์",
-    "รุ่งทิวา",
-    "ชัยวัฒน์",
-    "ชนิดา",
-    "สุรชัย",
-    "สุดาพร",
-    "มานิต",
-    "มาลี",
-    "ประยุทธ์",
-    "ปรียา",
-    "วิโรจน์",
-    "วิไล",
-    "อาทิตย์",
-    "อารีย์",
-  ];
-
-  const lastnames = [
-    "ใจดี",
-    "มั่นคง",
-    "สุขสันต์",
-    "รุ่งเรือง",
-    "เจริญสุข",
-    "ศรีสวัสดิ์",
-    "พัฒนา",
-    "วิทยา",
-    "กิจการ",
-    "สมบูรณ์",
-    "ชัยชนะ",
-    "บุญมี",
-    "เกียรติศักดิ์",
-    "วงศ์ใหญ่",
-    "ทองดี",
-    "แสงจันทร์",
-    "ดวงดี",
-    "เพชรรัตน์",
-  ];
-
-  const mockPoliticians: Politician[] = [];
-  let id = 1;
-
-  provinces.forEach((province) => {
-    // แต่ละจังหวัดมี 3-8 ส.ส.
-    const mpCount = Math.floor(Math.random() * 6) + 3;
-
-    for (let i = 0; i < mpCount; i++) {
-      mockPoliticians.push({
-        id: `mp-${id++}`,
-        firstname: firstnames[Math.floor(Math.random() * firstnames.length)],
-        lastname: lastnames[Math.floor(Math.random() * lastnames.length)],
-        province: province,
-        title: Math.random() > 0.5 ? "นาย" : "นาง",
-        party: parties[Math.floor(Math.random() * parties.length)],
-      });
+  const query = `
+    query {
+      people(limit: 1000) {
+        id
+        prefix
+        firstname
+        lastname
+        memberships {
+          province
+          label
+          start_date
+          end_date
+          posts {
+            organizations {
+              name
+              color
+            }
+          }
+        }
+      }
     }
-  });
+  `;
 
-  return mockPoliticians;
+  try {
+    const response = await fetch(GRAPHQL_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query }),
+    });
+
+    const { data } = await response.json();
+
+    if (!data?.people) return [];
+
+    // แปลงข้อมูลและดึงจังหวัดจาก membership
+    return data.people
+      .filter((person: { memberships?: unknown[] }) => {
+        if (!person.memberships || person.memberships.length === 0)
+          return false;
+
+        // ต้องมี membership ที่เป็น "แบ่งเขต" และยังดำรงตำแหน่งอยู่
+        return person.memberships.some(
+          (m: {
+            province?: string;
+            label?: string;
+            end_date?: string | null;
+          }) => m.province && m.label === "แบ่งเขต" && m.end_date === null
+        );
+      })
+      .map(
+        (person: {
+          id: string;
+          prefix: string;
+          firstname: string;
+          lastname: string;
+          memberships: {
+            province?: string;
+            label?: string;
+            end_date?: string | null;
+            posts?: {
+              organizations?: { name: string; color: string | null }[];
+            }[];
+          }[];
+        }) => {
+          // หา membership ที่เป็น "แบ่งเขต" และยังดำรงตำแหน่งอยู่
+          const activeMembership = person.memberships.find(
+            (m) => m.province && m.label === "แบ่งเขต" && m.end_date === null
+          );
+
+          // หาข้อมูลพรรคจาก membership ที่มี province = null (บัญชีรายชื่อ)
+          const partyMembership = person.memberships.find(
+            (m) => m.province === null && m.end_date === null
+          );
+
+          const party = partyMembership?.posts?.[0]?.organizations?.find(
+            (org) =>
+              org.name !== "สภาผู้แทนราษฎร ชุดที่ 26" &&
+              org.name !== "สภาผู้แทนราษฎร ชุดที่ 25"
+          );
+
+          return {
+            id: person.id,
+            firstname: person.firstname,
+            lastname: person.lastname,
+            prefix: person.prefix,
+            province: activeMembership?.province || "ไม่ระบุ",
+            party: party
+              ? { name: party.name, color: party.color || "#6b7280" }
+              : undefined,
+            imageUrl: getPoliticianImageUrl(person.firstname, person.lastname),
+          };
+        }
+      );
+  } catch (error) {
+    console.error("Error fetching politicians:", error);
+    return [];
+  }
 }
 
 /**
- * ดึงข้อมูลร่างกฎหมาย (ใช้ Mock Data)
+ * ดึงข้อมูล ส.ส. บัญชีรายชื่อ (ไม่มีจังหวัด)
+ */
+export async function fetchPartyListMPs(): Promise<Politician[]> {
+  const query = `
+    query {
+      people(limit: 1000) {
+        id
+        prefix
+        firstname
+        lastname
+        memberships {
+          province
+          label
+          start_date
+          end_date
+          posts {
+            organizations {
+              name
+              color
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  try {
+    const response = await fetch(GRAPHQL_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query }),
+    });
+
+    const { data } = await response.json();
+
+    if (!data?.people) return [];
+
+    // กรองเฉพาะ ส.ส. บัญชีรายชื่อ (province = null, label ไม่ใช่ "แบ่งเขต")
+    return data.people
+      .filter((person: { memberships?: unknown[] }) => {
+        if (!person.memberships || person.memberships.length === 0)
+          return false;
+
+        // ต้องมี membership ที่ province = null และยังดำรงตำแหน่งอยู่
+        return person.memberships.some(
+          (m: {
+            province?: string | null;
+            label?: string;
+            end_date?: string | null;
+          }) => m.province === null && m.end_date === null
+        );
+      })
+      .map(
+        (person: {
+          id: string;
+          prefix: string;
+          firstname: string;
+          lastname: string;
+          memberships: {
+            province?: string | null;
+            label?: string;
+            end_date?: string | null;
+            posts?: {
+              organizations?: { name: string; color: string | null }[];
+            }[];
+          }[];
+        }) => {
+          // หาข้อมูลพรรคจาก membership ที่มี province = null
+          const partyMembership = person.memberships.find(
+            (m) => m.province === null && m.end_date === null
+          );
+
+          const party = partyMembership?.posts?.[0]?.organizations?.find(
+            (org) =>
+              org.name !== "สภาผู้แทนราษฎร ชุดที่ 26" &&
+              org.name !== "สภาผู้แทนราษฎร ชุดที่ 25"
+          );
+
+          return {
+            id: person.id,
+            firstname: person.firstname,
+            lastname: person.lastname,
+            prefix: person.prefix,
+            province: "บัญชีรายชื่อ",
+            party: party
+              ? { name: party.name, color: party.color || "#6b7280" }
+              : undefined,
+            imageUrl: getPoliticianImageUrl(person.firstname, person.lastname),
+          };
+        }
+      );
+  } catch (error) {
+    console.error("Error fetching party list MPs:", error);
+    return [];
+  }
+}
+
+/**
+ * ดึงข้อมูลร่างกฎหมายทั้งหมด
  */
 export async function fetchBills(): Promise<Bill[]> {
-  const mockBills: Bill[] = [
-    {
-      id: "bill-1",
-      title: "ร่างพระราชบัญญัติการศึกษาแห่งชาติ (ฉบับที่ 5) พ.ศ. 2568",
-      nickname: "ร่าง พ.ร.บ. การศึกษาฯ",
-      created_at: "2025-10-15T10:00:00Z",
-      proposedOn: "2025-10-15",
-      proposedBy: ["mp-1", "mp-5", "mp-12"],
-    },
-    {
-      id: "bill-2",
-      title: "ร่างพระราชบัญญัติสาธารณสุข (ฉบับที่ 3) พ.ศ. 2568",
-      nickname: "ร่าง พ.ร.บ. สาธารณสุขฯ",
-      created_at: "2025-10-10T14:30:00Z",
-      proposedOn: "2025-10-10",
-      proposedBy: ["mp-3", "mp-8"],
-    },
-    {
-      id: "bill-3",
-      title: "ร่างพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล (ฉบับที่ 2) พ.ศ. 2568",
-      nickname: "ร่าง พ.ร.บ. PDPA ฉบับแก้ไข",
-      created_at: "2025-10-05T09:15:00Z",
-      proposedOn: "2025-10-05",
-      proposedBy: ["mp-2", "mp-7", "mp-15", "mp-20"],
-    },
-    {
-      id: "bill-4",
-      title: "ร่างพระราชบัญญัติพลังงานทดแทน พ.ศ. 2568",
-      nickname: "ร่าง พ.ร.บ. พลังงานสะอาด",
-      created_at: "2025-09-28T11:00:00Z",
-      proposedOn: "2025-09-28",
-      proposedBy: ["mp-4", "mp-9"],
-    },
-    {
-      id: "bill-5",
-      title: "ร่างพระราชบัญญัติการท่องเที่ยวแห่งชาติ พ.ศ. 2568",
-      nickname: "ร่าง พ.ร.บ. ท่องเที่ยว",
-      created_at: "2025-09-20T13:45:00Z",
-      proposedOn: "2025-09-20",
-      proposedBy: ["mp-6", "mp-11", "mp-18"],
-    },
-  ];
+  const query = `
+    query {
+      bills(limit: 500, sort: [{proposal_date: DESC}]) {
+        id
+        title
+        nickname
+        status
+        proposal_date
+      }
+    }
+  `;
 
-  return mockBills;
+  try {
+    const response = await fetch(GRAPHQL_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query }),
+    });
+
+    const { data } = await response.json();
+    return data?.bills || [];
+  } catch (error) {
+    console.error("Error fetching bills:", error);
+    return [];
+  }
 }
 
 /**
- * ดึงข้อมูลการลงคะแนนสำหรับร่างกฎหมายที่ระบุ (ใช้ Mock Data)
+ * ดึงข้อมูล Vote Events ทั้งหมด
  */
-export async function fetchVotingByBill(billId: string): Promise<Voting[]> {
-  // ดึงข้อมูล politicians ที่มีอยู่จริง
-  const allPoliticians = await fetchPoliticians();
-
-  const mockVotings: Voting[] = [];
-
-  // สร้างฟังก์ชัน seeded random เพื่อให้ผลลัพธ์เหมือนเดิมทุกครั้ง
-  const seededRandom = (seed: string): number => {
-    let hash = 0;
-    for (let i = 0; i < seed.length; i++) {
-      const char = seed.charCodeAt(i);
-      hash = (hash << 5) - hash + char;
-      hash = hash & hash; // Convert to 32bit integer
+export async function fetchAllVoteEvents(): Promise<VoteEvent[]> {
+  const query = `
+    query {
+      voteEvents(limit: 500, sort: [{start_date: DESC}]) {
+        id
+        title
+        nickname
+        start_date
+        result
+        agree_count
+        disagree_count
+        abstain_count
+        novote_count
+      }
     }
-    const x = Math.sin(Math.abs(hash)) * 10000;
-    return x - Math.floor(x);
-  };
+  `;
 
-  // สร้างข้อมูลการลงคะแนนสำหรับแต่ละ politician
-  allPoliticians.forEach((politician) => {
-    // สร้างรูปแบบการลงคะแนนที่แตกต่างกันตาม bill
-    let voteOption: string;
-
-    // ใช้ politician.id + billId เป็น seed เพื่อให้ได้ random แบบเดิมทุกครั้ง
-    const seed = `${politician.id}-${billId}`;
-    const rand = seededRandom(seed);
-
-    if (billId === "bill-1") {
-      // Bill 1: ส่วนใหญ่ไม่เห็นด้วยอย่างหนัก (95%)
-      voteOption =
-        rand < 0.95 ? "ไม่เห็นด้วย" : rand < 0.97 ? "งดออกเสียง" : "เห็นด้วย";
-    } else if (billId === "bill-2") {
-      // Bill 2: ไม่เห็นด้วยทั่วประเทศ (92%)
-      voteOption =
-        rand < 0.92 ? "ไม่เห็นด้วย" : rand < 0.96 ? "งดออกเสียง" : "เห็นด้วย";
-    } else if (billId === "bill-3") {
-      // Bill 3: ไม่เห็นด้วยเกือบทั้งหมด (88%)
-      voteOption =
-        rand < 0.88 ? "ไม่เห็นด้วย" : rand < 0.94 ? "งดออกเสียง" : "เห็นด้วย";
-    } else if (billId === "bill-4") {
-      // Bill 4: ไม่เห็นด้วยทั่วประเทศ (96%)
-      voteOption =
-        rand < 0.96 ? "ไม่เห็นด้วย" : rand < 0.98 ? "งดออกเสียง" : "เห็นด้วย";
-    } else if (billId === "bill-5") {
-      // Bill 5: ไม่เห็นด้วยทุกจังหวัด (94%)
-      voteOption =
-        rand < 0.94 ? "ไม่เห็นด้วย" : rand < 0.97 ? "งดออกเสียง" : "เห็นด้วย";
-    } else {
-      // Bills อื่นๆ: ส่วนใหญ่ไม่เห็นด้วย (90%)
-      voteOption =
-        rand < 0.9 ? "ไม่เห็นด้วย" : rand < 0.95 ? "งดออกเสียง" : "เห็นด้วย";
-    }
-
-    mockVotings.push({
-      id: `voting-${politician.id}-${billId}`,
-      date: "2025-10-25",
-      title: `การลงคะแนนร่างกฎหมาย ${billId}`,
-      voteOption: voteOption,
-      participatedBy: [politician],
+  try {
+    const response = await fetch(GRAPHQL_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query }),
     });
-  });
 
-  return mockVotings;
+    const { data } = await response.json();
+    return data?.voteEvents || [];
+  } catch (error) {
+    console.error("Error fetching all vote events:", error);
+    return [];
+  }
+}
+
+/**
+ * ดึงข้อมูล Vote Events ล่าสุด
+ */
+export async function fetchLatestVoteEvent(): Promise<VoteEvent | null> {
+  const query = `
+    query {
+      voteEvents(limit: 1, sort: [{start_date: DESC}]) {
+        id
+        title
+        nickname
+        start_date
+        result
+        agree_count
+        disagree_count
+        abstain_count
+        novote_count
+      }
+    }
+  `;
+
+  try {
+    const response = await fetch(GRAPHQL_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query }),
+    });
+
+    const { data } = await response.json();
+    return data?.voteEvents?.[0] || null;
+  } catch (error) {
+    console.error("Error fetching latest vote event:", error);
+    return null;
+  }
+}
+
+/**
+ * ดึงข้อมูลการลงมติล่าสุด พร้อมข้อมูลการลงคะแนนแยกตามจังหวัด
+ */
+export async function fetchLatestVoteWithProvinceStats(): Promise<{
+  voteEvent: VoteEvent | null;
+  provinceStats: Record<string, ProvinceVoteStats>;
+}> {
+  const query = `
+    query {
+      voteEvents(limit: 1, sort: [{start_date: DESC}]) {
+        id
+        title
+        nickname
+        start_date
+        result
+        agree_count
+        disagree_count
+        abstain_count
+        novote_count
+        votes {
+          id
+          option
+          voters {
+            id
+            firstname
+            lastname
+            memberships {
+              province
+            }
+          }
+        }
+      }
+    }
+  `;
+
+  try {
+    const response = await fetch(GRAPHQL_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query }),
+    });
+
+    const { data } = await response.json();
+
+    if (!data?.voteEvents?.[0]) {
+      return { voteEvent: null, provinceStats: {} };
+    }
+
+    const voteEvent = data.voteEvents[0];
+    const provinceStats: Record<string, ProvinceVoteStats> = {};
+
+    // วิเคราะห์การลงคะแนนแยกตามจังหวัด
+    voteEvent.votes?.forEach(
+      (vote: {
+        option?: string;
+        voters?: { memberships?: { province?: string }[] }[];
+      }) => {
+        vote.voters?.forEach(
+          (voter: { memberships?: { province?: string }[] }) => {
+            const province = voter.memberships?.[0]?.province;
+            if (!province) return;
+
+            if (!provinceStats[province]) {
+              provinceStats[province] = {
+                province,
+                agreeCount: 0,
+                disagreeCount: 0,
+                abstainCount: 0,
+                absentCount: 0,
+                totalCount: 0,
+              };
+            }
+
+            const option = vote.option?.toLowerCase() || "";
+
+            if (option.includes("เห็นด้วย") || option.includes("approve")) {
+              provinceStats[province].agreeCount++;
+            } else if (
+              option.includes("ไม่เห็นด้วย") ||
+              option.includes("disapprove")
+            ) {
+              provinceStats[province].disagreeCount++;
+            } else if (
+              option.includes("งดออกเสียง") ||
+              option.includes("abstain")
+            ) {
+              provinceStats[province].abstainCount++;
+            } else {
+              provinceStats[province].absentCount++;
+            }
+
+            provinceStats[province].totalCount++;
+          }
+        );
+      }
+    );
+
+    return {
+      voteEvent: {
+        id: voteEvent.id,
+        title: voteEvent.title,
+        nickname: voteEvent.nickname,
+        start_date: voteEvent.start_date,
+        result: voteEvent.result,
+        agree_count: voteEvent.agree_count,
+        disagree_count: voteEvent.disagree_count,
+        abstain_count: voteEvent.abstain_count,
+        novote_count: voteEvent.novote_count,
+      },
+      provinceStats,
+    };
+  } catch (error) {
+    console.error("Error fetching vote with province stats:", error);
+    return { voteEvent: null, provinceStats: {} };
+  }
+}
+
+/**
+ * ดึงข้อมูลสถิติภาพรวม
+ */
+export async function fetchOverallStatistics(): Promise<OverallStatistics> {
+  try {
+    const [politicians, bills, latestVote] = await Promise.all([
+      fetchPoliticians(),
+      fetchBills(),
+      fetchLatestVoteEvent(),
+    ]);
+
+    // นับจำนวนกฎหมายตามสถานะ
+    const passedBills = bills.filter(
+      (bill) =>
+        bill.status?.includes("ผ่าน") ||
+        bill.status?.includes("passed") ||
+        bill.status?.includes("บังคับใช้")
+    ).length;
+
+    const failedBills = bills.filter(
+      (bill) =>
+        bill.status?.includes("ไม่ผ่าน") ||
+        bill.status?.includes("rejected") ||
+        bill.status?.includes("ตก")
+    ).length;
+
+    const pendingBills = bills.filter(
+      (bill) =>
+        !bill.status ||
+        bill.status?.includes("รอ") ||
+        bill.status?.includes("pending") ||
+        bill.status?.includes("พิจารณา")
+    ).length;
+
+    return {
+      totalMPs: politicians.length,
+      totalBills: bills.length,
+      passedBills,
+      failedBills,
+      pendingBills,
+      latestVotingDate: latestVote?.start_date,
+    };
+  } catch (error) {
+    console.error("Error fetching overall statistics:", error);
+    return {
+      totalMPs: 0,
+      totalBills: 0,
+      passedBills: 0,
+      failedBills: 0,
+      pendingBills: 0,
+    };
+  }
 }
 
 /**
@@ -268,7 +562,7 @@ export function groupPoliticiansByProvince(
   const grouped: Record<string, Politician[]> = {};
 
   politicians.forEach((politician) => {
-    const province = politician.province || "อื่นๆ";
+    const province = politician.province || "ไม่ระบุ";
     if (!grouped[province]) {
       grouped[province] = [];
     }
@@ -276,93 +570,4 @@ export function groupPoliticiansByProvince(
   });
 
   return grouped;
-}
-
-export interface VotingStats {
-  approve: number;
-  disapprove: number;
-  abstain: number;
-  absent: number;
-  total: number;
-}
-
-/**
- * คำนวณสถิติการลงคะแนนตามจังหวัด
- */
-export function calculateVotingStatsByProvince(
-  votings: Voting[]
-): Record<string, VotingStats> {
-  const provinceStats: Record<string, VotingStats> = {};
-
-  votings.forEach((voting) => {
-    voting.participatedBy?.forEach((participant) => {
-      const province = participant.province || "อื่นๆ";
-
-      if (!provinceStats[province]) {
-        provinceStats[province] = {
-          approve: 0,
-          disapprove: 0,
-          abstain: 0,
-          absent: 0,
-          total: 0,
-        };
-      }
-
-      const voteType = voting.voteOption?.toLowerCase() || "absent";
-
-      if (voteType.includes("เห็นด้วย") || voteType.includes("approve")) {
-        provinceStats[province].approve++;
-      } else if (
-        voteType.includes("ไม่เห็นด้วย") ||
-        voteType.includes("disapprove")
-      ) {
-        provinceStats[province].disapprove++;
-      } else if (
-        voteType.includes("งดออกเสียง") ||
-        voteType.includes("abstain")
-      ) {
-        provinceStats[province].abstain++;
-      } else {
-        provinceStats[province].absent++;
-      }
-
-      provinceStats[province].total++;
-    });
-  });
-
-  return provinceStats;
-}
-
-/**
- * ดึงการลงคะแนนทั้งหมดของปี 2025 (รวมทุก Bill)
- */
-export async function fetchAllVotings2025(): Promise<Voting[]> {
-  const bills = await fetchBills();
-  const allVotings: Voting[] = [];
-
-  // ดึงข้อมูลการลงคะแนนจากทุก bill
-  for (const bill of bills) {
-    const votings = await fetchVotingByBill(bill.id);
-    allVotings.push(...votings);
-  }
-
-  return allVotings;
-}
-
-/**
- * คำนวณจำนวนการลงคะแนนรวมทั้งหมดของแต่ละจังหวัดในปี 2025
- */
-export function calculateTotalVotesByProvince(
-  votings: Voting[]
-): Record<string, number> {
-  const provinceTotalVotes: Record<string, number> = {};
-
-  votings.forEach((voting) => {
-    voting.participatedBy?.forEach((participant) => {
-      const province = participant.province || "อื่นๆ";
-      provinceTotalVotes[province] = (provinceTotalVotes[province] || 0) + 1;
-    });
-  });
-
-  return provinceTotalVotes;
 }
