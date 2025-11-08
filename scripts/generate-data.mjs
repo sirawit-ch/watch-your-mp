@@ -229,48 +229,14 @@ async function main() {
     await fs.writeFile(billPath, JSON.stringify(billDetails, null, 2), "utf-8");
     console.log(`📝 Saved to: ${billPath}\n`);
 
-    // สร้างสถิติเพิ่มเติม
-    const provinceStats = {};
-    for (const mp of actionSummary) {
-      if (!mp.province) continue;
-      if (!provinceStats[mp.province]) {
-        provinceStats[mp.province] = [];
-      }
-      provinceStats[mp.province].push(mp);
-    }
-
-    const provinceSummary = {};
-    for (const [province, mps] of Object.entries(provinceStats)) {
-      const totalMPs = mps.length;
-      provinceSummary[province] = {
-        totalMPs,
-        avgAgree:
-          Math.round(
-            (mps.reduce((sum, mp) => sum + mp.เห็นด้วย, 0) / totalMPs) * 100
-          ) / 100,
-        avgDisagree:
-          Math.round(
-            (mps.reduce((sum, mp) => sum + mp.ไม่เห็นด้วย, 0) / totalMPs) * 100
-          ) / 100,
-        avgAbstain:
-          Math.round(
-            (mps.reduce((sum, mp) => sum + mp.งดออกเสียง, 0) / totalMPs) * 100
-          ) / 100,
-        avgAbsent:
-          Math.round(
-            (mps.reduce((sum, mp) => sum + mp["ลา / ขาดลงมติ"], 0) / totalMPs) *
-              100
-          ) / 100,
-      };
-    }
-
-    const provincePath = path.join(dataDir, "province-summary.json");
+    // สร้าง Province Summary - เก็บข้อมูล MPs ทั้งหมดสำหรับใช้ filter ใน client
+    const provinceSummaryPath = path.join(dataDir, "province-summary.json");
     await fs.writeFile(
-      provincePath,
-      JSON.stringify(provinceSummary, null, 2),
+      provinceSummaryPath,
+      JSON.stringify(actionSummary, null, 2),
       "utf-8"
     );
-    console.log(`📝 Saved to: ${provincePath}\n`);
+    console.log(`📝 Saved to: ${provinceSummaryPath}\n`);
 
     console.log("✨ Data generation completed successfully!");
   } catch (error) {
