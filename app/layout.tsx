@@ -21,7 +21,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="th">
-      <body className={`${sarabun.variable} antialiased`}>
+      <body
+        className={`${sarabun.variable} antialiased`}
+        suppressHydrationWarning
+      >
         <ThemeRegistry>{children}</ThemeRegistry>
       </body>
     </html>

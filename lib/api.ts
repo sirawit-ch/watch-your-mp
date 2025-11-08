@@ -3,7 +3,8 @@
  * เชื่อมต่อกับ Politigraph API และดึงข้อมูล ส.ส. และการลงคะแนน
  */
 
-const GRAPHQL_ENDPOINT = "/api/graphql";
+// เรียก API โดยตรงเพราะ GitHub Pages ไม่ support API Routes
+const GRAPHQL_ENDPOINT = "https://politigraph.wevis.info/graphql";
 
 /**
  * แมพรูปภาพนักการเมืองจากชื่อ
@@ -124,16 +125,18 @@ export async function fetchPoliticians(): Promise<Politician[]> {
           return false;
 
         // ต้องมี membership ที่เป็น "แบ่งเขต" และยังดำรงตำแหน่งอยู่
-        return person.memberships.some(
-          (m) => {
-            const membership = m as {
-              province?: string;
-              label?: string;
-              end_date?: string | null;
-            };
-            return membership.province && membership.label === "แบ่งเขต" && membership.end_date === null;
-          }
-        );
+        return person.memberships.some((m) => {
+          const membership = m as {
+            province?: string;
+            label?: string;
+            end_date?: string | null;
+          };
+          return (
+            membership.province &&
+            membership.label === "แบ่งเขต" &&
+            membership.end_date === null
+          );
+        });
       })
       .map(
         (person: {
@@ -228,18 +231,16 @@ export async function fetchPartyListMPs(): Promise<Politician[]> {
       .filter((person: { memberships?: unknown[] }) => {
         if (!person.memberships || person.memberships.length === 0)
           return false;
-        
+
         // ต้องมี membership ที่ province = null และยังดำรงตำแหน่งอยู่
-        return person.memberships.some(
-          (m) => {
-            const membership = m as {
-              province?: string | null;
-              label?: string;
-              end_date?: string | null;
-            };
-            return membership.province === null && membership.end_date === null;
-          }
-        );
+        return person.memberships.some((m) => {
+          const membership = m as {
+            province?: string | null;
+            label?: string;
+            end_date?: string | null;
+          };
+          return membership.province === null && membership.end_date === null;
+        });
       })
       .map(
         (person: {

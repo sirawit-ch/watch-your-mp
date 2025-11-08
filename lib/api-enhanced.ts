@@ -3,7 +3,8 @@
  * ฟังก์ชันเพิ่มเติมสำหรับดึงข้อมูลการทำงานของ ส.ส. และรายละเอียดร่างกฎหมาย
  */
 
-const GRAPHQL_ENDPOINT = "/api/graphql";
+// เรียก API โดยตรงเพราะ GitHub Pages ไม่ support API Routes
+const GRAPHQL_ENDPOINT = "https://politigraph.wevis.info/graphql";
 
 /**
  * Interface สำหรับข้อมูลการทำงานของ ส.ส.
