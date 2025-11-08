@@ -105,7 +105,7 @@ export default function Home() {
 
   return (
     <div
-      className="min-h-screen flex flex-col"
+      className="h-screen flex flex-col overflow-hidden"
       style={{
         background: "linear-gradient(135deg, #6DD5ED 0%, #2193B0 100%)",
       }}
@@ -120,7 +120,7 @@ export default function Home() {
           boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
         }}
       >
-        <div className="container mx-auto px-4 py-3">
+        <div className="container mx-auto px-6 py-3">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-gray-900 mb-1">
@@ -140,79 +140,84 @@ export default function Home() {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-6 flex-1 overflow-hidden">
-        <div className=" flex gap-4 overflow-hidden">
-          {/* Filter Panel - Left */}
-          <div className="w-64 shrink-0 overflow-y-auto">
-            <Paper
-              elevation={3}
-              sx={{
-                background: "rgba(255, 255, 255, 0.95)",
-                backdropFilter: "blur(10px)",
-                borderRadius: "16px",
-              }}
-            >
-              <FilterPanel
-                voteEvents={allVoteEvents}
-                selectedVoteEvent={selectedVoteEvent}
-                onVoteEventChange={setSelectedVoteEvent}
-              />
-            </Paper>
-          </div>
-
-          {/* Map Section - Center */}
-          <div className="flex-1 flex flex-col overflow-hidden">
-            <Paper
-              elevation={3}
-              sx={{
-                background: "#E8FBFF",
-                borderRadius: "20px",
-                p: 3,
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
-              }}
-            >
-              <div className="mb-3 shrink-0">
-                <h2 className="text-lg font-semibold text-gray-900 mb-2">
-                  {latestVote?.title || "แผนที่การลงมติ"}
-                </h2>
-                {latestVote?.nickname && (
-                  <p className="text-sm text-gray-600 mb-2">
-                    {latestVote.nickname}
-                  </p>
-                )}
-              </div>
-
-              <div className="flex-1 overflow-hidden flex items-center justify-center">
-                <ThailandMap
-                  politicians={politicians}
-                  partyListMPs={partyListMPs}
-                  provinceVoteStats={provinceVoteStats}
-                  onProvinceSelected={handleProvinceSelected}
+      <main className="flex-1 overflow-hidden">
+        <div className="container mx-auto px-6 py-4 h-full">
+          <div className="h-full flex gap-4">
+            {/* Filter Panel - Left */}
+            <div className="w-64 shrink-0 h-full overflow-hidden">
+              <Paper
+                elevation={3}
+                sx={{
+                  background: "rgba(255, 255, 255, 0.95)",
+                  backdropFilter: "blur(10px)",
+                  borderRadius: "16px",
+                  height: "100%",
+                  overflow: "auto",
+                }}
+              >
+                <FilterPanel
+                  voteEvents={allVoteEvents}
+                  selectedVoteEvent={selectedVoteEvent}
+                  onVoteEventChange={setSelectedVoteEvent}
                 />
-              </div>
-            </Paper>
-          </div>
+              </Paper>
+            </div>
 
-          {/* Info Panel - Right */}
-          <div className="w-96 overflow-hidden">
-            <InfoPanel
-              province={selectedProvince}
-              mps={selectedMPs}
-              totalMPs={overallStats?.totalMPs || 0}
-              totalBills={overallStats?.totalBills || 0}
-              passedBills={overallStats?.passedBills || 0}
-              failedBills={overallStats?.failedBills || 0}
-              pendingBills={overallStats?.pendingBills || 0}
-              latestVotingDate={latestVote?.start_date || ""}
-              provinceVoteStats={
-                selectedProvince && provinceVoteStats[selectedProvince]
-                  ? provinceVoteStats[selectedProvince]
-                  : undefined
-              }
-            />
+            {/* Map Section - Center */}
+            <div className="flex-1 h-full overflow-hidden">
+              <Paper
+                elevation={3}
+                sx={{
+                  background: "#E8FBFF",
+                  borderRadius: "20px",
+                  p: 2.5,
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+                  overflow: "hidden",
+                }}
+              >
+                <div className="mb-2 shrink-0">
+                  <h2 className="text-lg font-semibold text-gray-900 mb-1">
+                    {latestVote?.title || "แผนที่การลงมติ"}
+                  </h2>
+                  {latestVote?.nickname && (
+                    <p className="text-sm text-gray-600">
+                      {latestVote.nickname}
+                    </p>
+                  )}
+                </div>
+
+                <div className="flex-1 overflow-hidden flex items-center justify-center">
+                  <ThailandMap
+                    politicians={politicians}
+                    partyListMPs={partyListMPs}
+                    provinceVoteStats={provinceVoteStats}
+                    onProvinceSelected={handleProvinceSelected}
+                  />
+                </div>
+              </Paper>
+            </div>
+
+            {/* Info Panel - Right */}
+            <div className="w-96 h-full overflow-hidden">
+              <InfoPanel
+                province={selectedProvince}
+                mps={selectedMPs}
+                totalMPs={overallStats?.totalMPs || 0}
+                totalBills={overallStats?.totalBills || 0}
+                passedBills={overallStats?.passedBills || 0}
+                failedBills={overallStats?.failedBills || 0}
+                pendingBills={overallStats?.pendingBills || 0}
+                latestVotingDate={latestVote?.start_date || ""}
+                provinceVoteStats={
+                  selectedProvince && provinceVoteStats[selectedProvince]
+                    ? provinceVoteStats[selectedProvince]
+                    : undefined
+                }
+              />
+            </div>
           </div>
         </div>
       </main>

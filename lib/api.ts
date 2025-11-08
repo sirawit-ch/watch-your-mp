@@ -230,6 +230,18 @@ export async function fetchPoliticians(): Promise<Politician[]> {
  * ดึงข้อมูล ส.ส. บัญชีรายชื่อ (ไม่มีจังหวัด)
  */
 export async function fetchPartyListMPs(): Promise<Politician[]> {
+  // Try loading from static data first
+  const staticData = await loadStaticData<Politician[]>("party-list-mps.json");
+
+  if (staticData && staticData.length > 0) {
+    console.log("Loading party list MPs from static data");
+    return staticData.map((mp) => ({
+      ...mp,
+      imageUrl: mp.imageUrl || getPoliticianImageUrl(mp.firstname, mp.lastname),
+    }));
+  }
+
+  console.log("Fallback to API for party list MPs");
   const query = `
     query {
       people(limit: 1000) {
@@ -360,6 +372,15 @@ export async function fetchBills(): Promise<Bill[]> {
  * ดึงข้อมูล Vote Events ทั้งหมด
  */
 export async function fetchAllVoteEvents(): Promise<VoteEvent[]> {
+  // Try loading from static data first
+  const staticData = await loadStaticData<VoteEvent[]>("vote-events.json");
+
+  if (staticData && staticData.length > 0) {
+    console.log("Loading vote events from static data");
+    return staticData;
+  }
+
+  console.log("Fallback to API for vote events");
   const query = `
     query {
       voteEvents(limit: 500, sort: [{start_date: DESC}]) {
@@ -433,6 +454,18 @@ export async function fetchLatestVoteWithProvinceStats(): Promise<{
   voteEvent: VoteEvent | null;
   provinceStats: Record<string, ProvinceVoteStats>;
 }> {
+  // Try loading from static data first
+  const staticData = await loadStaticData<{
+    voteEvent: VoteEvent | null;
+    provinceStats: Record<string, ProvinceVoteStats>;
+  }>("latest-vote.json");
+
+  if (staticData && staticData.voteEvent) {
+    console.log("Loading latest vote from static data");
+    return staticData;
+  }
+
+  console.log("Fallback to API for latest vote");
   const query = `
     query {
       voteEvents(limit: 1, sort: [{start_date: DESC}]) {
@@ -547,6 +580,17 @@ export async function fetchLatestVoteWithProvinceStats(): Promise<{
  * ดึงข้อมูลสถิติภาพรวม
  */
 export async function fetchOverallStatistics(): Promise<OverallStatistics> {
+  // Try loading from static data first
+  const staticData = await loadStaticData<OverallStatistics>(
+    "overall-stats.json"
+  );
+
+  if (staticData) {
+    console.log("Loading overall statistics from static data");
+    return staticData;
+  }
+
+  console.log("Fallback to API for overall statistics");
   try {
     const [politicians, bills, latestVote] = await Promise.all([
       fetchPoliticians(),

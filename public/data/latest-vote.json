@@ -1,0 +1,595 @@
+{
+  "voteEvent": {
+    "id": "placeholder",
+    "title": "ข้อมูลการลงมติล่าสุด",
+    "nickname": null,
+    "start_date": "2025-11-08",
+    "result": null
+  },
+  "provinceStats": {
+    "หนองบัวลำภู": {
+      "province": "หนองบัวลำภู",
+      "agreeCount": 165,
+      "disagreeCount": 18,
+      "abstainCount": 0,
+      "absentCount": 29,
+      "totalCount": 2
+    },
+    "บึงกาฬ": {
+      "province": "บึงกาฬ",
+      "agreeCount": 166,
+      "disagreeCount": 25,
+      "abstainCount": 0,
+      "absentCount": 42,
+      "totalCount": 3
+    },
+    "สุพรรณบุรี": {
+      "province": "สุพรรณบุรี",
+      "agreeCount": 233,
+      "disagreeCount": 24,
+      "abstainCount": 0,
+      "absentCount": 270,
+      "totalCount": 5
+    },
+    "สระบุรี": {
+      "province": "สระบุรี",
+      "agreeCount": 212,
+      "disagreeCount": 22,
+      "abstainCount": 3,
+      "absentCount": 84,
+      "totalCount": 3
+    },
+    "มหาสารคาม": {
+      "province": "มหาสารคาม",
+      "agreeCount": 321,
+      "disagreeCount": 33,
+      "abstainCount": 0,
+      "absentCount": 68,
+      "totalCount": 4
+    },
+    "สงขลา": {
+      "province": "สงขลา",
+      "agreeCount": 202,
+      "disagreeCount": 29,
+      "abstainCount": 4,
+      "absentCount": 396,
+      "totalCount": 6
+    },
+    "สระแก้ว": {
+      "province": "สระแก้ว",
+      "agreeCount": 102,
+      "disagreeCount": 14,
+      "abstainCount": 9,
+      "absentCount": 194,
+      "totalCount": 3
+    },
+    "ปทุมธานี": {
+      "province": "ปทุมธานี",
+      "agreeCount": 339,
+      "disagreeCount": 36,
+      "abstainCount": 12,
+      "absentCount": 38,
+      "totalCount": 4
+    },
+    "ขอนแก่น": {
+      "province": "ขอนแก่น",
+      "agreeCount": 507,
+      "disagreeCount": 58,
+      "abstainCount": 5,
+      "absentCount": 127,
+      "totalCount": 7
+    },
+    "กระบี่": {
+      "province": "กระบี่",
+      "agreeCount": 261,
+      "disagreeCount": 31,
+      "abstainCount": 0,
+      "absentCount": 21,
+      "totalCount": 3
+    },
+    "ปราจีนบุรี": {
+      "province": "ปราจีนบุรี",
+      "agreeCount": 180,
+      "disagreeCount": 24,
+      "abstainCount": 0,
+      "absentCount": 9,
+      "totalCount": 2
+    },
+    "ระยอง": {
+      "province": "ระยอง",
+      "agreeCount": 434,
+      "disagreeCount": 44,
+      "abstainCount": 18,
+      "absentCount": 27,
+      "totalCount": 5
+    },
+    "ชลบุรี": {
+      "province": "ชลบุรี",
+      "agreeCount": 480,
+      "disagreeCount": 41,
+      "abstainCount": 9,
+      "absentCount": 197,
+      "totalCount": 7
+    },
+    "ประจวบคีรีขันธ์": {
+      "province": "ประจวบคีรีขันธ์",
+      "agreeCount": 170,
+      "disagreeCount": 21,
+      "abstainCount": 3,
+      "absentCount": 124,
+      "totalCount": 3
+    },
+    "นครสวรรค์": {
+      "province": "นครสวรรค์",
+      "agreeCount": 256,
+      "disagreeCount": 25,
+      "abstainCount": 4,
+      "absentCount": 35,
+      "totalCount": 3
+    },
+    "ชุมพร": {
+      "province": "ชุมพร",
+      "agreeCount": 122,
+      "disagreeCount": 14,
+      "abstainCount": 0,
+      "absentCount": 73,
+      "totalCount": 2
+    },
+    "นราธิวาส": {
+      "province": "นราธิวาส",
+      "agreeCount": 207,
+      "disagreeCount": 28,
+      "abstainCount": 1,
+      "absentCount": 186,
+      "totalCount": 4
+    },
+    "ชัยภูมิ": {
+      "province": "ชัยภูมิ",
+      "agreeCount": 440,
+      "disagreeCount": 49,
+      "abstainCount": 0,
+      "absentCount": 143,
+      "totalCount": 6
+    },
+    "ลพบุรี": {
+      "province": "ลพบุรี",
+      "agreeCount": 265,
+      "disagreeCount": 30,
+      "abstainCount": 3,
+      "absentCount": 21,
+      "totalCount": 3
+    },
+    "ปัตตานี": {
+      "province": "ปัตตานี",
+      "agreeCount": 117,
+      "disagreeCount": 18,
+      "abstainCount": 4,
+      "absentCount": 72,
+      "totalCount": 2
+    },
+    "นครปฐม": {
+      "province": "นครปฐม",
+      "agreeCount": 294,
+      "disagreeCount": 32,
+      "abstainCount": 8,
+      "absentCount": 88,
+      "totalCount": 4
+    },
+    "กรุงเทพมหานคร": {
+      "province": "กรุงเทพมหานคร",
+      "agreeCount": 1584,
+      "disagreeCount": 164,
+      "abstainCount": 50,
+      "absentCount": 305,
+      "totalCount": 20
+    },
+    "อำนาจเจริญ": {
+      "province": "อำนาจเจริญ",
+      "agreeCount": 168,
+      "disagreeCount": 21,
+      "abstainCount": 0,
+      "absentCount": 23,
+      "totalCount": 2
+    },
+    "ตรัง": {
+      "province": "ตรัง",
+      "agreeCount": 237,
+      "disagreeCount": 24,
+      "abstainCount": 6,
+      "absentCount": 155,
+      "totalCount": 4
+    },
+    "อุบลราชธานี": {
+      "province": "อุบลราชธานี",
+      "agreeCount": 474,
+      "disagreeCount": 61,
+      "abstainCount": 2,
+      "absentCount": 95,
+      "totalCount": 6
+    },
+    "นครศรีธรรมราช": {
+      "province": "นครศรีธรรมราช",
+      "agreeCount": 234,
+      "disagreeCount": 29,
+      "abstainCount": 7,
+      "absentCount": 161,
+      "totalCount": 4
+    },
+    "พัทลุง": {
+      "province": "พัทลุง",
+      "agreeCount": 102,
+      "disagreeCount": 13,
+      "abstainCount": 2,
+      "absentCount": 98,
+      "totalCount": 2
+    },
+    "ยโสธร": {
+      "province": "ยโสธร",
+      "agreeCount": 222,
+      "disagreeCount": 23,
+      "abstainCount": 1,
+      "absentCount": 75,
+      "totalCount": 3
+    },
+    "ศรีสะเกษ": {
+      "province": "ศรีสะเกษ",
+      "agreeCount": 430,
+      "disagreeCount": 60,
+      "abstainCount": 2,
+      "absentCount": 102,
+      "totalCount": 6
+    },
+    "นครนายก": {
+      "province": "นครนายก",
+      "agreeCount": 121,
+      "disagreeCount": 15,
+      "abstainCount": 0,
+      "absentCount": 77,
+      "totalCount": 2
+    },
+    "นนทบุรี": {
+      "province": "นนทบุรี",
+      "agreeCount": 532,
+      "disagreeCount": 53,
+      "abstainCount": 16,
+      "absentCount": 35,
+      "totalCount": 6
+    },
+    "พระนครศรีอยุธยา": {
+      "province": "พระนครศรีอยุธยา",
+      "agreeCount": 286,
+      "disagreeCount": 30,
+      "abstainCount": 6,
+      "absentCount": 93,
+      "totalCount": 4
+    },
+    "ยะลา": {
+      "province": "ยะลา",
+      "agreeCount": 168,
+      "disagreeCount": 27,
+      "abstainCount": 0,
+      "absentCount": 114,
+      "totalCount": 3
+    },
+    "อุดรธานี": {
+      "province": "อุดรธานี",
+      "agreeCount": 599,
+      "disagreeCount": 72,
+      "abstainCount": 10,
+      "absentCount": 174,
+      "totalCount": 8
+    },
+    "บุรีรัมย์": {
+      "province": "บุรีรัมย์",
+      "agreeCount": 380,
+      "disagreeCount": 58,
+      "abstainCount": 0,
+      "absentCount": 91,
+      "totalCount": 5
+    },
+    "กำแพงเพชร": {
+      "province": "กำแพงเพชร",
+      "agreeCount": 141,
+      "disagreeCount": 17,
+      "abstainCount": 0,
+      "absentCount": 159,
+      "totalCount": 3
+    },
+    "ชัยนาท": {
+      "province": "ชัยนาท",
+      "agreeCount": 16,
+      "disagreeCount": 2,
+      "abstainCount": 0,
+      "absentCount": 88,
+      "totalCount": 1
+    },
+    "ร้อยเอ็ด": {
+      "province": "ร้อยเอ็ด",
+      "agreeCount": 479,
+      "disagreeCount": 56,
+      "abstainCount": 15,
+      "absentCount": 186,
+      "totalCount": 7
+    },
+    "พะเยา": {
+      "province": "พะเยา",
+      "agreeCount": 130,
+      "disagreeCount": 10,
+      "abstainCount": 0,
+      "absentCount": 172,
+      "totalCount": 3
+    },
+    "นครราชสีมา": {
+      "province": "นครราชสีมา",
+      "agreeCount": 536,
+      "disagreeCount": 57,
+      "abstainCount": 6,
+      "absentCount": 146,
+      "totalCount": 7
+    },
+    "สกลนคร": {
+      "province": "สกลนคร",
+      "agreeCount": 307,
+      "disagreeCount": 43,
+      "abstainCount": 4,
+      "absentCount": 179,
+      "totalCount": 5
+    },
+    "เพชรบุรี": {
+      "province": "เพชรบุรี",
+      "agreeCount": 126,
+      "disagreeCount": 12,
+      "abstainCount": 2,
+      "absentCount": 71,
+      "totalCount": 2
+    },
+    "เชียงใหม่": {
+      "province": "เชียงใหม่",
+      "agreeCount": 468,
+      "disagreeCount": 46,
+      "abstainCount": 12,
+      "absentCount": 103,
+      "totalCount": 6
+    },
+    "ฉะเชิงเทรา": {
+      "province": "ฉะเชิงเทรา",
+      "agreeCount": 184,
+      "disagreeCount": 20,
+      "abstainCount": 3,
+      "absentCount": 109,
+      "totalCount": 3
+    },
+    "พังงา": {
+      "province": "พังงา",
+      "agreeCount": 132,
+      "disagreeCount": 17,
+      "abstainCount": 0,
+      "absentCount": 62,
+      "totalCount": 2
+    },
+    "นครพนม": {
+      "province": "นครพนม",
+      "agreeCount": 175,
+      "disagreeCount": 21,
+      "abstainCount": 0,
+      "absentCount": 15,
+      "totalCount": 2
+    },
+    "เพชรบูรณ์": {
+      "province": "เพชรบูรณ์",
+      "agreeCount": 134,
+      "disagreeCount": 17,
+      "abstainCount": 12,
+      "absentCount": 153,
+      "totalCount": 3
+    },
+    "กาญจนบุรี": {
+      "province": "กาญจนบุรี",
+      "agreeCount": 137,
+      "disagreeCount": 16,
+      "abstainCount": 0,
+      "absentCount": 57,
+      "totalCount": 2
+    },
+    "ราชบุรี": {
+      "province": "ราชบุรี",
+      "agreeCount": 239,
+      "disagreeCount": 26,
+      "abstainCount": 1,
+      "absentCount": 267,
+      "totalCount": 5
+    },
+    "สมุทรสงคราม": {
+      "province": "สมุทรสงคราม",
+      "agreeCount": 93,
+      "disagreeCount": 9,
+      "abstainCount": 3,
+      "absentCount": 2,
+      "totalCount": 1
+    },
+    "อุทัยธานี": {
+      "province": "อุทัยธานี",
+      "agreeCount": 90,
+      "disagreeCount": 16,
+      "abstainCount": 0,
+      "absentCount": 103,
+      "totalCount": 2
+    },
+    "ภูเก็ต": {
+      "province": "ภูเก็ต",
+      "agreeCount": 175,
+      "disagreeCount": 15,
+      "abstainCount": 7,
+      "absentCount": 9,
+      "totalCount": 2
+    },
+    "เชียงราย": {
+      "province": "เชียงราย",
+      "agreeCount": 336,
+      "disagreeCount": 35,
+      "abstainCount": 9,
+      "absentCount": 43,
+      "totalCount": 4
+    },
+    "สุรินทร์": {
+      "province": "สุรินทร์",
+      "agreeCount": 400,
+      "disagreeCount": 50,
+      "abstainCount": 0,
+      "absentCount": 76,
+      "totalCount": 5
+    },
+    "เลย": {
+      "province": "เลย",
+      "agreeCount": 145,
+      "disagreeCount": 18,
+      "abstainCount": 0,
+      "absentCount": 51,
+      "totalCount": 2
+    },
+    "หนองคาย": {
+      "province": "หนองคาย",
+      "agreeCount": 217,
+      "disagreeCount": 28,
+      "abstainCount": 4,
+      "absentCount": 69,
+      "totalCount": 3
+    },
+    "สิงห์บุรี": {
+      "province": "สิงห์บุรี",
+      "agreeCount": 41,
+      "disagreeCount": 7,
+      "abstainCount": 1,
+      "absentCount": 56,
+      "totalCount": 1
+    },
+    "อ่างทอง": {
+      "province": "อ่างทอง",
+      "agreeCount": 78,
+      "disagreeCount": 11,
+      "abstainCount": 1,
+      "absentCount": 17,
+      "totalCount": 1
+    },
+    "อุตรดิตถ์": {
+      "province": "อุตรดิตถ์",
+      "agreeCount": 61,
+      "disagreeCount": 6,
+      "abstainCount": 0,
+      "absentCount": 37,
+      "totalCount": 1
+    },
+    "สุราษฎร์ธานี": {
+      "province": "สุราษฎร์ธานี",
+      "agreeCount": 109,
+      "disagreeCount": 16,
+      "abstainCount": 0,
+      "absentCount": 81,
+      "totalCount": 2
+    },
+    "ระนอง": {
+      "province": "ระนอง",
+      "agreeCount": 91,
+      "disagreeCount": 12,
+      "abstainCount": 0,
+      "absentCount": 4,
+      "totalCount": 1
+    },
+    "ตาก": {
+      "province": "ตาก",
+      "agreeCount": 83,
+      "disagreeCount": 9,
+      "abstainCount": 3,
+      "absentCount": 10,
+      "totalCount": 1
+    },
+    "สุโขทัย": {
+      "province": "สุโขทัย",
+      "agreeCount": 235,
+      "disagreeCount": 24,
+      "abstainCount": 0,
+      "absentCount": 60,
+      "totalCount": 3
+    },
+    "กาฬสินธ์ุ": {
+      "province": "กาฬสินธ์ุ",
+      "agreeCount": 239,
+      "disagreeCount": 27,
+      "abstainCount": 1,
+      "absentCount": 50,
+      "totalCount": 3
+    },
+    "ลำปาง": {
+      "province": "ลำปาง",
+      "agreeCount": 254,
+      "disagreeCount": 27,
+      "abstainCount": 7,
+      "absentCount": 26,
+      "totalCount": 3
+    },
+    "น่าน": {
+      "province": "น่าน",
+      "agreeCount": 247,
+      "disagreeCount": 24,
+      "abstainCount": 3,
+      "absentCount": 44,
+      "totalCount": 3
+    },
+    "จันทบุรี": {
+      "province": "จันทบุรี",
+      "agreeCount": 88,
+      "disagreeCount": 8,
+      "abstainCount": 3,
+      "absentCount": 7,
+      "totalCount": 1
+    },
+    "มุกดาหาร": {
+      "province": "มุกดาหาร",
+      "agreeCount": 92,
+      "disagreeCount": 9,
+      "abstainCount": 3,
+      "absentCount": 3,
+      "totalCount": 1
+    },
+    "สมุทรสาคร": {
+      "province": "สมุทรสาคร",
+      "agreeCount": 92,
+      "disagreeCount": 8,
+      "abstainCount": 3,
+      "absentCount": 2,
+      "totalCount": 1
+    },
+    "สมุทรปราการ": {
+      "province": "สมุทรปราการ",
+      "agreeCount": 268,
+      "disagreeCount": 25,
+      "abstainCount": 9,
+      "absentCount": 14,
+      "totalCount": 3
+    },
+    "แพร่": {
+      "province": "แพร่",
+      "agreeCount": 172,
+      "disagreeCount": 16,
+      "abstainCount": 1,
+      "absentCount": 25,
+      "totalCount": 2
+    },
+    "พิษณุโลก": {
+      "province": "พิษณุโลก",
+      "agreeCount": 78,
+      "disagreeCount": 8,
+      "abstainCount": 1,
+      "absentCount": 20,
+      "totalCount": 1
+    },
+    "แม่ฮ่องสอน": {
+      "province": "แม่ฮ่องสอน",
+      "agreeCount": 72,
+      "disagreeCount": 9,
+      "abstainCount": 0,
+      "absentCount": 24,
+      "totalCount": 1
+    }
+  }
+}

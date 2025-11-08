@@ -75,8 +75,11 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Generate static data
-        run: node scripts/generate-data.mjs
+      - name: Generate static data from API
+        run: |
+          node scripts/generate-data.mjs || echo "MP data generation failed"
+          node scripts/generate-all-data.mjs || echo "Complete data generation failed, using placeholder"
+          node scripts/create-placeholder-data.mjs || echo "Placeholder creation failed"
         continue-on-error: true
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
