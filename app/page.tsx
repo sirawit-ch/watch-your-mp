@@ -83,8 +83,14 @@ export default function Home() {
   }, [mounted]);
 
   const handleProvinceSelected = (province: string, mps: Politician[]) => {
-    setSelectedProvince(province);
-    setSelectedMPs(mps);
+    // ถ้า province เป็นค่าว่าง แสดงว่า deselect
+    if (!province) {
+      setSelectedProvince(null);
+      setSelectedMPs([]);
+    } else {
+      setSelectedProvince(province);
+      setSelectedMPs(mps);
+    }
   };
 
   if (!mounted || loading) {

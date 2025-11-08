@@ -32,6 +32,8 @@ export default function ThailandMap({
   onProvinceSelected,
 }: ThailandMapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
+  const zoomStateRef = useRef<d3.ZoomTransform | null>(null); // เก็บ zoom state
+  const [selectedProvince, setSelectedProvince] = useState<string | null>(null); // เก็บจังหวัดที่เลือก
   const [tooltip, setTooltip] = useState<{
     isVisible: boolean;
     position: { x: number; y: number };
@@ -114,6 +116,9 @@ export default function ThailandMap({
       .on("zoom", (event) => {
         const transform = event.transform;
 
+        // บันทึก zoom state
+        zoomStateRef.current = transform;
+
         // ถ้า zoom = 1 (zoom out สุด) ให้ล็อคตำแหน่งไว้ที่กลาง
         if (transform.k === 1) {
           g.attr("transform", `translate(0,0) scale(1)`);
@@ -123,6 +128,11 @@ export default function ThailandMap({
       });
 
     svg.call(zoom);
+
+    // กู้คืน zoom state ถ้ามี (เมื่อ re-render)
+    if (zoomStateRef.current) {
+      svg.call(zoom.transform, zoomStateRef.current);
+    }
 
     // วาด tile สำหรับแต่ละจังหวัด
     Object.entries(provinceGridLayout).forEach(([provinceName, position]) => {
@@ -139,7 +149,7 @@ export default function ThailandMap({
         .style("cursor", "pointer");
 
       // วาดสี่เหลี่ยม
-      provinceGroup
+      const rect = provinceGroup
         .append("rect")
         .attr("x", x)
         .attr("y", y)
@@ -147,9 +157,17 @@ export default function ThailandMap({
         .attr("height", tileSize)
         .attr("rx", 4)
         .attr("fill", getProvinceHeatmapColor(provinceName))
-        .attr("stroke", "#ffffff")
-        .attr("stroke-width", 2)
+        .attr(
+          "stroke",
+          selectedProvince === provinceName ? "#ff6b00" : "#ffffff"
+        )
+        .attr("stroke-width", selectedProvince === provinceName ? 4 : 2)
         .style("transition", "all 0.3s ease");
+
+      // เพิ่ม highlight indicator ถ้าถูกเลือก
+      if (selectedProvince === provinceName) {
+        rect.style("filter", "drop-shadow(0 0 8px rgba(255, 107, 0, 0.8))");
+      }
 
       // เพิ่มตัวย่อจังหวัด
       provinceGroup
@@ -200,10 +218,20 @@ export default function ThailandMap({
         })
         .on("click", function () {
           const mps = politiciansByProvince[provinceName] || [];
-          onProvinceSelected(provinceName, mps);
+
+          // Toggle selection
+          if (selectedProvince === provinceName) {
+            // Deselect - ส่งค่า null
+            setSelectedProvince(null);
+            onProvinceSelected("", []); // Clear selection
+          } else {
+            // Select - เลือกจังหวัดใหม่
+            setSelectedProvince(provinceName);
+            onProvinceSelected(provinceName, mps);
+          }
         });
     });
-  }, [politicians, provinceVoteStats, onProvinceSelected]);
+  }, [politicians, provinceVoteStats, onProvinceSelected, selectedProvince]);
 
   return (
     <div className="relative w-full h-full flex flex-col gap-3">
