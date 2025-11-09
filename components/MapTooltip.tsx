@@ -1,11 +1,20 @@
 "use client";
 
 import React, { useMemo } from "react";
-import { Politician, ProvinceVoteStats } from "@/lib/api";
+import type { PersonData } from "@/lib/types";
+
+interface ProvinceVoteStats {
+  province: string;
+  agreeCount: number;
+  disagreeCount: number;
+  abstainCount: number;
+  absentCount: number;
+  total: number;
+}
 
 interface MapTooltipProps {
   provinceName: string;
-  mps: Politician[];
+  mps: PersonData[];
   voteStats?: ProvinceVoteStats;
   position: { x: number; y: number };
   isVisible: boolean;

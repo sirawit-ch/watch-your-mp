@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { VoteEvent } from "@/lib/api";
 import {
   Paper,
   Typography,
@@ -16,9 +15,9 @@ import {
 } from "@mui/material";
 
 interface FilterPanelProps {
-  voteEvents: VoteEvent[];
-  selectedVoteEvent: VoteEvent | null;
-  onVoteEventChange: (voteEvent: VoteEvent | null) => void;
+  voteEvents: string[];
+  selectedVoteEvent: string | null;
+  onVoteEventChange: (voteEvent: string | null) => void;
 }
 
 export default function FilterPanel({
@@ -76,25 +75,16 @@ export default function FilterPanel({
           options={voteEvents}
           value={selectedVoteEvent}
           onChange={(event, newValue) => onVoteEventChange(newValue)}
-          getOptionLabel={(option) => option.nickname || option.title}
+          getOptionLabel={(option) => option}
           renderOption={(props, option) => (
             <Box component="li" {...props}>
-              <Box>
-                <Typography variant="body2" fontWeight="500">
-                  {option.nickname || option.title}
-                </Typography>
-                {option.nickname && (
-                  <Typography variant="caption" color="text.secondary">
-                    {option.title}
-                  </Typography>
-                )}
-              </Box>
+              <Typography variant="body2">{option}</Typography>
             </Box>
           )}
           renderInput={(params) => (
             <TextField
               {...params}
-              label="ชื่อร่างกฎหมาย / ความเห็น"
+              label="ชื่อร่างกฎหมาย"
               placeholder="ค้นหาร่างกฎหมายที่สนใจ..."
               size="small"
             />

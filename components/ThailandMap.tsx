@@ -2,11 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
-import {
-  Politician,
-  groupPoliticiansByProvince,
-  ProvinceVoteStats,
-} from "@/lib/api";
+import type { PersonData } from "@/lib/types";
 import { provinceGridLayout } from "@/lib/provinceGridSimple";
 import MapTooltip from "./MapTooltip";
 import {
@@ -18,11 +14,20 @@ import {
   ListItemText,
 } from "@mui/material";
 
+interface ProvinceVoteStats {
+  province: string;
+  agreeCount: number;
+  disagreeCount: number;
+  abstainCount: number;
+  absentCount: number;
+  total: number;
+}
+
 interface ThailandMapProps {
-  politicians: Politician[];
-  partyListMPs: Politician[];
+  politicians: PersonData[];
+  partyListMPs: PersonData[];
   provinceVoteStats: Record<string, ProvinceVoteStats>;
-  onProvinceSelected: (province: string, mps: Politician[]) => void;
+  onProvinceSelected: (province: string, mps: PersonData[]) => void;
 }
 
 export default function ThailandMap({
@@ -38,7 +43,7 @@ export default function ThailandMap({
     isVisible: boolean;
     position: { x: number; y: number };
     provinceName: string;
-    mps: Politician[];
+    mps: PersonData[];
     voteStats?: ProvinceVoteStats;
   }>({
     isVisible: false,
@@ -61,7 +66,16 @@ export default function ThailandMap({
     const svg = d3.select(svgRef.current);
     svg.selectAll("*").remove();
 
-    const politiciansByProvince = groupPoliticiansByProvince(politicians);
+    // Group people by province using m__province field
+    const politiciansByProvince: Record<string, PersonData[]> = {};
+    politicians.forEach((person) => {
+      if (person.m__province) {
+        if (!politiciansByProvince[person.m__province]) {
+          politiciansByProvince[person.m__province] = [];
+        }
+        politiciansByProvince[person.m__province].push(person);
+      }
+    });
 
     /**
      * คำนวณสี Heatmap สำหรับแต่ละจังหวัด
@@ -266,9 +280,9 @@ export default function ThailandMap({
         </Typography>
         <Box sx={{ maxHeight: 160, overflowY: "auto" }}>
           <List disablePadding>
-            {partyListMPs.map((mp) => (
+            {partyListMPs.map((mp, index) => (
               <ListItem
-                key={mp.id}
+                key={`party-mp-${index}`}
                 sx={{
                   bgcolor: "secondary.lighter",
                   borderRadius: 1,
@@ -281,8 +295,7 @@ export default function ThailandMap({
                 <ListItemText
                   primary={
                     <Typography variant="caption" fontWeight="500" noWrap>
-                      {mp.prefix}
-                      {mp.firstname} {mp.lastname}
+                      {mp.person_name}
                     </Typography>
                   }
                 />

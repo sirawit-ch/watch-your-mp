@@ -6,41 +6,65 @@ import ThailandMap from "@/components/ThailandMap";
 import InfoPanel from "@/components/InfoPanel";
 import FilterPanel from "@/components/FilterPanel";
 import {
-  Politician,
-  fetchPoliticians,
-  fetchPartyListMPs,
-  fetchOverallStatistics,
-  fetchLatestVoteWithProvinceStats,
-  fetchAllVoteEvents,
-  OverallStatistics,
-  ProvinceVoteStats,
-  VoteEvent,
-} from "@/lib/api";
+  loadPersonData,
+  loadFactData,
+  loadVoteDetailData,
+  groupPersonByProvince,
+  getProvinceVoteStats,
+  getVoteEvents,
+} from "@/lib/new-api";
+import type { PersonData, FactData, VoteDetailData } from "@/lib/types";
 
 export default function Home() {
-  const [politicians, setPoliticians] = useState<Politician[]>([]);
-  const [partyListMPs, setPartyListMPs] = useState<Politician[]>([]);
+  const [people, setPeople] = useState<PersonData[]>([]);
+  const [groupedPeople, setGroupedPeople] = useState<
+    Record<string, PersonData[]>
+  >({});
   const [selectedProvince, setSelectedProvince] = useState<string | null>(null);
-  const [selectedMPs, setSelectedMPs] = useState<Politician[]>([]);
+  const [selectedMPs, setSelectedMPs] = useState<PersonData[]>([]);
   const [loading, setLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
 
-  // Overall statistics
-  const [overallStats, setOverallStats] = useState<OverallStatistics | null>(
-    null
-  );
-
-  // Latest vote event and province stats for heatmap
-  const [latestVote, setLatestVote] = useState<VoteEvent | null>(null);
+  // Fact data for heatmap and statistics
+  const [factData, setFactData] = useState<FactData[]>([]);
+  const [voteDetailData, setVoteDetailData] = useState<VoteDetailData[]>([]);
   const [provinceVoteStats, setProvinceVoteStats] = useState<
-    Record<string, ProvinceVoteStats>
+    Record<
+      string,
+      {
+        province: string;
+        agreeCount: number;
+        disagreeCount: number;
+        abstainCount: number;
+        absentCount: number;
+        total: number;
+      }
+    >
   >({});
 
-  // All vote events for filter
-  const [allVoteEvents, setAllVoteEvents] = useState<VoteEvent[]>([]);
-  const [selectedVoteEvent, setSelectedVoteEvent] = useState<VoteEvent | null>(
+  // Vote events for filter
+  const [allVoteEvents, setAllVoteEvents] = useState<string[]>([]);
+  const [selectedVoteEvent, setSelectedVoteEvent] = useState<string | null>(
     null
   );
+
+  // Filtered data based on selected vote event
+  const [filteredVoteDetailData, setFilteredVoteDetailData] = useState<
+    VoteDetailData[]
+  >([]);
+  const [filteredProvinceVoteStats, setFilteredProvinceVoteStats] = useState<
+    Record<
+      string,
+      {
+        province: string;
+        agreeCount: number;
+        disagreeCount: number;
+        abstainCount: number;
+        absentCount: number;
+        total: number;
+      }
+    >
+  >({});
 
   useEffect(() => {
     setMounted(true);
@@ -52,26 +76,49 @@ export default function Home() {
     async function loadData() {
       setLoading(true);
       try {
-        const [
-          politiciansData,
-          partyListData,
-          statsData,
-          voteData,
-          voteEventsData,
-        ] = await Promise.all([
-          fetchPoliticians(),
-          fetchPartyListMPs(),
-          fetchOverallStatistics(),
-          fetchLatestVoteWithProvinceStats(),
-          fetchAllVoteEvents(),
-        ]);
+        // Load all data in parallel
+        const [personData, factDataResult, voteDetailDataResult] =
+          await Promise.all([
+            loadPersonData(),
+            loadFactData(),
+            loadVoteDetailData(),
+          ]);
 
-        setPoliticians(politiciansData);
-        setPartyListMPs(partyListData);
-        setOverallStats(statsData);
-        setLatestVote(voteData.voteEvent);
-        setAllVoteEvents(voteEventsData);
-        setProvinceVoteStats(voteData.provinceStats);
+        setPeople(personData);
+        setFactData(factDataResult);
+        setVoteDetailData(voteDetailDataResult);
+
+        // Group people by province
+        const grouped = groupPersonByProvince(personData, voteDetailDataResult);
+        setGroupedPeople(grouped);
+
+        // Calculate province vote stats from fact data
+        const statsMap = getProvinceVoteStats(factDataResult);
+        const statsRecord: Record<
+          string,
+          {
+            province: string;
+            agreeCount: number;
+            disagreeCount: number;
+            abstainCount: number;
+            absentCount: number;
+            total: number;
+          }
+        > = {};
+        statsMap.forEach((value, key) => {
+          statsRecord[key] = value;
+        });
+        setProvinceVoteStats(statsRecord);
+
+        // Get unique vote events
+        const events = getVoteEvents(factDataResult);
+        setAllVoteEvents(events);
+
+        // Auto-select the latest vote event (last in array)
+        if (events.length > 0) {
+          const latestEvent = events[events.length - 1];
+          setSelectedVoteEvent(latestEvent);
+        }
       } catch (error) {
         console.error("Error loading data:", error);
       } finally {
@@ -82,7 +129,45 @@ export default function Home() {
     loadData();
   }, [mounted]);
 
-  const handleProvinceSelected = (province: string, mps: Politician[]) => {
+  // Filter data based on selected vote event
+  useEffect(() => {
+    if (!selectedVoteEvent) {
+      // If no event selected, show all data
+      setFilteredVoteDetailData(voteDetailData);
+      setFilteredProvinceVoteStats(provinceVoteStats);
+    } else {
+      // Filter fact data by selected event
+      const filteredFacts = factData.filter(
+        (fact) => fact.title === selectedVoteEvent
+      );
+
+      // Filter vote detail data by selected event
+      const filteredDetails = voteDetailData.filter(
+        (vote) => vote.title === selectedVoteEvent
+      );
+      setFilteredVoteDetailData(filteredDetails);
+
+      // Calculate province stats from filtered fact data
+      const statsMap = getProvinceVoteStats(filteredFacts);
+      const statsRecord: Record<
+        string,
+        {
+          province: string;
+          agreeCount: number;
+          disagreeCount: number;
+          abstainCount: number;
+          absentCount: number;
+          total: number;
+        }
+      > = {};
+      statsMap.forEach((value, key) => {
+        statsRecord[key] = value;
+      });
+      setFilteredProvinceVoteStats(statsRecord);
+    }
+  }, [selectedVoteEvent, factData, voteDetailData, provinceVoteStats]);
+
+  const handleProvinceSelected = (province: string, mps: PersonData[]) => {
     // ถ้า province เป็นค่าว่าง แสดงว่า deselect
     if (!province) {
       setSelectedProvince(null);
@@ -138,7 +223,7 @@ export default function Home() {
             </div>
             <div className="text-right">
               <div className="text-sm text-gray-500 mb-1">
-                ข้อมูลล่าสุด: {latestVote?.start_date || "ไม่มีข้อมูล"}
+                ข้อมูลทั้งหมด: {people.length} คน
               </div>
             </div>
           </div>
@@ -186,20 +271,29 @@ export default function Home() {
               >
                 <div className="mb-2 shrink-0">
                   <h2 className="text-lg font-semibold text-gray-900 mb-1">
-                    {latestVote?.title || "แผนที่การลงมติ"}
+                    แผนที่การลงมติ
                   </h2>
-                  {latestVote?.nickname && (
+                  {selectedVoteEvent ? (
+                    <div>
+                      <p className="text-sm font-medium text-blue-600 mb-1">
+                        ร่างกฎหมายที่เลือก:
+                      </p>
+                      <p className="text-sm text-gray-700 line-clamp-2">
+                        {selectedVoteEvent}
+                      </p>
+                    </div>
+                  ) : allVoteEvents.length > 0 ? (
                     <p className="text-sm text-gray-600">
-                      {latestVote.nickname}
+                      จำนวนการลงมติทั้งหมด: {allVoteEvents.length} ครั้ง
                     </p>
-                  )}
+                  ) : null}
                 </div>
 
                 <div className="flex-1 overflow-hidden flex items-center justify-center">
                   <ThailandMap
-                    politicians={politicians}
-                    partyListMPs={partyListMPs}
-                    provinceVoteStats={provinceVoteStats}
+                    politicians={Object.values(groupedPeople).flat()}
+                    partyListMPs={[]}
+                    provinceVoteStats={filteredProvinceVoteStats}
                     onProvinceSelected={handleProvinceSelected}
                   />
                 </div>
@@ -211,17 +305,14 @@ export default function Home() {
               <InfoPanel
                 province={selectedProvince}
                 mps={selectedMPs}
-                totalMPs={overallStats?.totalMPs || 0}
-                totalBills={overallStats?.totalBills || 0}
-                passedBills={overallStats?.passedBills || 0}
-                failedBills={overallStats?.failedBills || 0}
-                pendingBills={overallStats?.pendingBills || 0}
-                latestVotingDate={latestVote?.start_date || ""}
-                provinceVoteStats={
-                  selectedProvince && provinceVoteStats[selectedProvince]
-                    ? provinceVoteStats[selectedProvince]
-                    : undefined
-                }
+                totalMPs={people.length}
+                totalBills={allVoteEvents.length}
+                passedBills={0}
+                failedBills={0}
+                pendingBills={0}
+                latestVotingDate=""
+                voteDetailData={filteredVoteDetailData}
+                allVoteDetailData={voteDetailData}
               />
             </div>
           </div>
