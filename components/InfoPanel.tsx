@@ -46,17 +46,17 @@ const getMajorityAction = (stats: MPStats): string => {
 const getActionColor = (action: string): string => {
   switch (action) {
     case "เห็นด้วย":
-      return "#0EA5E9"; // สีฟ้า
+      return "#00C758"; // สีเขียว
     case "ไม่เห็นด้วย":
       return "#EF4444"; // สีแดง
     case "งดออกเสียง":
-      return "#1F2937"; // สีดำ
+      return "#EDB200"; // สีเหลือง
     case "ไม่ลงคะแนนเสียง":
-      return "#6B7280"; // สีเทาเข้ม
+      return "#1F2937"; // สีดำ
     case "ลา / ขาดลงมติ":
-      return "#D1D5DB"; // สีเทาอ่อน
+      return "#6B7280"; // สีเทาเข้ม
     default:
-      return "#9CA3AF";
+      return "#D1D5DB"; // สีเทาอ่อน (อื่นๆ/ไม่มีข้อมูล)
   }
 };
 
@@ -159,6 +159,20 @@ export default function InfoPanel({
 
     return stats;
   }, [selectedMP, province, chartVoteDetailData]);
+
+  // Get selected MP vote for CURRENT FILTERED bill
+  const selectedMPCurrentVote = useMemo(() => {
+    if (!selectedMP || !province) return null;
+
+    // Use FILTERED data (voteDetailData) to get vote for current bill
+    const mpFilteredVote = voteDetailData.find(
+      (vote) =>
+        vote.person_name === selectedMP.person_name &&
+        vote.province === province
+    );
+
+    return mpFilteredVote || null;
+  }, [selectedMP, province, voteDetailData]);
 
   // Default view - Overall statistics
   if (!province || mps.length === 0) {
@@ -301,7 +315,7 @@ export default function InfoPanel({
               border: "2px solid #FF6B00",
             }}
           >
-            <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 1 }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 2 }}>
               <Avatar
                 src={selectedMP.image || undefined}
                 sx={{ width: 56, height: 56 }}
@@ -324,6 +338,55 @@ export default function InfoPanel({
                 />
               )}
             </Box>
+
+            {/* การลงมติในร่างกฎหมายที่เลือก */}
+            {selectedMPCurrentVote ? (
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                  p: 1,
+                  bgcolor: "#F9FAFB",
+                  borderRadius: 1,
+                }}
+              >
+                <Box
+                  sx={{
+                    width: 16,
+                    height: 16,
+                    borderRadius: "50%",
+                    bgcolor: getActionColor(selectedMPCurrentVote.option),
+                  }}
+                />
+                <Typography variant="body2" fontWeight="500">
+                  {selectedMPCurrentVote.option}
+                </Typography>
+              </Box>
+            ) : (
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                  p: 1,
+                  bgcolor: "#F9FAFB",
+                  borderRadius: 1,
+                }}
+              >
+                <Box
+                  sx={{
+                    width: 16,
+                    height: 16,
+                    borderRadius: "50%",
+                    bgcolor: "#9CA3AF",
+                  }}
+                />
+                <Typography variant="body2" color="text.secondary">
+                  ไม่มีข้อมูลการลงมติ
+                </Typography>
+              </Box>
+            )}
           </Box>
 
           {/* Donut Chart - สัดส่วนการใช้สิทธิ */}
@@ -359,13 +422,13 @@ export default function InfoPanel({
 
                 return (
                   <svg width="150" height="150" viewBox="0 0 150 150">
-                    {/* Used right (blue) */}
+                    {/* Used right (green) */}
                     <circle
                       cx="75"
                       cy="75"
                       r={radius}
                       fill="none"
-                      stroke="#0EA5E9"
+                      stroke="#00C758"
                       strokeWidth="20"
                       strokeDasharray={`${usedLength} ${
                         circumference - usedLength
@@ -395,7 +458,7 @@ export default function InfoPanel({
                       dy=".3em"
                       fontSize="20"
                       fontWeight="bold"
-                      fill="#0EA5E9"
+                      fill="#00C758"
                     >
                       {usedPercent.toFixed(0)}%
                     </text>
@@ -409,7 +472,7 @@ export default function InfoPanel({
                   sx={{
                     width: 12,
                     height: 12,
-                    bgcolor: "#0EA5E9",
+                    bgcolor: "#00C758", // สีเขียว
                     borderRadius: 1,
                   }}
                 />
@@ -439,27 +502,27 @@ export default function InfoPanel({
                 {
                   label: "เห็นด้วย",
                   count: selectedMPStats.agreeCount,
-                  color: "#0EA5E9",
+                  color: "#00C758", // สีเขียว
                 },
                 {
                   label: "ไม่เห็นด้วย",
                   count: selectedMPStats.disagreeCount,
-                  color: "#EF4444",
+                  color: "#EF4444", // สีแดง
                 },
                 {
                   label: "งดออกเสียง",
                   count: selectedMPStats.abstainCount,
-                  color: "#1F2937",
+                  color: "#EDB200", // สีเหลือง
                 },
                 {
                   label: "ไม่ลงคะแนน",
                   count: selectedMPStats.noVoteCount,
-                  color: "#6B7280",
+                  color: "#1F2937", // สีดำ
                 },
                 {
                   label: "ลา/ขาดลงมติ",
                   count: selectedMPStats.absentCount,
-                  color: "#D1D5DB",
+                  color: "#6B7280", // สีเทาเข้ม
                 },
               ].map((item) => (
                 <Box key={item.label} sx={{ mb: 1 }}>

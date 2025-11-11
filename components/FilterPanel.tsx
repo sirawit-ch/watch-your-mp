@@ -93,6 +93,15 @@ export default function FilterPanel({
               size="small"
             />
           )}
+          ListboxProps={{
+            sx: {
+              maxWidth: "600px",
+              "& .MuiAutocomplete-option": {
+                whiteSpace: "normal",
+                wordBreak: "break-word",
+              },
+            },
+          }}
         />
       </Box>
 

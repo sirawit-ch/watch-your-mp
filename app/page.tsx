@@ -118,12 +118,20 @@ export default function Home() {
 
     // Filter by vote option
     if (selectedVoteOption) {
+      // Filter vote details by option
       filteredDetails = filteredDetails.filter(
         (vote) => vote.option === selectedVoteOption
       );
+
+      // Filter facts by both option AND type
+      // type field should match the selected option for specific filtering
       filteredFacts = filteredFacts.filter(
-        (fact) => fact.option === selectedVoteOption
+        (fact) =>
+          fact.option === selectedVoteOption && fact.type === selectedVoteOption
       );
+    } else {
+      // When no option selected (ทั้งหมด), use type === "All"
+      filteredFacts = filteredFacts.filter((fact) => fact.type === "All");
     }
 
     setFilteredVoteDetailData(filteredDetails);
@@ -277,6 +285,7 @@ export default function Home() {
                     partyListMPs={[]}
                     provinceVoteStats={filteredProvinceVoteStats}
                     onProvinceSelected={handleProvinceSelected}
+                    selectedVoteOption={selectedVoteOption}
                   />
                 </div>
               </Paper>

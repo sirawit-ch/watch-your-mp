@@ -1,15 +1,11 @@
 # Workflow for building and deploying a Next.js site to GitHub Pages
-# with pre-generated static data
+# Uses pre-generated static data (updated by update-data.yml workflow)
 name: Deploy Next.js site to Pages
 
 on:
   # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
-
-  # Schedule: ทุกวันอาทิตย์ เวลา 00:00 UTC (07:00 ICT)
-  schedule:
-    - cron: "0 0 * * 1"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -76,26 +72,8 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-
-      - name: Install Python dependencies
-        run: |
-          pip install -r requirements.txt
-
-      - name: Generate new data structure
-        run: |
-          python3 scripts/generate-new-data.py || echo "New data generation failed, will use existing data"
-        continue-on-error: true
-
-      - name: Generate legacy data (fallback)
-        run: |
-          node scripts/generate-data.mjs || echo "MP data generation failed"
-          node scripts/generate-all-data.mjs || echo "Complete data generation failed, using placeholder"
-          node scripts/create-placeholder-data.mjs || echo "Placeholder creation failed"
-        continue-on-error: true
+      # ข้อมูลถูก generate โดย update-data.yml workflow แล้ว
+      # ไม่ต้อง generate ใหม่ทุกครั้งที่ deploy
 
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build

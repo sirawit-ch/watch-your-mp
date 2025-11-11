@@ -28,6 +28,7 @@ interface ThailandMapProps {
   partyListMPs: PersonData[];
   provinceVoteStats: Record<string, ProvinceVoteStats>;
   onProvinceSelected: (province: string, mps: PersonData[]) => void;
+  selectedVoteOption?: string | null;
 }
 
 export default function ThailandMap({
@@ -35,6 +36,7 @@ export default function ThailandMap({
   partyListMPs,
   provinceVoteStats,
   onProvinceSelected,
+  selectedVoteOption,
 }: ThailandMapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const zoomStateRef = useRef<d3.ZoomTransform | null>(null); // เก็บ zoom state
@@ -79,45 +81,73 @@ export default function ThailandMap({
 
     /**
      * คำนวณสี Heatmap สำหรับแต่ละจังหวัด
-     * - สีเขียว: เห็นด้วยมากกว่า
-     * - สีแดง: ไม่เห็นด้วยมากกว่า
-     * - ความเข้ม: ยิ่งมี ส.ส. มาลงมติมาก (agree + disagree) สียิ่งเข้ม
+     * - ถ้าเลือก "ทั้งหมด" (selectedVoteOption = null): สีม่วง fade ตามสัดส่วนการใช้สิทธิ
+     * - ถ้าเลือก option อื่นๆ: สีตาม status และ fade ตาม portion (คำนวณมาแล้ว)
      */
     const getProvinceHeatmapColor = (provinceName: string): string => {
       const stats = provinceVoteStats[provinceName];
-      const mps = politiciansByProvince[provinceName] || [];
-      const totalMPsInProvince = mps.length;
 
-      // ถ้าไม่มีข้อมูลการลงมติ หรือไม่มี ส.ส. ในจังหวัด
-      if (!stats || totalMPsInProvince === 0) {
+      // ถ้าไม่มีข้อมูลการลงมติ
+      if (!stats) {
         return "#e5e7eb"; // สีเทาอ่อน
       }
 
-      const { agreeCount, disagreeCount } = stats;
+      const { agreeCount, disagreeCount, abstainCount, absentCount, total } =
+        stats;
 
       // ถ้าไม่มีการลงมติเลย
-      if (agreeCount === 0 && disagreeCount === 0) {
+      if (total === 0) {
         return "#e5e7eb";
       }
 
-      // คำนวณ participation rate (ผู้ที่มาลงมติเห็นด้วย/ไม่เห็นด้วย)
-      const participationCount = agreeCount + disagreeCount;
-      const participationRate = participationCount / totalMPsInProvince;
+      // === กรณีเลือก "ทั้งหมด" (All) ===
+      if (!selectedVoteOption) {
+        // portion ของการใช้สิทธิ (เห็นด้วย + ไม่เห็นด้วย) คำนวณมาแล้ว
+        const usageRate = agreeCount + disagreeCount;
 
-      // จำกัด opacity ระหว่าง 0.3 ถึง 0.9 (ไม่ให้จางหรือเข้มเกินไป)
-      const opacity = Math.max(0.3, Math.min(0.9, participationRate));
+        // จำกัด opacity ระหว่าง 0.2 ถึง 0.9
+        const opacity = Math.max(0.2, Math.min(0.9, usageRate));
 
-      // เลือกสีตามเสียงข้างมาก
-      if (agreeCount > disagreeCount) {
-        // สีเขียว (เห็นด้วย) - RGB: 34, 197, 94
-        return `rgba(34, 197, 94, ${opacity})`;
-      } else if (disagreeCount > agreeCount) {
-        // สีแดง (ไม่เห็นด้วย) - RGB: 239, 68, 68
-        return `rgba(239, 68, 68, ${opacity})`;
-      } else {
-        // เท่ากัน - สีเทา
-        return `rgba(156, 163, 175, ${opacity})`;
+        // สีม่วง - RGB: 139, 92, 246 (purple-500)
+        return `rgba(139, 92, 246, ${opacity})`;
       }
+
+      // === กรณีเลือก option เฉพาะ ===
+      // portion คำนวณมาแล้วในข้อมูล
+      let portionRate = 0;
+      let baseColor = "";
+
+      switch (selectedVoteOption) {
+        case "เห็นด้วย":
+          portionRate = agreeCount;
+          baseColor = "0, 199, 88"; // #00C758 สีเขียว
+          break;
+        case "ไม่เห็นด้วย":
+          portionRate = disagreeCount;
+          baseColor = "239, 68, 68"; // #EF4444 สีแดง
+          break;
+        case "งดออกเสียง":
+          portionRate = abstainCount;
+          baseColor = "237, 178, 0"; // #EDB200 สีเหลือง
+          break;
+        case "ไม่ลงคะแนนเสียง":
+          // คำนวณจาก total - (agree + disagree + abstain + absent)
+          portionRate =
+            total - (agreeCount + disagreeCount + abstainCount + absentCount);
+          baseColor = "31, 41, 55"; // #1F2937 สีดำ
+          break;
+        case "ลา / ขาดลงมติ":
+          portionRate = absentCount;
+          baseColor = "107, 114, 128"; // #6B7280 สีเทาเข้ม
+          break;
+        default:
+          return "#e5e7eb";
+      }
+
+      // จำกัด opacity ระหว่าง 0.2 ถึง 0.9
+      const opacity = Math.max(0.2, Math.min(0.9, portionRate));
+
+      return `rgba(${baseColor}, ${opacity})`;
     };
 
     // Draw provinces
@@ -245,7 +275,13 @@ export default function ThailandMap({
           }
         });
     });
-  }, [politicians, provinceVoteStats, onProvinceSelected, selectedProvince]);
+  }, [
+    politicians,
+    provinceVoteStats,
+    onProvinceSelected,
+    selectedProvince,
+    selectedVoteOption,
+  ]);
 
   return (
     <div className="relative w-full h-full flex flex-col gap-3">
