@@ -210,8 +210,8 @@ export default function Home() {
               </p>
             </div>
             <div className="text-right">
-              <div className="text-sm text-gray-500 mb-1">
-                ข้อมูลทั้งหมด: {people.length} คน
+              <div className="text-xs text-gray-500 ">
+                อัพเดทล่าสุด: 
               </div>
             </div>
           </div>

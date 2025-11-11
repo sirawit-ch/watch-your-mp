@@ -18,6 +18,7 @@ interface MapTooltipProps {
   voteStats?: ProvinceVoteStats;
   position: { x: number; y: number };
   isVisible: boolean;
+  selectedVoteOption?: string | null;
 }
 
 export default function MapTooltip({
@@ -26,6 +27,7 @@ export default function MapTooltip({
   voteStats,
   position,
   isVisible,
+  selectedVoteOption,
 }: MapTooltipProps) {
   // Simple position calculation with offset
   const tooltipPosition = useMemo(() => {
@@ -60,31 +62,83 @@ export default function MapTooltip({
         {/* Vote Statistics */}
         {voteStats && (
           <div className="space-y-1.5 pt-2 border-t border-gray-200">
-            <div className="text-xs font-semibold text-gray-700 mb-1.5">
-              การลงมติล่าสุด:
-            </div>
-            <div className="grid grid-cols-2 gap-1.5 text-xs">
-              <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                <span className="text-gray-600">เห็นด้วย:</span>
-                <span className="font-semibold">{voteStats.agreeCount}</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full bg-red-500"></div>
-                <span className="text-gray-600">ไม่เห็นด้วย:</span>
-                <span className="font-semibold">{voteStats.disagreeCount}</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full bg-yellow-500"></div>
-                <span className="text-gray-600">งดออกเสียง:</span>
-                <span className="font-semibold">{voteStats.abstainCount}</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <div className="w-2 h-2 rounded-full bg-gray-400"></div>
-                <span className="text-gray-600">ขาด/ลา:</span>
-                <span className="font-semibold">{voteStats.absentCount}</span>
-              </div>
-            </div>
+            {!selectedVoteOption ? (
+              // แสดง "สัดส่วนการใช้สิทธิ" เมื่อเลือก "ทั้งหมด"
+              <>
+                <div className="text-xs font-semibold text-gray-700 mb-1.5">
+                  สัดส่วนการใช้สิทธิ:
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 rounded-full bg-purple-500"></div>
+                  <span className="text-lg font-bold text-purple-600">
+                    {(
+                      (voteStats.agreeCount + voteStats.disagreeCount) *
+                      100
+                    ).toFixed(1)}
+                    %
+                  </span>
+                </div>
+              </>
+            ) : (
+              // แสดง "สัดส่วนคะแนนโหวต" เมื่อเลือก filter เฉพาะ
+              <>
+                <div className="text-xs font-semibold text-gray-700 mb-1.5">
+                  สัดส่วนคะแนนโหวต:
+                </div>
+                <div className="flex items-center gap-2">
+                  <div
+                    className="w-3 h-3 rounded-full"
+                    style={{
+                      backgroundColor:
+                        selectedVoteOption === "เห็นด้วย"
+                          ? "#00C758"
+                          : selectedVoteOption === "ไม่เห็นด้วย"
+                          ? "#EF4444"
+                          : selectedVoteOption === "งดออกเสียง"
+                          ? "#EDB200"
+                          : selectedVoteOption === "ไม่ลงคะแนนเสียง"
+                          ? "#1F2937"
+                          : selectedVoteOption === "ลา / ขาดลงมติ"
+                          ? "#6B7280"
+                          : "#D1D5DB",
+                    }}
+                  ></div>
+                  <span className="text-xs text-gray-600">
+                    {selectedVoteOption}:
+                  </span>
+                  <span
+                    className="text-lg font-bold"
+                    style={{
+                      color:
+                        selectedVoteOption === "เห็นด้วย"
+                          ? "#00C758"
+                          : selectedVoteOption === "ไม่เห็นด้วย"
+                          ? "#EF4444"
+                          : selectedVoteOption === "งดออกเสียง"
+                          ? "#EDB200"
+                          : selectedVoteOption === "ไม่ลงคะแนนเสียง"
+                          ? "#1F2937"
+                          : selectedVoteOption === "ลา / ขาดลงมติ"
+                          ? "#6B7280"
+                          : "#6B7280",
+                    }}
+                  >
+                    {(
+                      (selectedVoteOption === "เห็นด้วย"
+                        ? voteStats.agreeCount
+                        : selectedVoteOption === "ไม่เห็นด้วย"
+                        ? voteStats.disagreeCount
+                        : selectedVoteOption === "งดออกเสียง"
+                        ? voteStats.abstainCount
+                        : selectedVoteOption === "ลา / ขาดลงมติ"
+                        ? voteStats.absentCount
+                        : 0) * 100
+                    ).toFixed(1)}
+                    %
+                  </span>
+                </div>
+              </>
+            )}
           </div>
         )}
 

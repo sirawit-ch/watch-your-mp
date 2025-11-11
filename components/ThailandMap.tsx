@@ -356,6 +356,7 @@ export default function ThailandMap({
           voteStats={tooltip.voteStats}
           position={tooltip.position}
           isVisible={tooltip.isVisible}
+          selectedVoteOption={selectedVoteOption}
         />
       </div>
     </div>

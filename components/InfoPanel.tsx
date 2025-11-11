@@ -254,7 +254,7 @@ export default function InfoPanel({
       {/* MPs Visualization - Circles */}
       <Box sx={{ mb: 2 }}>
         <Typography variant="subtitle2" fontWeight="600" gutterBottom>
-          ส.ส. ทั้งหมด (สีแทนการลงมติส่วนใหญ่)
+          ส.ส. ทั้งหมด
         </Typography>
         <Box
           sx={{
