@@ -18,15 +18,18 @@ interface FilterPanelProps {
   voteEvents: string[];
   selectedVoteEvent: string | null;
   onVoteEventChange: (voteEvent: string | null) => void;
+  selectedVoteOption: string | null;
+  onVoteOptionChange: (voteOption: string | null) => void;
 }
 
 export default function FilterPanel({
   voteEvents,
   selectedVoteEvent,
   onVoteEventChange,
+  selectedVoteOption,
+  onVoteOptionChange,
 }: FilterPanelProps) {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [voteResult, setVoteResult] = useState<string>("");
 
   // ตัวอย่างหมวดหมู่ (สามารถดึงจาก API ได้)
   const categories = [
@@ -36,10 +39,11 @@ export default function FilterPanel({
     "กฎหมายสิ่งแวดล้อม",
   ];
 
-  const handleVoteResultChange = (
+  const handleVoteOptionChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
-    setVoteResult(event.target.value);
+    const value = event.target.value;
+    onVoteOptionChange(value === "" ? null : value);
   };
 
   return (
@@ -101,19 +105,39 @@ export default function FilterPanel({
             </Typography>
           </FormLabel>
           <RadioGroup
-            value={voteResult}
-            onChange={handleVoteResultChange}
+            value={selectedVoteOption || ""}
+            onChange={handleVoteOptionChange}
             sx={{ mt: 1 }}
           >
             <FormControlLabel
-              value="passed"
+              value=""
               control={<Radio size="small" />}
-              label="ผ่าน"
+              label="ทั้งหมด"
             />
             <FormControlLabel
-              value="failed"
+              value="เห็นด้วย"
               control={<Radio size="small" />}
-              label="ไม่ผ่าน"
+              label="เห็นด้วย"
+            />
+            <FormControlLabel
+              value="ไม่เห็นด้วย"
+              control={<Radio size="small" />}
+              label="ไม่เห็นด้วย"
+            />
+            <FormControlLabel
+              value="งดออกเสียง"
+              control={<Radio size="small" />}
+              label="งดออกเสียง"
+            />
+            <FormControlLabel
+              value="ไม่ลงคะแนนเสียง"
+              control={<Radio size="small" />}
+              label="ไม่ลงคะแนนเสียง"
+            />
+            <FormControlLabel
+              value="ลา / ขาดลงมติ"
+              control={<Radio size="small" />}
+              label="ลา/ขาดลงมติ"
             />
           </RadioGroup>
         </FormControl>

@@ -261,12 +261,7 @@ export default function InfoPanel({
             const isSelected = selectedMP?.person_name === mp.person_name;
 
             return (
-              <Tooltip
-                key={index}
-                title={mp.person_name}
-                arrow
-                placement="top"
-              >
+              <Tooltip key={index} title={mp.person_name} arrow placement="top">
                 <Box
                   onClick={() => setSelectedMP(mp)}
                   sx={{

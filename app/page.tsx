@@ -28,27 +28,17 @@ export default function Home() {
   // Fact data for heatmap and statistics
   const [factData, setFactData] = useState<FactData[]>([]);
   const [voteDetailData, setVoteDetailData] = useState<VoteDetailData[]>([]);
-  const [provinceVoteStats, setProvinceVoteStats] = useState<
-    Record<
-      string,
-      {
-        province: string;
-        agreeCount: number;
-        disagreeCount: number;
-        abstainCount: number;
-        absentCount: number;
-        total: number;
-      }
-    >
-  >({});
 
   // Vote events for filter
   const [allVoteEvents, setAllVoteEvents] = useState<string[]>([]);
   const [selectedVoteEvent, setSelectedVoteEvent] = useState<string | null>(
     null
   );
+  const [selectedVoteOption, setSelectedVoteOption] = useState<string | null>(
+    null
+  );
 
-  // Filtered data based on selected vote event
+  // Filtered data based on selected vote event and option
   const [filteredVoteDetailData, setFilteredVoteDetailData] = useState<
     VoteDetailData[]
   >([]);
@@ -92,24 +82,6 @@ export default function Home() {
         const grouped = groupPersonByProvince(personData, voteDetailDataResult);
         setGroupedPeople(grouped);
 
-        // Calculate province vote stats from fact data
-        const statsMap = getProvinceVoteStats(factDataResult);
-        const statsRecord: Record<
-          string,
-          {
-            province: string;
-            agreeCount: number;
-            disagreeCount: number;
-            abstainCount: number;
-            absentCount: number;
-            total: number;
-          }
-        > = {};
-        statsMap.forEach((value, key) => {
-          statsRecord[key] = value;
-        });
-        setProvinceVoteStats(statsRecord);
-
         // Get unique vote events
         const events = getVoteEvents(factDataResult);
         setAllVoteEvents(events);
@@ -129,43 +101,51 @@ export default function Home() {
     loadData();
   }, [mounted]);
 
-  // Filter data based on selected vote event
+  // Filter data based on selected vote event and option
   useEffect(() => {
-    if (!selectedVoteEvent) {
-      // If no event selected, show all data
-      setFilteredVoteDetailData(voteDetailData);
-      setFilteredProvinceVoteStats(provinceVoteStats);
-    } else {
-      // Filter fact data by selected event
-      const filteredFacts = factData.filter(
-        (fact) => fact.title === selectedVoteEvent
-      );
+    let filteredDetails = voteDetailData;
+    let filteredFacts = factData;
 
-      // Filter vote detail data by selected event
-      const filteredDetails = voteDetailData.filter(
+    // Filter by vote event
+    if (selectedVoteEvent) {
+      filteredDetails = filteredDetails.filter(
         (vote) => vote.title === selectedVoteEvent
       );
-      setFilteredVoteDetailData(filteredDetails);
-
-      // Calculate province stats from filtered fact data
-      const statsMap = getProvinceVoteStats(filteredFacts);
-      const statsRecord: Record<
-        string,
-        {
-          province: string;
-          agreeCount: number;
-          disagreeCount: number;
-          abstainCount: number;
-          absentCount: number;
-          total: number;
-        }
-      > = {};
-      statsMap.forEach((value, key) => {
-        statsRecord[key] = value;
-      });
-      setFilteredProvinceVoteStats(statsRecord);
+      filteredFacts = filteredFacts.filter(
+        (fact) => fact.title === selectedVoteEvent
+      );
     }
-  }, [selectedVoteEvent, factData, voteDetailData, provinceVoteStats]);
+
+    // Filter by vote option
+    if (selectedVoteOption) {
+      filteredDetails = filteredDetails.filter(
+        (vote) => vote.option === selectedVoteOption
+      );
+      filteredFacts = filteredFacts.filter(
+        (fact) => fact.option === selectedVoteOption
+      );
+    }
+
+    setFilteredVoteDetailData(filteredDetails);
+
+    // Calculate province stats from filtered fact data
+    const statsMap = getProvinceVoteStats(filteredFacts);
+    const statsRecord: Record<
+      string,
+      {
+        province: string;
+        agreeCount: number;
+        disagreeCount: number;
+        abstainCount: number;
+        absentCount: number;
+        total: number;
+      }
+    > = {};
+    statsMap.forEach((value, key) => {
+      statsRecord[key] = value;
+    });
+    setFilteredProvinceVoteStats(statsRecord);
+  }, [selectedVoteEvent, selectedVoteOption, factData, voteDetailData]);
 
   const handleProvinceSelected = (province: string, mps: PersonData[]) => {
     // ถ้า province เป็นค่าว่าง แสดงว่า deselect
@@ -250,6 +230,8 @@ export default function Home() {
                   voteEvents={allVoteEvents}
                   selectedVoteEvent={selectedVoteEvent}
                   onVoteEventChange={setSelectedVoteEvent}
+                  selectedVoteOption={selectedVoteOption}
+                  onVoteOptionChange={setSelectedVoteOption}
                 />
               </Paper>
             </div>
@@ -303,6 +285,7 @@ export default function Home() {
             {/* Info Panel - Right */}
             <div className="w-96 h-full overflow-hidden">
               <InfoPanel
+                key={selectedProvince || "no-province"}
                 province={selectedProvince}
                 mps={selectedMPs}
                 totalMPs={people.length}
