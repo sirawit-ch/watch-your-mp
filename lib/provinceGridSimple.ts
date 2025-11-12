@@ -40,7 +40,7 @@ export const provinceGridLayout: Record<string, ProvinceGridPosition> = {
   เพชรบูรณ์: { row: 5, col: 3, abbr: "พช" },
   หนองบัวลำภู: { row: 5, col: 4, abbr: "นภ" },
   อุดรธานี: { row: 5, col: 5, abbr: "อด" },
-  กาฬสินธุ์: { row: 5, col: 6, abbr: "กส" },
+  กาฬสินธ์ุ: { row: 5, col: 6, abbr: "กส" },
   มุกดาหาร: { row: 5, col: 7, abbr: "มห" },
 
   ชัยนาท: { row: 6, col: 0, abbr: "ชน" },
@@ -55,7 +55,7 @@ export const provinceGridLayout: Record<string, ProvinceGridPosition> = {
 
   สุพรรณบุรี: { row: 7, col: 0, abbr: "สพ" },
   อ่างทอง: { row: 7, col: 1, abbr: "อท" },
-  อยุธยา: { row: 7, col: 2, abbr: "อย" },
+  พระนครศรีอยุธยา: { row: 7, col: 2, abbr: "อย" },
   สระบุรี: { row: 7, col: 3, abbr: "สบ" },
   นครราชสีมา: { row: 7, col: 4, abbr: "นม" },
   บุรีรัมย์: { row: 7, col: 5, abbr: "บร" },
@@ -99,7 +99,7 @@ export const provinceGridLayout: Record<string, ProvinceGridPosition> = {
 
   ตรัง: { row: 15, col: 2, abbr: "ตง" },
   พัทลุง: { row: 15, col: 3, abbr: "พท" },
-  
+
   สตูล: { row: 16, col: 3, abbr: "สต" },
   สงขลา: { row: 16, col: 4, abbr: "สข" },
   ปัตตานี: { row: 16, col: 5, abbr: "ปน" },

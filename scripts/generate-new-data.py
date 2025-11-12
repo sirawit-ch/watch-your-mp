@@ -10,6 +10,7 @@ import pandas as pd
 import json
 import sys
 from pathlib import Path
+from datetime import datetime, timezone
 
 # Configuration
 GRAPHQL_URL = 'https://politigraph.wevis.info/graphql'
@@ -368,6 +369,16 @@ def main():
         save_json(df_person_vote, "person_vote_data.json")
         save_json(df_fact, "fact_data.json")
         save_json(df_vote_detail, "vote_detail_data.json")
+        
+        # Save last updated timestamp
+        metadata = {
+            "last_updated": datetime.now(timezone.utc).isoformat(),
+            "timestamp": int(datetime.now(timezone.utc).timestamp() * 1000)
+        }
+        metadata_path = OUTPUT_DIR / "metadata.json"
+        with open(metadata_path, "w", encoding="utf-8") as f:
+            json.dump(metadata, f, ensure_ascii=False, indent=2)
+        print(f"\n✓ Metadata saved: {metadata_path}")
         
         print("\n" + "=" * 60)
         print("✓ Data generation completed successfully!")

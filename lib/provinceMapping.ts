@@ -54,7 +54,7 @@ export const provinceMapping: Record<string, string> = {
   "Nong Khai": "หนองคาย",
   "Maha Sarakham": "มหาสารคาม",
   "Roi Et": "ร้อยเอ็ด",
-  Kalasin: "กาฬสินธุ์",
+  Kalasin: "กาฬสินธ์ุ",
   "Sakon Nakhon": "สกลนคร",
   "Nakhon Phanom": "นครพนม",
   Mukdahan: "มุกดาหาร",

@@ -11,6 +11,7 @@ import {
   applyFilters,
   type ProvinceVoteStats,
 } from "./dataHelpers";
+import { loadMetadata, formatRelativeTime } from "@/lib/metadata";
 
 export default function Home() {
   const [people, setPeople] = useState<PersonData[]>([]);
@@ -45,6 +46,9 @@ export default function Home() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [factData, setFactData] = useState<any[]>([]);
 
+  // Last updated timestamp
+  const [lastUpdated, setLastUpdated] = useState<string | null>(null);
+
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -67,6 +71,12 @@ export default function Home() {
         if (data.voteEvents.length > 0) {
           const latestEvent = data.voteEvents[data.voteEvents.length - 1];
           setSelectedVoteEvent(latestEvent);
+        }
+
+        // Load metadata
+        const metadata = await loadMetadata();
+        if (metadata) {
+          setLastUpdated(metadata.last_updated);
         }
       } catch (error) {
         console.error("Error loading data:", error);
@@ -147,11 +157,14 @@ export default function Home() {
               </p>
             </div>
             <div className="text-right">
-              {/*
-              <div className="text-xs text-gray-500 ">
-                อัพเดทล่าสุด: 
-              </div>
-              */}
+              {lastUpdated && (
+                <div className="text-xs text-gray-500">
+                  <div className="mb-0.5">อัพเดทล่าสุด</div>
+                  <div className="font-medium text-gray-700">
+                    {formatRelativeTime(lastUpdated)}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
