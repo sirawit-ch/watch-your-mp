@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import * as d3 from "d3";
-import type { MPStats } from "@/lib/api";
+import type { MPStats } from "./types";
 
 interface D3DonutChartProps {
   stats: MPStats;
