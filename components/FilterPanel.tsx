@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import {
   Paper,
   Typography,
@@ -37,9 +37,38 @@ export default function FilterPanel({
     onVoteOptionChange(value === "" ? null : value);
   };
 
+  // Background color mapping based on selected vote option
+  const getBackgroundColor = () => {
+    switch (selectedVoteOption) {
+      case null:
+      case "":
+        return "#e8dbcf"; // ทั้งหมด
+      case "เห็นด้วย":
+        return "#9bb4c6"; // เห็นด้วย
+      case "ไม่เห็นด้วย":
+        return "#ffd7ce"; // ไม่เห็นด้วย
+      case "งดออกเสียง":
+        return "#e1e1e1"; // งดออกเสียง
+      case "ไม่ลงคะแนนเสียง":
+        return "#e1e1e1"; // ไม่ลงคะแนนเสียง
+      case "ลา / ขาดลงมติ":
+        return "#e1e1e1"; // ลา / ขาดลงมติ
+      default:
+        return "#f4eeeb"; // initial/default
+    }
+  };
+
   return (
     <>
-      <Paper elevation={1} sx={{ p: 3, borderRadius: 2 }}>
+      <Paper
+        elevation={1}
+        sx={{
+          p: 3,
+          borderRadius: 2,
+          backgroundColor: getBackgroundColor(),
+          transition: "background-color 0.3s ease",
+        }}
+      >
         {/* ร่างกฎหมาย Section */}
         <Box sx={{ mb: 3 }}>
           <Typography variant="subtitle1" fontWeight="600" gutterBottom>

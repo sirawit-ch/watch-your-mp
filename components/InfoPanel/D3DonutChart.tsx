@@ -30,8 +30,8 @@ export default function D3DonutChart({
     const total = stats.total;
 
     const data = [
-      { label: "ใช้สิทธิ์", value: used, color: "#8B5CF6" },
-      { label: "ไม่ใช้สิทธิ์", value: other, color: "#D1D5DB" },
+      { label: "ใช้สิทธิ์", value: used, color: "##065f46" },
+      { label: "ไม่ใช้สิทธิ์", value: other, color: "##fffdfd" },
     ];
 
     const radius = Math.min(width, height) / 2;

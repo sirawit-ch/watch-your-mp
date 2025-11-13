@@ -34,6 +34,27 @@ export default function Home() {
     null
   );
 
+  // Background color helper function based on selected vote option
+  const getBackgroundColor = () => {
+    switch (selectedVoteOption) {
+      case null:
+      case "":
+        return "#e8dbcf"; // ทั้งหมด
+      case "เห็นด้วย":
+        return "#9bb4c6"; // เห็นด้วย
+      case "ไม่เห็นด้วย":
+        return "#ffd7ce"; // ไม่เห็นด้วย
+      case "งดออกเสียง":
+        return "#e1e1e1"; // งดออกเสียง
+      case "ไม่ลงคะแนนเสียง":
+        return "#e1e1e1"; // ไม่ลงคะแนนเสียง
+      case "ลา / ขาดลงมติ":
+        return "#e1e1e1"; // ลา / ขาดลงมติ
+      default:
+        return "#e8dbcf"; // default
+    }
+  };
+
   // Filtered data based on selected vote event and option
   const [filteredVoteDetailData, setFilteredVoteDetailData] = useState<
     VoteDetailData[]
@@ -117,12 +138,12 @@ export default function Home() {
       <div
         className="min-h-screen flex items-center justify-center"
         style={{
-          background: "linear-gradient(135deg, #6DD5ED 0%, #2193B0 100%)",
+          background: "#f4eeeb",
         }}
       >
         <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-white mb-4"></div>
-          <p className="text-white font-medium">กำลังโหลดข้อมูล...</p>
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-gray-800 mb-4"></div>
+          <p className="text-gray-800 font-medium">กำลังโหลดข้อมูล...</p>
         </div>
       </div>
     );
@@ -132,7 +153,7 @@ export default function Home() {
     <div
       className="h-screen flex flex-col overflow-hidden"
       style={{
-        background: "linear-gradient(135deg, #6DD5ED 0%, #2193B0 100%)",
+        background: "#f4eeeb",
       }}
     >
       {/* Header */}
@@ -201,7 +222,8 @@ export default function Home() {
               <Paper
                 elevation={3}
                 sx={{
-                  background: "#E8FBFF",
+                  backgroundColor: getBackgroundColor(),
+                  transition: "background-color 0.3s ease",
                   borderRadius: "20px",
                   p: 2.5,
                   height: "100%",
@@ -257,6 +279,7 @@ export default function Home() {
                 totalMPs={people.length}
                 voteDetailData={filteredVoteDetailData}
                 allVoteDetailData={voteDetailData}
+                backgroundColor={getBackgroundColor()}
               />
             </div>
           </div>

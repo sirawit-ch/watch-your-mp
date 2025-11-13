@@ -1,13 +1,20 @@
 import type { ProvinceVoteStats } from "./types";
-import {
-  VOTE_OPTION_COLORS,
-  DEFAULT_COLORS,
-  OPACITY_CONFIG,
-} from "./constants";
-import { clampOpacity } from "./helpers";
+import { VOTE_OPTION_COLORS_3BIN, DEFAULT_COLORS } from "./constants";
+
+/**
+ * Determines which color bin (0-2) a portion value falls into
+ * Divides the 0-1 range into 3 equal bins
+ */
+function getColorBin(portion: number): number {
+  if (portion <= 0) return -1; // No data
+  if (portion <= 0.33) return 2; // Lightest (0-33%)
+  if (portion <= 0.67) return 1; // Medium (33-67%)
+  return 0; // Darkest (67-100%)
+}
 
 /**
  * Calculates heatmap color for a province based on vote statistics
+ * Uses 3-bin color system instead of opacity gradient
  */
 export function getProvinceHeatmapColor(
   provinceName: string,
@@ -23,64 +30,62 @@ export function getProvinceHeatmapColor(
 
   // "All" option selected - show usage portion
   if (!selectedVoteOption) {
-    const opacity = clampOpacity(
-      stats.portion,
-      OPACITY_CONFIG.MIN,
-      OPACITY_CONFIG.MAX
-    );
-    return `rgba(${DEFAULT_COLORS.ALL_OPTION_BASE}, ${opacity})`;
+    const bin = getColorBin(stats.portion);
+    if (bin === -1) return DEFAULT_COLORS.NO_DATA;
+    return VOTE_OPTION_COLORS_3BIN.ทั้งหมด[bin];
   }
 
   // Specific option selected
-  const { portionValue, baseColor } = getVoteOptionData(
+  const { portionValue, voteOption } = getVoteOptionData(
     selectedVoteOption,
     stats
   );
 
-  if (!baseColor) {
+  if (!voteOption) {
     return DEFAULT_COLORS.NO_DATA;
   }
 
-  const opacity = clampOpacity(
-    portionValue,
-    OPACITY_CONFIG.MIN,
-    OPACITY_CONFIG.MAX
-  );
-  return `rgba(${baseColor}, ${opacity})`;
+  const bin = getColorBin(portionValue);
+  if (bin === -1) return DEFAULT_COLORS.NO_DATA;
+
+  return VOTE_OPTION_COLORS_3BIN[voteOption][bin];
 }
 
 /**
- * Gets portion value and base color for a specific vote option
+ * Gets portion value and vote option key for a specific vote option
  */
 function getVoteOptionData(
   selectedVoteOption: string,
   stats: ProvinceVoteStats
-): { portionValue: number; baseColor: string } {
+): {
+  portionValue: number;
+  voteOption: keyof typeof VOTE_OPTION_COLORS_3BIN | null;
+} {
   let portionValue = 0;
-  let baseColor = "";
+  let voteOption: keyof typeof VOTE_OPTION_COLORS_3BIN | null = null;
 
   switch (selectedVoteOption) {
     case "เห็นด้วย":
       portionValue = stats.agreeCount;
-      baseColor = VOTE_OPTION_COLORS["เห็นด้วย"];
+      voteOption = "เห็นด้วย";
       break;
     case "ไม่เห็นด้วย":
       portionValue = stats.disagreeCount;
-      baseColor = VOTE_OPTION_COLORS["ไม่เห็นด้วย"];
+      voteOption = "ไม่เห็นด้วย";
       break;
     case "งดออกเสียง":
       portionValue = stats.abstainCount;
-      baseColor = VOTE_OPTION_COLORS["งดออกเสียง"];
+      voteOption = "งดออกเสียง";
       break;
     case "ไม่ลงคะแนนเสียง":
       portionValue = stats.noVoteCount;
-      baseColor = VOTE_OPTION_COLORS["ไม่ลงคะแนนเสียง"];
+      voteOption = "ไม่ลงคะแนนเสียง";
       break;
     case "ลา / ขาดลงมติ":
       portionValue = stats.absentCount;
-      baseColor = VOTE_OPTION_COLORS["ลา / ขาดลงมติ"];
+      voteOption = "ลา / ขาดลงมติ";
       break;
   }
 
-  return { portionValue, baseColor };
+  return { portionValue, voteOption };
 }

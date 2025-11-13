@@ -14,6 +14,7 @@ interface InfoPanelProps {
   totalMPs: number;
   voteDetailData: VoteDetailData[];
   allVoteDetailData?: VoteDetailData[];
+  backgroundColor?: string;
 }
 
 export default function InfoPanel({
@@ -22,6 +23,7 @@ export default function InfoPanel({
   totalMPs,
   voteDetailData,
   allVoteDetailData,
+  backgroundColor = "#E8FBFF",
 }: InfoPanelProps) {
   const [selectedMP, setSelectedMP] = useState<PersonData | null>(null);
 
@@ -140,7 +142,8 @@ export default function InfoPanel({
         elevation={3}
         sx={{
           height: "100%",
-          background: "#E8FBFF",
+          backgroundColor: backgroundColor,
+          transition: "background-color 0.3s ease",
           borderRadius: "20px",
           p: 3,
           display: "flex",
@@ -190,7 +193,8 @@ export default function InfoPanel({
       elevation={3}
       sx={{
         height: "100%",
-        background: "#E8FBFF",
+        backgroundColor: backgroundColor,
+        transition: "background-color 0.3s ease",
         borderRadius: "20px",
         p: 2,
         display: "flex",
