@@ -30,6 +30,7 @@ export const VOTE_OPTION_COLORS_3BIN = {
   งดออกเสียง: ["#4b5563", "#6b7280", "#9ca3af"], // gray เข้ม -> กลาง -> อ่อน
   ไม่ลงคะแนนเสียง: ["#4b5563", "#6b7280", "#9ca3af"], // gray เข้ม -> กลาง -> อ่อน
   "ลา / ขาดลงมติ": ["#4b5563", "#6b7280", "#9ca3af"], // gray เข้ม -> กลาง -> อ่อน
+  ผลโหวตเสมอ: ["#7c3aed", "#a78bfa", "#c4b5fd"], // purple เข้ม -> กลาง -> อ่อน
 } as const;
 
 // Old vote option colors (kept for reference, but not used with 3-bin system)

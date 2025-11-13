@@ -28,11 +28,21 @@ export function getProvinceHeatmapColor(
     return DEFAULT_COLORS.NO_DATA;
   }
 
-  // "All" option selected - show usage portion
+  // "All" option selected - show winning option color with usage portion intensity
   if (!selectedVoteOption) {
     const bin = getColorBin(stats.portion);
     if (bin === -1) return DEFAULT_COLORS.NO_DATA;
-    return VOTE_OPTION_COLORS_3BIN.ทั้งหมด[bin];
+    
+    // Use winning option color instead of default "ทั้งหมด" color
+    const winningOption = stats.winningOption || "ทั้งหมด";
+    const colorArray = VOTE_OPTION_COLORS_3BIN[winningOption as keyof typeof VOTE_OPTION_COLORS_3BIN];
+    
+    if (!colorArray) {
+      // Fallback to default color if winning option not found
+      return VOTE_OPTION_COLORS_3BIN.ทั้งหมด[bin];
+    }
+    
+    return colorArray[bin];
   }
 
   // Specific option selected
