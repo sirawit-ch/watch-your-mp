@@ -7,6 +7,7 @@ export interface ProvinceVoteStats {
   absentCount: number;
   total: number;
   portion: number;
+  winningOption?: string;
 }
 
 export interface TooltipState {

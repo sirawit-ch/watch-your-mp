@@ -143,6 +143,7 @@ export function getProvinceVoteStats(
         absentCount: 0,
         total: 0,
         portion: 0, // เพิ่ม portion สำหรับเก็บค่าโดยตรง
+        winningOption: undefined, // เก็บ option ที่ชนะ
       });
     }
 
@@ -161,9 +162,10 @@ export function getProvinceVoteStats(
       stats.absentCount = fact.portion;
     }
 
-    // สำหรับ type="All" ใช้ portion นี้โดยตรง
+    // สำหรับ type="All" ใช้ portion นี้โดยตรงและเก็บ winning option
     if (fact.type === "All") {
       stats.portion = fact.portion;
+      stats.winningOption = fact.option; // เก็บ option ที่ชนะในจังหวัดนั้นๆ
     }
 
     stats.total = 1; // total ไม่จำเป็นต้องใช้แล้วเพราะเรามี portion

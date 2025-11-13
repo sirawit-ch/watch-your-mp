@@ -61,6 +61,7 @@ export interface ProvinceVoteStats {
   absentCount: number; // portion ของ option="ลา / ขาดลงมติ"
   total: number;
   portion: number; // portion สำหรับ type="All" (ใช้ในกรณีไม่เลือก option)
+  winningOption?: string; // option ที่ชนะในจังหวัดนั้นๆ (จาก type="All")
 }
 
 /**
