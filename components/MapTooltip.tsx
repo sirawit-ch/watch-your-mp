@@ -72,7 +72,7 @@ export default function MapTooltip({
         fontFamily: "var(--font-sukhumvit), system-ui, sans-serif",
       }}
     >
-      <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-3 min-w-[200px] max-w-[280px]">
+      <div className="bg-white rounded-lg border border-gray-200 p-3 min-w-[200px] max-w-[280px]">
         {/* Province Name */}
         <div className="font-bold text-sm text-gray-900 mb-2">
           {provinceName}
@@ -93,8 +93,14 @@ export default function MapTooltip({
                   สัดส่วนการใช้สิทธิ:
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-purple-500"></div>
-                  <span className="text-lg font-bold text-purple-600">
+                  <div
+                    className="w-3 h-3 rounded-full"
+                    style={{ backgroundColor: "#678967" }}
+                  ></div>
+                  <span
+                    className="text-lg font-bold"
+                    style={{ color: "#678967" }}
+                  >
                     {(
                       (voteStats.agreeCount + voteStats.disagreeCount) *
                       100
@@ -115,15 +121,15 @@ export default function MapTooltip({
                     style={{
                       backgroundColor:
                         selectedVoteOption === "เห็นด้วย"
-                          ? "#00C758"
+                          ? "#060b7d"
                           : selectedVoteOption === "ไม่เห็นด้วย"
-                          ? "#EF4444"
+                          ? "#9d0606"
                           : selectedVoteOption === "งดออกเสียง"
-                          ? "#EDB200"
+                          ? "#d9d9d9"
                           : selectedVoteOption === "ไม่ลงคะแนนเสียง"
-                          ? "#1F2937"
+                          ? "#b4b4b4"
                           : selectedVoteOption === "ลา / ขาดลงมติ"
-                          ? "#6B7280"
+                          ? "#545454"
                           : "#D1D5DB",
                     }}
                   ></div>
@@ -135,15 +141,15 @@ export default function MapTooltip({
                     style={{
                       color:
                         selectedVoteOption === "เห็นด้วย"
-                          ? "#00C758"
+                          ? "#060b7d"
                           : selectedVoteOption === "ไม่เห็นด้วย"
-                          ? "#EF4444"
+                          ? "#9d0606"
                           : selectedVoteOption === "งดออกเสียง"
-                          ? "#EDB200"
+                          ? "#d9d9d9"
                           : selectedVoteOption === "ไม่ลงคะแนนเสียง"
-                          ? "#1F2937"
+                          ? "#b4b4b4"
                           : selectedVoteOption === "ลา / ขาดลงมติ"
-                          ? "#6B7280"
+                          ? "#545454"
                           : "#9CA3AF", // สีเทากลาง (gray-400) สำหรับ default
                     }}
                   >

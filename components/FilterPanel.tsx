@@ -61,7 +61,7 @@ export default function FilterPanel({
   return (
     <>
       <Paper
-        elevation={1}
+        elevation={0}
         sx={{
           p: 3,
           borderRadius: 2,
@@ -70,7 +70,7 @@ export default function FilterPanel({
         }}
       >
         {/* ร่างกฎหมาย Section */}
-        <Box sx={{ mb: 3 }}>
+        <Box sx={{ mb: 3, bgcolor: "white", p: 2, borderRadius: 1.5 }}>
           <Typography variant="subtitle1" fontWeight="600" gutterBottom>
             ร่างกฎหมาย
           </Typography>
@@ -135,7 +135,7 @@ export default function FilterPanel({
         </Box>
 
         {/* รูปแบบการโหวต Section */}
-        <Box>
+        <Box sx={{ bgcolor: "white", p: 2, borderRadius: 1.5 }}>
           <FormControl component="fieldset">
             <FormLabel component="legend">
               <Typography variant="subtitle1" fontWeight="600">

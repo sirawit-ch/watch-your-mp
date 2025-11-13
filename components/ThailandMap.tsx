@@ -154,9 +154,9 @@ export default function ThailandMap({
         .style("transition", "all 0.3s ease");
 
       // เพิ่ม highlight indicator ถ้าถูกเลือก
-      if (selectedProvince === provinceName) {
-        rect.style("filter", "drop-shadow(0 0 8px rgba(255, 107, 0, 0.8))");
-      }
+      // if (selectedProvince === provinceName) {
+      //   rect.style("filter", "drop-shadow(0 0 8px gray)");
+      // }
 
       // เพิ่มตัวย่อจังหวัด
       provinceGroup
@@ -309,16 +309,16 @@ export default function ThailandMap({
       </div>
 
       {/* Color Legend - อยู่ข้างนอก SVG container */}
-      <div
-        className="absolute bottom-3 left-3 bg-white rounded shadow-md border border-gray-200 px-2 py-1.5 z-10"
+      {/* <div
+        className="absolute bottom-3 left-3 bg-white rounded border border-gray-200 px-2 py-1.5 z-10"
         style={{ fontFamily: "var(--font-sukhumvit), system-ui, sans-serif" }}
       >
         <div className="text-[10px] font-semibold text-gray-700 mb-1">
           {!selectedVoteOption ? "สัดส่วนการใช้สิทธิ" : "สัดส่วนคะแนนโหวต"}
-        </div>
+        </div> */}
 
         {/* Gradient Bar */}
-        <div className="flex items-center gap-1.5">
+        {/* <div className="flex items-center gap-1.5">
           <span className="text-[9px] text-gray-500">น้อย</span>
           <div
             className="w-20 h-2.5 rounded"
@@ -340,7 +340,7 @@ export default function ThailandMap({
           />
           <span className="text-[9px] text-gray-500">มาก</span>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

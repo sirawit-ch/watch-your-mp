@@ -20,11 +20,11 @@ export default function D3BarChart({ stats }: D3BarChartProps) {
     if (!containerRef.current || !stats) return;
 
     const data = [
-      { label: "เห็นด้วย", count: stats.agreeCount, color: "#00C758" },
-      { label: "ไม่เห็นด้วย", count: stats.disagreeCount, color: "#EF4444" },
-      { label: "งดออกเสียง", count: stats.abstainCount, color: "#EDB200" },
-      { label: "ไม่ลงคะแนน", count: stats.noVoteCount, color: "#1F2937" },
-      { label: "ลา/ขาดลงมติ", count: stats.absentCount, color: "#6B7280" },
+      { label: "เห็นด้วย", count: stats.agreeCount, color: "#060b7d" },
+      { label: "ไม่เห็นด้วย", count: stats.disagreeCount, color: "#9d0606" },
+      { label: "งดออกเสียง", count: stats.abstainCount, color: "#d9d9d9" },
+      { label: "ไม่ลงคะแนน", count: stats.noVoteCount, color: "#b4b4b4" },
+      { label: "ลา/ขาดลงมติ", count: stats.absentCount, color: "#545454" },
     ];
 
     const containerWidth = containerRef.current.clientWidth || 360;

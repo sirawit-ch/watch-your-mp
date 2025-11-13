@@ -23,15 +23,15 @@ export function getMajorityAction(stats: MPStats): string {
 export function getActionColor(action: string): string {
   switch (action) {
     case "เห็นด้วย":
-      return "#00C758"; // Green
+      return "#060b7d"; // Dark blue
     case "ไม่เห็นด้วย":
-      return "#EF4444"; // Red
+      return "#9d0606"; // Dark red
     case "งดออกเสียง":
-      return "#EDB200"; // Yellow
+      return "#d9d9d9"; // Light gray
     case "ไม่ลงคะแนนเสียง":
-      return "#1F2937"; // Dark gray
+      return "#b4b4b4"; // Medium gray
     case "ลา / ขาดลงมติ":
-      return "#6B7280"; // Gray
+      return "#545454"; // Dark gray
     default:
       return "#D1D5DB"; // Light gray (default/no data)
   }

@@ -198,7 +198,7 @@ export default function Home() {
             {/* Filter Panel - Left */}
             <div className="w-80 shrink-0 h-full overflow-hidden">
               <Paper
-                elevation={3}
+                elevation={0}
                 sx={{
                   background: "rgba(255, 255, 255, 0.95)",
                   backdropFilter: "blur(10px)",
@@ -220,7 +220,7 @@ export default function Home() {
             {/* Map Section - Center */}
             <div className="flex-1 h-full overflow-hidden">
               <Paper
-                elevation={3}
+                elevation={0}
                 sx={{
                   backgroundColor: getBackgroundColor(),
                   transition: "background-color 0.3s ease",
@@ -229,7 +229,7 @@ export default function Home() {
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",
-                  boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+
                   overflow: "hidden",
                 }}
               >

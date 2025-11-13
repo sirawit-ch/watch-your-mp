@@ -135,11 +135,23 @@ export default function InfoPanel({
     return mpFilteredVote || null;
   }, [selectedMP, province, voteDetailData]);
 
+  // Filter MPs based on voteDetailData
+  const filteredMPs = useMemo(() => {
+    if (!province) return mps;
+
+    return mps.filter((mp) => {
+      return voteDetailData.some(
+        (vote) =>
+          vote.person_name === mp.person_name && vote.province === province
+      );
+    });
+  }, [mps, voteDetailData, province]);
+
   // Default view - Overall statistics
   if (!province || mps.length === 0) {
     return (
       <Paper
-        elevation={3}
+        elevation={0}
         sx={{
           height: "100%",
           backgroundColor: backgroundColor,
@@ -190,7 +202,7 @@ export default function InfoPanel({
   // Province selected - Show MPs visualization
   return (
     <Paper
-      elevation={3}
+      elevation={0}
       sx={{
         height: "100%",
         backgroundColor: backgroundColor,
@@ -216,7 +228,7 @@ export default function InfoPanel({
           {province}
         </Typography>
         <Typography variant="caption" color="text.secondary">
-          ส.ส. ทั้งหมด {mps.length} คน
+          ส.ส. ทั้งหมด {filteredMPs.length} คน
         </Typography>
       </Box>
 
@@ -244,7 +256,7 @@ export default function InfoPanel({
               overflowY: "auto",
             }}
           >
-            {mps.map((mp, index) => {
+            {filteredMPs.map((mp, index) => {
               const stats = mpStats.find(
                 (s) => s.person_name === mp.person_name
               );
@@ -270,11 +282,9 @@ export default function InfoPanel({
                       bgcolor: color,
                       cursor: "pointer",
                       border: isSelected
-                        ? "2px solid #FF6B00"
+                        ? "2px solid gray"
                         : "1.5px solid white",
-                      boxShadow: isSelected
-                        ? "0 0 6px rgba(255, 107, 0, 0.8)"
-                        : "0 1px 2px rgba(0,0,0,0.1)",
+
                       transition: "all 0.2s",
                       "&:hover": {
                         transform: "scale(1.1)",
@@ -297,7 +307,6 @@ export default function InfoPanel({
                 p: 1.5,
                 bgcolor: "white",
                 borderRadius: 1.5,
-                border: "2px solid #FF6B00",
               }}
             >
               <Box
@@ -387,7 +396,12 @@ export default function InfoPanel({
             </Box>
 
             {/* Donut Chart - สัดส่วนการใช้สิทธิ */}
-            <Box sx={{ flexShrink: 0, mb: 1.5 }}>
+            <Box
+              sx={{
+                flexShrink: 0,
+                mb: 1.5,
+              }}
+            >
               <Typography
                 variant="caption"
                 fontWeight="600"
@@ -404,8 +418,8 @@ export default function InfoPanel({
               >
                 <D3DonutChart
                   stats={selectedMPStats}
-                  width={120}
-                  height={120}
+                  width={200}
+                  height={180}
                 />
               </Box>
             </Box>

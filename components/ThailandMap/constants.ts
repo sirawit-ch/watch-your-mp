@@ -13,8 +13,8 @@ export const MAP_CONFIG = {
 export const STROKE_CONFIG = {
   DEFAULT_WIDTH: 2,
   SELECTED_WIDTH: 4,
-  DEFAULT_COLOR: "#ffffff",
-  SELECTED_COLOR: "#ff6b00",
+  DEFAULT_COLOR: "transparent",
+  SELECTED_COLOR: "gray",
 } as const;
 
 export const OPACITY_CONFIG = {
@@ -25,7 +25,7 @@ export const OPACITY_CONFIG = {
 // 3-bin color system for vote options
 export const VOTE_OPTION_COLORS_3BIN = {
   ทั้งหมด: ["#678967", "#9db49d", "#bae4c1"], // เข้ม -> กลาง -> อ่อน
-  เห็นด้วย: ["#065f46", "#2d3470", "#677590"], // เข้ม -> กลาง -> อ่อน
+  เห็นด้วย: ["#2d3470", "#677590", "#9ca3af"], // เข้ม -> กลาง -> อ่อน
   ไม่เห็นด้วย: ["#9d0606", "#ef5958", "#fdacaf"], // เข้ม -> กลาง -> อ่อน
   งดออกเสียง: ["#4b5563", "#6b7280", "#9ca3af"], // gray เข้ม -> กลาง -> อ่อน
   ไม่ลงคะแนนเสียง: ["#4b5563", "#6b7280", "#9ca3af"], // gray เข้ม -> กลาง -> อ่อน
