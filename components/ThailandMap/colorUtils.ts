@@ -1,20 +1,53 @@
 import type { ProvinceVoteStats } from "./types";
-import { VOTE_OPTION_COLORS_3BIN, DEFAULT_COLORS } from "./constants";
+import { VOTE_OPTION_SINGLE_COLORS, DEFAULT_COLORS } from "./constants";
 
 /**
- * Determines which color bin (0-2) a portion value falls into
- * Divides the 0-1 range into 3 equal bins
+ * Interpolates between two colors based on a factor (0-1)
  */
-function getColorBin(portion: number): number {
-  if (portion <= 0) return -1; // No data
-  if (portion <= 0.33) return 2; // Lightest (0-33%)
-  if (portion <= 0.67) return 1; // Medium (33-67%)
-  return 0; // Darkest (67-100%)
+function interpolateColor(
+  color1: string,
+  color2: string,
+  factor: number
+): string {
+  // Parse hex colors
+  const hex1 = color1.replace("#", "");
+  const hex2 = color2.replace("#", "");
+
+  const r1 = parseInt(hex1.substring(0, 2), 16);
+  const g1 = parseInt(hex1.substring(2, 4), 16);
+  const b1 = parseInt(hex1.substring(4, 6), 16);
+
+  const r2 = parseInt(hex2.substring(0, 2), 16);
+  const g2 = parseInt(hex2.substring(2, 4), 16);
+  const b2 = parseInt(hex2.substring(4, 6), 16);
+
+  // Interpolate
+  const r = Math.round(r1 + (r2 - r1) * factor);
+  const g = Math.round(g1 + (g2 - g1) * factor);
+  const b = Math.round(b1 + (b2 - b1) * factor);
+
+  // Convert back to hex
+  return `#${r.toString(16).padStart(2, "0")}${g
+    .toString(16)
+    .padStart(2, "0")}${b.toString(16).padStart(2, "0")}`;
+}
+
+/**
+ * Gets gradient color based on portion value (0-1)
+ * Interpolates from light (#f5f5f5) to the full color
+ */
+function getGradientColor(baseColor: string, portion: number): string {
+  if (portion <= 0) return DEFAULT_COLORS.NO_DATA;
+
+  const lightColor = "#f5f5f5"; // Very light gray as base
+  const clampedPortion = Math.min(Math.max(portion, 0), 1);
+
+  return interpolateColor(lightColor, baseColor, clampedPortion);
 }
 
 /**
  * Calculates heatmap color for a province based on vote statistics
- * Uses 3-bin color system instead of opacity gradient
+ * Uses gradient color system based on portion values
  */
 export function getProvinceHeatmapColor(
   provinceName: string,
@@ -30,22 +63,21 @@ export function getProvinceHeatmapColor(
 
   // "All" option selected - show winning option color with usage portion intensity
   if (!selectedVoteOption) {
-    const bin = getColorBin(stats.portion);
-    if (bin === -1) return DEFAULT_COLORS.NO_DATA;
+    if (stats.portion <= 0) return DEFAULT_COLORS.NO_DATA;
 
-    // Use winning option color instead of default "ทั้งหมด" color
+    // Use winning option color
     const winningOption = stats.winningOption || "ทั้งหมด";
-    const colorArray =
-      VOTE_OPTION_COLORS_3BIN[
-        winningOption as keyof typeof VOTE_OPTION_COLORS_3BIN
+    const baseColor =
+      VOTE_OPTION_SINGLE_COLORS[
+        winningOption as keyof typeof VOTE_OPTION_SINGLE_COLORS
       ];
 
-    if (!colorArray) {
-      // Fallback to default color if winning option not found
-      return VOTE_OPTION_COLORS_3BIN.ทั้งหมด[bin];
+    if (!baseColor) {
+      // Fallback to gray if winning option not found
+      return getGradientColor("#9ca3af", stats.portion);
     }
 
-    return colorArray[bin];
+    return getGradientColor(baseColor, stats.portion);
   }
 
   // Specific option selected
@@ -58,10 +90,10 @@ export function getProvinceHeatmapColor(
     return DEFAULT_COLORS.NO_DATA;
   }
 
-  const bin = getColorBin(portionValue);
-  if (bin === -1) return DEFAULT_COLORS.NO_DATA;
+  if (portionValue <= 0) return DEFAULT_COLORS.NO_DATA;
 
-  return VOTE_OPTION_COLORS_3BIN[voteOption][bin];
+  const baseColor = VOTE_OPTION_SINGLE_COLORS[voteOption];
+  return getGradientColor(baseColor, portionValue);
 }
 
 /**
@@ -72,10 +104,10 @@ function getVoteOptionData(
   stats: ProvinceVoteStats
 ): {
   portionValue: number;
-  voteOption: keyof typeof VOTE_OPTION_COLORS_3BIN | null;
+  voteOption: keyof typeof VOTE_OPTION_SINGLE_COLORS | null;
 } {
   let portionValue = 0;
-  let voteOption: keyof typeof VOTE_OPTION_COLORS_3BIN | null = null;
+  let voteOption: keyof typeof VOTE_OPTION_SINGLE_COLORS | null = null;
 
   switch (selectedVoteOption) {
     case "เห็นด้วย":

@@ -25,6 +25,7 @@ interface FilterPanelProps {
   onVoteEventChange: (voteEvent: string | null) => void;
   selectedVoteOption: string | null;
   onVoteOptionChange: (voteOption: string | null) => void;
+  backgroundColor?: string;
 }
 
 export default function FilterPanel({
@@ -33,27 +34,13 @@ export default function FilterPanel({
   onVoteEventChange,
   selectedVoteOption,
   onVoteOptionChange,
+  backgroundColor = "#e8dbcf",
 }: FilterPanelProps) {
   const handleVoteOptionChange = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const value = event.target.value;
     onVoteOptionChange(value === "" ? null : value);
-  };
-
-  // Background color mapping based on selected vote option
-  const getBackgroundColor = () => {
-    if (selectedVoteOption === null || selectedVoteOption === "") {
-      return FILTER_BACKGROUND_COLORS.ทั้งหมด;
-    }
-
-    return (
-      (selectedVoteOption &&
-        (FILTER_BACKGROUND_COLORS as unknown as Record<string, string>)[
-          selectedVoteOption
-        ]) ||
-      FILTER_BACKGROUND_COLORS.default
-    );
   };
 
   return (
@@ -63,14 +50,14 @@ export default function FilterPanel({
         sx={{
           p: 3,
           borderRadius: 2,
-          backgroundColor: getBackgroundColor(),
+          backgroundColor: backgroundColor,
           transition: "background-color 0.3s ease",
         }}
       >
         {/* ร่างกฎหมาย Section */}
         <Box sx={{ mb: 3, bgcolor: "white", p: 2, borderRadius: 1.5 }}>
           <Typography variant="subtitle1" fontWeight="600" gutterBottom>
-            ร่างกฎหมาย
+            ชื่อวาระ
           </Typography>
           <Autocomplete
             options={voteEvents}
@@ -138,7 +125,7 @@ export default function FilterPanel({
         <Box sx={{ bgcolor: "white", p: 2, borderRadius: 1.5 }}>
           <FormControl component="fieldset">
             <FormLabel component="legend">
-              <Typography variant="subtitle1" fontWeight="600">
+              <Typography variant="subtitle1" fontWeight="600" color="black">
                 รูปแบบการโหวต
               </Typography>
             </FormLabel>

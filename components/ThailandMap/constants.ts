@@ -25,7 +25,7 @@ export const OPACITY_CONFIG = {
 // 3-bin color system for vote options
 export const VOTE_OPTION_COLORS_3BIN = {
   ทั้งหมด: ["#678967", "#9db49d", "#bae4c1"], // เข้ม -> กลาง -> อ่อน
-  เห็นด้วย: ["#2d3470", "#677590", "#9ca3af"], // เข้ม -> กลาง -> อ่อน
+  เห็นด้วย: ["#2d3470", "#5b83c2", "#9ca3af"], // เข้ม -> กลาง -> อ่อน
   ไม่เห็นด้วย: ["#9d0606", "#ef5958", "#fdacaf"], // เข้ม -> กลาง -> อ่อน
   งดออกเสียง: ["#4b5563", "#6b7280", "#9ca3af"], // gray เข้ม -> กลาง -> อ่อน
   ไม่ลงคะแนนเสียง: ["#4b5563", "#6b7280", "#9ca3af"], // gray เข้ม -> กลาง -> อ่อน
@@ -35,22 +35,22 @@ export const VOTE_OPTION_COLORS_3BIN = {
 
 // Single color for each vote option (used in charts, tooltips, etc.)
 export const VOTE_OPTION_SINGLE_COLORS = {
-  เห็นด้วย: "#5b83c2", // น้ำเงินเข้ม
+  เห็นด้วย: "#2d3470", // น้ำเงินเข้ม
   ไม่เห็นด้วย: "#bb000b", // แดงเข้ม
   งดออกเสียง: "#d9d9d9", // เทาอ่อน
   ไม่ลงคะแนนเสียง: "#b4b4b4", // เทากลาง
   "ลา / ขาดลงมติ": "#545454", // เทาเข้ม
-  ผลโหวตเสมอ: "#7c3aed", // ม่วง
+  ผลโหวตเสมอ: "#bb5a00", // ม่วง
 } as const;
 
 // Old vote option colors (kept for reference, but not used with 3-bin system)
-export const VOTE_OPTION_COLORS = {
-  เห็นด้วย: "0, 199, 88", // #00C758 in RGB
-  ไม่เห็นด้วย: "239, 68, 68", // #EF4444 in RGB
-  งดออกเสียง: "237, 178, 0", // #EDB200 in RGB TODO CHANGE COLOR
-  ไม่ลงคะแนนเสียง: "31, 41, 55", // #1F2937 in RGB
-  "ลา / ขาดลงมติ": "107, 114, 128", // #6B7280 in RGB
-} as const;
+// export const VOTE_OPTION_COLORS = {
+//   เห็นด้วย: "0, 199, 88", // #00C758 in RGB
+//   ไม่เห็นด้วย: "239, 68, 68", // #EF4444 in RGB
+//   งดออกเสียง: "237, 178, 0", // #EDB200 in RGB TODO CHANGE COLOR
+//   ไม่ลงคะแนนเสียง: "31, 41, 55", // #1F2937 in RGB
+//   "ลา / ขาดลงมติ": "107, 114, 128", // #6B7280 in RGB
+// } as const;
 
 export const DEFAULT_COLORS = {
   NO_DATA: "#d4d4d4", // สีเทาเมื่อไม่มีข้อมูล

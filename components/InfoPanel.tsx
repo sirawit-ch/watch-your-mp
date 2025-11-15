@@ -139,13 +139,39 @@ export default function InfoPanel({
   const filteredMPs = useMemo(() => {
     if (!province) return mps;
 
-    return mps.filter((mp) => {
+    const filtered = mps.filter((mp) => {
       return voteDetailData.some(
         (vote) =>
           vote.person_name === mp.person_name && vote.province === province
       );
     });
-  }, [mps, voteDetailData, province]);
+
+    // Sort MPs by their vote action in the specified order
+    const voteOrder = [
+      "เห็นด้วย",
+      "ไม่เห็นด้วย",
+      "งดออกเสียง",
+      "ไม่ลงคะแนนเสียง",
+      "ลา / ขาดลงมติ",
+    ];
+
+    return filtered.sort((a, b) => {
+      const statsA = mpStats.find((s) => s.person_name === a.person_name);
+      const statsB = mpStats.find((s) => s.person_name === b.person_name);
+
+      const majorityActionA = statsA ? getMajorityAction(statsA) : "ไม่ระบุ";
+      const majorityActionB = statsB ? getMajorityAction(statsB) : "ไม่ระบุ";
+
+      const indexA = voteOrder.indexOf(majorityActionA);
+      const indexB = voteOrder.indexOf(majorityActionB);
+
+      // If action not found in order, put it at the end
+      const orderA = indexA === -1 ? voteOrder.length : indexA;
+      const orderB = indexB === -1 ? voteOrder.length : indexB;
+
+      return orderA - orderB;
+    });
+  }, [mps, voteDetailData, province, mpStats]);
 
   // Default view - Overall statistics
   if (!province || mps.length === 0) {

@@ -5,6 +5,7 @@ import { Paper } from "@mui/material";
 import ThailandMap from "@/components/ThailandMap";
 import InfoPanel from "@/components/InfoPanel";
 import FilterPanel from "@/components/FilterPanel";
+import MapLegend from "@/components/MapLegend";
 import type { PersonData, VoteDetailData } from "@/lib/types";
 import {
   loadAllData,
@@ -41,7 +42,7 @@ export default function Home() {
       case "":
         return "#e8dbcf"; // ทั้งหมด
       case "เห็นด้วย":
-        return "#9bb4c6"; // เห็นด้วย
+        return "#b4d0e4"; // เห็นด้วย
       case "ไม่เห็นด้วย":
         return "#ffd7ce"; // ไม่เห็นด้วย
       case "งดออกเสียง":
@@ -57,18 +58,19 @@ export default function Home() {
 
   // Background color helper function based on selected vote option
   const getBackgroundColorForMap = () => {
-    switch (selectedVoteOption) {
-      case null:
-      case "":
-      case "เห็นด้วย":
-      case "ไม่เห็นด้วย":
-        return "white"; // ไม่เห็นด้วย
-      case "งดออกเสียง":
-      case "ไม่ลงคะแนนเสียง":
-      case "ลา / ขาดลงมติ":
-      default:
-        return "#E6FCFF"; // default
-    }
+    // switch (selectedVoteOption) {
+    //   case null:
+    //   case "":
+    //   case "เห็นด้วย":
+    //   case "ไม่เห็นด้วย":
+    //     return "white"; // ไม่เห็นด้วย
+    //   case "งดออกเสียง":
+    //   case "ไม่ลงคะแนนเสียง":
+    //   case "ลา / ขาดลงมติ":
+    //   default:
+    //     return "#E6FCFF"; // default
+    // }
+    return "white";
   };
 
   // Filtered data based on selected vote event and option
@@ -199,16 +201,16 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold text-gray-900 mb-1">
-                Politigraph
+                {/* Politigraph */} คนที่คุณเลือก "ทำอะไร?" ในสภา
               </h1>
               <p className="text-sm text-gray-600">
-                การลงมติของสมาชิกสภาผู้แทนราษฎร
+                ติดตามการลงมติของสมาชิกสภาผู้แทนราษฎร (แบ่งเขต) ในปี 2025
               </p>
             </div>
             <div className="text-right">
               {lastUpdated && (
                 <div className="text-xs text-gray-500">
-                  <div className="mb-0.5">อัพเดทล่าสุด</div>
+                  <div className="mb-0.5">อัปเดทล่าสุด</div>
                   <div className="font-medium text-gray-700">
                     {formatRelativeTime(lastUpdated)}
                   </div>
@@ -231,7 +233,7 @@ export default function Home() {
                   background: "rgba(255, 255, 255, 0.95)",
                   backdropFilter: "blur(10px)",
                   borderRadius: "16px",
-                  height: "full",
+                  height: "100%",
                   overflow: "auto",
                 }}
               >
@@ -241,6 +243,7 @@ export default function Home() {
                   onVoteEventChange={setSelectedVoteEvent}
                   selectedVoteOption={selectedVoteOption}
                   onVoteOptionChange={setSelectedVoteOption}
+                  backgroundColor={getBackgroundColor()}
                 />
               </Paper>
             </div>
@@ -272,7 +275,7 @@ export default function Home() {
                   </h2>
                   {selectedVoteEvent ? (
                     <div>
-                      <p className="text-sm font-medium text-blue-600 mb-1">
+                      <p className="text-md font-medium text-blue-600 mb-1">
                         ร่างกฎหมายที่เลือก:
                       </p>
                       <p className="text-sm text-gray-700 line-clamp-2">
@@ -286,7 +289,7 @@ export default function Home() {
                   ) : null}
                 </div>
 
-                <div className="flex-1 overflow-hidden flex items-center justify-center">
+                <div className="flex-1 overflow-hidden flex items-center justify-center relative">
                   <ThailandMap
                     politicians={Object.values(groupedPeople).flat()}
                     partyListMPs={[]}
@@ -294,6 +297,11 @@ export default function Home() {
                     onProvinceSelected={handleProvinceSelected}
                     selectedVoteOption={selectedVoteOption}
                   />
+
+                  {/* Map Legend - Bottom Right Corner */}
+                  <div className="absolute bottom-4 left-4 z-10">
+                    <MapLegend selectedVoteOption={selectedVoteOption} />
+                  </div>
                 </div>
               </Paper>
             </div>

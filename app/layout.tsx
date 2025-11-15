@@ -10,8 +10,8 @@ const prompt = Prompt({
 });
 
 export const metadata: Metadata = {
-  title: "Politigraph Thailand - Visual Analytics",
-  description: "ติดตามการทำงานของสมาชิกสภาผู้แทนราษฎร ปี 2025",
+  title: 'คนที่คุณเลือก "ทำอะไร?" ในสภา',
+  description: "ติดตามการลงมติของสมาชิกสภาผู้แทนราษฎร (แบ่งเขต) ในปี 2025",
 };
 
 export default function RootLayout({

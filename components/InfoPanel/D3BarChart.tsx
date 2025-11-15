@@ -89,7 +89,8 @@ export default function D3BarChart({ stats }: D3BarChartProps) {
       .attr("y", 10)
       .attr("font-size", "11px")
       .attr("font-family", "var(--font-sukhumvit), system-ui, sans-serif")
-      .attr("fill", DEFAULT_COLORS.GRAY_500)
+
+      .attr("fill", "black")
       .text((d) => d.label);
 
     // Add counts (right)
@@ -99,9 +100,9 @@ export default function D3BarChart({ stats }: D3BarChartProps) {
       .attr("y", 10)
       .attr("text-anchor", "end")
       .attr("font-size", "11px")
-      .attr("font-weight", "600")
+
       .attr("font-family", "var(--font-sukhumvit), system-ui, sans-serif")
-      .attr("fill", DEFAULT_COLORS.GRAY_700)
+      .attr("fill", "black")
       .text((d) => d.count);
 
     // Add background bars
