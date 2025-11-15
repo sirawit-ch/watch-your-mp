@@ -1,4 +1,8 @@
 import type { MPStats } from "./types";
+import {
+  VOTE_OPTION_SINGLE_COLORS,
+  DEFAULT_COLORS,
+} from "../ThailandMap/constants";
 
 /**
  * Determines the voting action with the highest count
@@ -23,16 +27,16 @@ export function getMajorityAction(stats: MPStats): string {
 export function getActionColor(action: string): string {
   switch (action) {
     case "เห็นด้วย":
-      return "#060b7d"; // Dark blue
+      return VOTE_OPTION_SINGLE_COLORS.เห็นด้วย;
     case "ไม่เห็นด้วย":
-      return "#9d0606"; // Dark red
+      return VOTE_OPTION_SINGLE_COLORS["ไม่เห็นด้วย"];
     case "งดออกเสียง":
-      return "#d9d9d9"; // Light gray
+      return VOTE_OPTION_SINGLE_COLORS["งดออกเสียง"];
     case "ไม่ลงคะแนนเสียง":
-      return "#b4b4b4"; // Medium gray
+      return VOTE_OPTION_SINGLE_COLORS["ไม่ลงคะแนนเสียง"];
     case "ลา / ขาดลงมติ":
-      return "#545454"; // Dark gray
+      return VOTE_OPTION_SINGLE_COLORS["ลา / ขาดลงมติ"];
     default:
-      return "#D1D5DB"; // Light gray (default/no data)
+      return DEFAULT_COLORS.GRAY_400; // Light gray (default/no data)
   }
 }

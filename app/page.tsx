@@ -55,6 +55,22 @@ export default function Home() {
     }
   };
 
+  // Background color helper function based on selected vote option
+  const getBackgroundColorForMap = () => {
+    switch (selectedVoteOption) {
+      case null:
+      case "":
+      case "เห็นด้วย":
+      case "ไม่เห็นด้วย":
+        return "white"; // ไม่เห็นด้วย
+      case "งดออกเสียง":
+      case "ไม่ลงคะแนนเสียง":
+      case "ลา / ขาดลงมติ":
+      default:
+        return "#E6FCFF"; // default
+    }
+  };
+
   // Filtered data based on selected vote event and option
   const [filteredVoteDetailData, setFilteredVoteDetailData] = useState<
     VoteDetailData[]
@@ -222,7 +238,7 @@ export default function Home() {
               <Paper
                 elevation={0}
                 sx={{
-                  backgroundColor: getBackgroundColor(),
+                  backgroundColor: getBackgroundColorForMap(),
                   transition: "background-color 0.3s ease",
                   borderRadius: "20px",
                   p: 2.5,

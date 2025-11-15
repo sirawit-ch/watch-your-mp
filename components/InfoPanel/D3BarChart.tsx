@@ -3,6 +3,10 @@
 import React, { useRef, useEffect } from "react";
 import * as d3 from "d3";
 import type { MPStats } from "./types";
+import {
+  VOTE_OPTION_SINGLE_COLORS,
+  DEFAULT_COLORS,
+} from "../ThailandMap/constants";
 
 interface D3BarChartProps {
   stats: MPStats;
@@ -20,11 +24,31 @@ export default function D3BarChart({ stats }: D3BarChartProps) {
     if (!containerRef.current || !stats) return;
 
     const data = [
-      { label: "เห็นด้วย", count: stats.agreeCount, color: "#060b7d" },
-      { label: "ไม่เห็นด้วย", count: stats.disagreeCount, color: "#9d0606" },
-      { label: "งดออกเสียง", count: stats.abstainCount, color: "#d9d9d9" },
-      { label: "ไม่ลงคะแนน", count: stats.noVoteCount, color: "#b4b4b4" },
-      { label: "ลา/ขาดลงมติ", count: stats.absentCount, color: "#545454" },
+      {
+        label: "เห็นด้วย",
+        count: stats.agreeCount,
+        color: VOTE_OPTION_SINGLE_COLORS.เห็นด้วย,
+      },
+      {
+        label: "ไม่เห็นด้วย",
+        count: stats.disagreeCount,
+        color: VOTE_OPTION_SINGLE_COLORS["ไม่เห็นด้วย"],
+      },
+      {
+        label: "งดออกเสียง",
+        count: stats.abstainCount,
+        color: VOTE_OPTION_SINGLE_COLORS["งดออกเสียง"],
+      },
+      {
+        label: "ไม่ลงคะแนน",
+        count: stats.noVoteCount,
+        color: VOTE_OPTION_SINGLE_COLORS["ไม่ลงคะแนนเสียง"],
+      },
+      {
+        label: "ลา/ขาดลงมติ",
+        count: stats.absentCount,
+        color: VOTE_OPTION_SINGLE_COLORS["ลา / ขาดลงมติ"],
+      },
     ];
 
     const containerWidth = containerRef.current.clientWidth || 360;
@@ -65,7 +89,7 @@ export default function D3BarChart({ stats }: D3BarChartProps) {
       .attr("y", 10)
       .attr("font-size", "11px")
       .attr("font-family", "var(--font-sukhumvit), system-ui, sans-serif")
-      .attr("fill", "#6B7280")
+      .attr("fill", DEFAULT_COLORS.GRAY_500)
       .text((d) => d.label);
 
     // Add counts (right)
@@ -77,7 +101,7 @@ export default function D3BarChart({ stats }: D3BarChartProps) {
       .attr("font-size", "11px")
       .attr("font-weight", "600")
       .attr("font-family", "var(--font-sukhumvit), system-ui, sans-serif")
-      .attr("fill", "#374151")
+      .attr("fill", DEFAULT_COLORS.GRAY_700)
       .text((d) => d.count);
 
     // Add background bars
@@ -87,7 +111,7 @@ export default function D3BarChart({ stats }: D3BarChartProps) {
       .attr("y", 16)
       .attr("width", containerWidth - 16)
       .attr("height", barHeight)
-      .attr("fill", "#E5E7EB")
+      .attr("fill", DEFAULT_COLORS.GRAY_200)
       .attr("rx", 4);
 
     // Add colored bars with animation

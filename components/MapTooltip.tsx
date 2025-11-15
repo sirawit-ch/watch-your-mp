@@ -2,6 +2,11 @@
 
 import React, { useMemo, useEffect, useRef, useState } from "react";
 import type { PersonData } from "@/lib/types";
+import {
+  VOTE_OPTION_SINGLE_COLORS,
+  VOTE_OPTION_COLORS_3BIN,
+  DEFAULT_COLORS,
+} from "./ThailandMap/constants";
 
 interface ProvinceVoteStats {
   province: string;
@@ -95,11 +100,16 @@ export default function MapTooltip({
                 <div className="flex items-center gap-2">
                   <div
                     className="w-3 h-3 rounded-full"
-                    style={{ backgroundColor: "#678967" }}
+                    style={{
+                      backgroundColor: VOTE_OPTION_COLORS_3BIN
+                        .ทั้งหมด[0] as string,
+                    }}
                   ></div>
                   <span
                     className="text-lg font-bold"
-                    style={{ color: "#678967" }}
+                    style={{
+                      color: VOTE_OPTION_COLORS_3BIN.ทั้งหมด[0] as string,
+                    }}
                   >
                     {(
                       (voteStats.agreeCount + voteStats.disagreeCount) *
@@ -121,16 +131,16 @@ export default function MapTooltip({
                     style={{
                       backgroundColor:
                         selectedVoteOption === "เห็นด้วย"
-                          ? "#060b7d"
+                          ? VOTE_OPTION_SINGLE_COLORS.เห็นด้วย
                           : selectedVoteOption === "ไม่เห็นด้วย"
-                          ? "#9d0606"
+                          ? VOTE_OPTION_SINGLE_COLORS["ไม่เห็นด้วย"]
                           : selectedVoteOption === "งดออกเสียง"
-                          ? "#d9d9d9"
+                          ? VOTE_OPTION_SINGLE_COLORS["งดออกเสียง"]
                           : selectedVoteOption === "ไม่ลงคะแนนเสียง"
-                          ? "#b4b4b4"
+                          ? VOTE_OPTION_SINGLE_COLORS["ไม่ลงคะแนนเสียง"]
                           : selectedVoteOption === "ลา / ขาดลงมติ"
-                          ? "#545454"
-                          : "#D1D5DB",
+                          ? VOTE_OPTION_SINGLE_COLORS["ลา / ขาดลงมติ"]
+                          : DEFAULT_COLORS.GRAY_400,
                     }}
                   ></div>
                   <span className="text-xs text-gray-600">
@@ -141,16 +151,16 @@ export default function MapTooltip({
                     style={{
                       color:
                         selectedVoteOption === "เห็นด้วย"
-                          ? "#060b7d"
+                          ? VOTE_OPTION_SINGLE_COLORS.เห็นด้วย
                           : selectedVoteOption === "ไม่เห็นด้วย"
-                          ? "#9d0606"
+                          ? VOTE_OPTION_SINGLE_COLORS["ไม่เห็นด้วย"]
                           : selectedVoteOption === "งดออกเสียง"
-                          ? "#d9d9d9"
+                          ? VOTE_OPTION_SINGLE_COLORS["งดออกเสียง"]
                           : selectedVoteOption === "ไม่ลงคะแนนเสียง"
-                          ? "#b4b4b4"
+                          ? VOTE_OPTION_SINGLE_COLORS["ไม่ลงคะแนนเสียง"]
                           : selectedVoteOption === "ลา / ขาดลงมติ"
-                          ? "#545454"
-                          : "#9CA3AF", // สีเทากลาง (gray-400) สำหรับ default
+                          ? VOTE_OPTION_SINGLE_COLORS["ลา / ขาดลงมติ"]
+                          : DEFAULT_COLORS.GRAY_400, // สีเทากลาง (gray-400) สำหรับ default
                     }}
                   >
                     {(

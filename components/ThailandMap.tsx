@@ -11,7 +11,10 @@ import {
   calculateTotalTileSize,
   calculateTilePosition,
 } from "./ThailandMap/helpers";
-import { getProvinceHeatmapColor } from "./ThailandMap/colorUtils";
+import {
+  getProvinceHeatmapColor,
+  getTextColorForBackground,
+} from "./ThailandMap/colorUtils";
 import type { ProvinceVoteStats, TooltipState } from "./ThailandMap/types";
 
 interface ThailandMapProps {
@@ -124,21 +127,20 @@ export default function ThailandMap({
         .style("cursor", "pointer");
 
       // วาดสี่เหลี่ยม
-      const rect = provinceGroup
+      const backgroundColor = getProvinceHeatmapColor(
+        provinceName,
+        provinceVoteStats,
+        selectedVoteOption ?? null
+      );
+
+      provinceGroup
         .append("rect")
         .attr("x", x)
         .attr("y", y)
         .attr("width", MAP_CONFIG.TILE_SIZE)
         .attr("height", MAP_CONFIG.TILE_SIZE)
         .attr("rx", 4)
-        .attr(
-          "fill",
-          getProvinceHeatmapColor(
-            provinceName,
-            provinceVoteStats,
-            selectedVoteOption ?? null
-          )
-        )
+        .attr("fill", backgroundColor)
         .attr(
           "stroke",
           selectedProvince === provinceName
@@ -158,7 +160,9 @@ export default function ThailandMap({
       //   rect.style("filter", "drop-shadow(0 0 8px gray)");
       // }
 
-      // เพิ่มตัวย่อจังหวัด
+      // เพิ่มตัวย่อจังหวัด - ใช้สีที่เหมาะสมกับพื้นหลัง
+      const textColor = getTextColorForBackground(backgroundColor);
+
       provinceGroup
         .append("text")
         .attr("x", x + MAP_CONFIG.TILE_SIZE / 2)
@@ -168,7 +172,7 @@ export default function ThailandMap({
         .attr("font-size", `${MAP_CONFIG.FONT_SIZE}px`)
         .attr("font-weight", "bold")
         .attr("font-family", "var(--font-sukhumvit), system-ui, sans-serif")
-        .attr("fill", "#1f2937")
+        .attr("fill", textColor)
         .attr("pointer-events", "none")
         .text(abbr);
 
@@ -317,8 +321,8 @@ export default function ThailandMap({
           {!selectedVoteOption ? "สัดส่วนการใช้สิทธิ" : "สัดส่วนคะแนนโหวต"}
         </div> */}
 
-        {/* Gradient Bar */}
-        {/* <div className="flex items-center gap-1.5">
+      {/* Gradient Bar */}
+      {/* <div className="flex items-center gap-1.5">
           <span className="text-[9px] text-gray-500">น้อย</span>
           <div
             className="w-20 h-2.5 rounded"

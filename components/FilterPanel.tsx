@@ -14,6 +14,10 @@ import {
 } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import { GrayRadio } from "./FilterPanel/StyledComponents";
+import {
+  FILTER_BACKGROUND_COLORS,
+  DEFAULT_COLORS,
+} from "./ThailandMap/constants";
 
 interface FilterPanelProps {
   voteEvents: string[];
@@ -39,23 +43,17 @@ export default function FilterPanel({
 
   // Background color mapping based on selected vote option
   const getBackgroundColor = () => {
-    switch (selectedVoteOption) {
-      case null:
-      case "":
-        return "#e8dbcf"; // ทั้งหมด
-      case "เห็นด้วย":
-        return "#9bb4c6"; // เห็นด้วย
-      case "ไม่เห็นด้วย":
-        return "#ffd7ce"; // ไม่เห็นด้วย
-      case "งดออกเสียง":
-        return "#e1e1e1"; // งดออกเสียง
-      case "ไม่ลงคะแนนเสียง":
-        return "#e1e1e1"; // ไม่ลงคะแนนเสียง
-      case "ลา / ขาดลงมติ":
-        return "#e1e1e1"; // ลา / ขาดลงมติ
-      default:
-        return "#f4eeeb"; // initial/default
+    if (selectedVoteOption === null || selectedVoteOption === "") {
+      return FILTER_BACKGROUND_COLORS.ทั้งหมด;
     }
+
+    return (
+      (selectedVoteOption &&
+        (FILTER_BACKGROUND_COLORS as unknown as Record<string, string>)[
+          selectedVoteOption
+        ]) ||
+      FILTER_BACKGROUND_COLORS.default
+    );
   };
 
   return (
@@ -97,7 +95,9 @@ export default function FilterPanel({
                     {option}
                   </Typography>
                   {selectedVoteEvent === option && (
-                    <CheckIcon sx={{ fontSize: 18, color: "#1976D2", ml: 1 }} />
+                    <CheckIcon
+                      sx={{ fontSize: 18, color: DEFAULT_COLORS.ACCENT, ml: 1 }}
+                    />
                   )}
                 </Box>
               );

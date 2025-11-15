@@ -418,8 +418,8 @@ export default function InfoPanel({
               >
                 <D3DonutChart
                   stats={selectedMPStats}
-                  width={200}
-                  height={180}
+                  width={250}
+                  height={200}
                 />
               </Box>
             </Box>

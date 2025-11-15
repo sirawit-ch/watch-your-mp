@@ -33,6 +33,16 @@ export const VOTE_OPTION_COLORS_3BIN = {
   ผลโหวตเสมอ: ["#7c3aed", "#a78bfa", "#c4b5fd"], // purple เข้ม -> กลาง -> อ่อน
 } as const;
 
+// Single color for each vote option (used in charts, tooltips, etc.)
+export const VOTE_OPTION_SINGLE_COLORS = {
+  เห็นด้วย: "#5b83c2", // น้ำเงินเข้ม
+  ไม่เห็นด้วย: "#bb000b", // แดงเข้ม
+  งดออกเสียง: "#d9d9d9", // เทาอ่อน
+  ไม่ลงคะแนนเสียง: "#b4b4b4", // เทากลาง
+  "ลา / ขาดลงมติ": "#545454", // เทาเข้ม
+  ผลโหวตเสมอ: "#7c3aed", // ม่วง
+} as const;
+
 // Old vote option colors (kept for reference, but not used with 3-bin system)
 export const VOTE_OPTION_COLORS = {
   เห็นด้วย: "0, 199, 88", // #00C758 in RGB
@@ -45,4 +55,29 @@ export const VOTE_OPTION_COLORS = {
 export const DEFAULT_COLORS = {
   NO_DATA: "#d4d4d4", // สีเทาเมื่อไม่มีข้อมูล
   ALL_OPTION_BASE: "139, 92, 246", // #8B5CF6 in RGB (สีม่วงสำหรับ "ทั้งหมด")
+  GRAY_400: "#9CA3AF", // Tailwind gray-400
+  GRAY_500: "#6B7280", // Tailwind gray-500
+  GRAY_700: "#374151", // Tailwind gray-700
+  GRAY_800: "#1f2937", // Tailwind gray-800
+  GRAY_200: "#E5E7EB", // Tailwind gray-200
+  GRAY_50: "#F9FAFB", // Tailwind gray-50
+  ACCENT: "#1976D2", // Action / accent color (matches previous CheckIcon)
+} as const;
+
+// Background colors for filter panel
+export const FILTER_BACKGROUND_COLORS = {
+  ทั้งหมด: "#e8dbcf",
+  เห็นด้วย: "#9bb4c6",
+  ไม่เห็นด้วย: "#ffd7ce",
+  งดออกเสียง: "#e1e1e1",
+  ไม่ลงคะแนนเสียง: "#e1e1e1",
+  "ลา / ขาดลงมติ": "#e1e1e1",
+  default: "#f4eeeb",
+} as const;
+
+// Usage colors (for donut chart)
+export const USAGE_COLORS = {
+  USED: "#065f46", // เขียวเข้ม - ใช้สิทธิ์
+  NOT_USED: "#fffdfd", // เทาอ่อน - ไม่ใช้สิทธิ์
+  NOT_USED_TEXT: "#545454", // เทาเข้มสำหรับ text
 } as const;

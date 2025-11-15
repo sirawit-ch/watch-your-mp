@@ -32,16 +32,19 @@ export function getProvinceHeatmapColor(
   if (!selectedVoteOption) {
     const bin = getColorBin(stats.portion);
     if (bin === -1) return DEFAULT_COLORS.NO_DATA;
-    
+
     // Use winning option color instead of default "ทั้งหมด" color
     const winningOption = stats.winningOption || "ทั้งหมด";
-    const colorArray = VOTE_OPTION_COLORS_3BIN[winningOption as keyof typeof VOTE_OPTION_COLORS_3BIN];
-    
+    const colorArray =
+      VOTE_OPTION_COLORS_3BIN[
+        winningOption as keyof typeof VOTE_OPTION_COLORS_3BIN
+      ];
+
     if (!colorArray) {
       // Fallback to default color if winning option not found
       return VOTE_OPTION_COLORS_3BIN.ทั้งหมด[bin];
     }
-    
+
     return colorArray[bin];
   }
 
@@ -98,4 +101,34 @@ function getVoteOptionData(
   }
 
   return { portionValue, voteOption };
+}
+
+/**
+ * Calculates relative luminance of a color to determine if it's dark
+ * Returns true if the color is dark (needs white text)
+ */
+function isColorDark(hexColor: string): boolean {
+  // Convert hex to RGB
+  const hex = hexColor.replace("#", "");
+  const r = parseInt(hex.substring(0, 2), 16) / 255;
+  const g = parseInt(hex.substring(2, 4), 16) / 255;
+  const b = parseInt(hex.substring(4, 6), 16) / 255;
+
+  // Apply gamma correction
+  const rLinear = r <= 0.03928 ? r / 12.92 : Math.pow((r + 0.055) / 1.055, 2.4);
+  const gLinear = g <= 0.03928 ? g / 12.92 : Math.pow((g + 0.055) / 1.055, 2.4);
+  const bLinear = b <= 0.03928 ? b / 12.92 : Math.pow((b + 0.055) / 1.055, 2.4);
+
+  // Calculate relative luminance
+  const luminance = 0.2126 * rLinear + 0.7152 * gLinear + 0.0722 * bLinear;
+
+  // Return true if luminance is less than 0.5 (dark color)
+  return luminance < 0.5;
+}
+
+/**
+ * Gets appropriate text color (white or dark gray) based on background color
+ */
+export function getTextColorForBackground(backgroundColor: string): string {
+  return isColorDark(backgroundColor) ? "#ffffff" : DEFAULT_COLORS.GRAY_800;
 }

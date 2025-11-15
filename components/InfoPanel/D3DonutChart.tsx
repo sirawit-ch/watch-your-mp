@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import type { MPStats } from "./types";
+import { USAGE_COLORS, DEFAULT_COLORS } from "../ThailandMap/constants";
 
 interface D3DonutChartProps {
   stats: MPStats;
@@ -30,8 +31,8 @@ export default function D3DonutChart({
     const total = stats.total;
 
     const data = [
-      { label: "ใช้สิทธิ์", value: used, color: "#065f46" },
-      { label: "ไม่ใช้สิทธิ์", value: other, color: "#d9d9d9" },
+      { label: "ใช้สิทธิ์", value: used, color: USAGE_COLORS.USED },
+      { label: "ไม่ใช้สิทธิ์", value: other, color: USAGE_COLORS.NOT_USED },
     ];
 
     // Reserve space for labels
@@ -113,7 +114,7 @@ export default function D3DonutChart({
         .attr("dy", "-0.2em")
         .attr("font-size", "8px")
         .attr("font-weight", "600")
-        .attr("fill", "#374151")
+        .attr("fill", DEFAULT_COLORS.GRAY_700)
         .attr("font-family", "var(--font-sukhumvit), system-ui, sans-serif")
         .text(d.data.label);
 
@@ -124,7 +125,12 @@ export default function D3DonutChart({
         .attr("dy", "0.7em")
         .attr("font-size", "9px")
         .attr("font-weight", "700")
-        .attr("fill", d.data.label === "ใช้สิทธิ์" ? d.data.color : "#545454")
+        .attr(
+          "fill",
+          d.data.label === "ใช้สิทธิ์"
+            ? d.data.color
+            : USAGE_COLORS.NOT_USED_TEXT
+        )
         .attr("font-family", "var(--font-sukhumvit), system-ui, sans-serif")
         .text(`${percent}%`);
     });
