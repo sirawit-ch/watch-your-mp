@@ -138,6 +138,15 @@ export default function Home() {
     setFilteredProvinceVoteStats(filteredProvinceVoteStats);
   }, [selectedVoteEvent, selectedVoteOption, factData, voteDetailData]);
 
+  // Reset selected MPs when filter changes, but keep selected province
+  useEffect(() => {
+    if (selectedProvince && selectedMPs.length > 0) {
+      // Re-fetch MPs for the selected province from groupedPeople
+      const mps = groupedPeople[selectedProvince] || [];
+      setSelectedMPs(mps);
+    }
+  }, [selectedVoteEvent, selectedVoteOption]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const handleProvinceSelected = (province: string, mps: PersonData[]) => {
     // ถ้า province เป็นค่าว่าง แสดงว่า deselect
     if (!province) {
@@ -289,7 +298,7 @@ export default function Home() {
             {/* Info Panel - Right */}
             <div className="w-[420px] h-full overflow-hidden">
               <InfoPanel
-                key={selectedProvince || "no-province"}
+                key={`${selectedProvince || "no-province"}-${selectedVoteEvent || "no-event"}-${selectedVoteOption || "no-option"}`}
                 province={selectedProvince}
                 mps={selectedMPs}
                 totalMPs={people.length}

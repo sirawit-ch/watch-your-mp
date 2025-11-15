@@ -23,6 +23,7 @@ interface ThailandMapProps {
   provinceVoteStats: Record<string, ProvinceVoteStats>;
   onProvinceSelected: (province: string, mps: PersonData[]) => void;
   selectedVoteOption?: string | null;
+  selectedProvince?: string | null;
 }
 
 export default function ThailandMap({
@@ -31,11 +32,11 @@ export default function ThailandMap({
   provinceVoteStats,
   onProvinceSelected,
   selectedVoteOption,
+  selectedProvince = null,
 }: ThailandMapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
   const containerRef = useRef<HTMLDivElement>(null); // เพิ่ม ref สำหรับ container
   const zoomStateRef = useRef<d3.ZoomTransform | null>(null);
-  const [selectedProvince, setSelectedProvince] = useState<string | null>(null);
   const [containerWidth, setContainerWidth] = useState(0);
   const [tooltip, setTooltip] = useState<TooltipState>({
     isVisible: false,
@@ -141,18 +142,8 @@ export default function ThailandMap({
         .attr("height", MAP_CONFIG.TILE_SIZE)
         .attr("rx", 4)
         .attr("fill", backgroundColor)
-        .attr(
-          "stroke",
-          selectedProvince === provinceName
-            ? STROKE_CONFIG.SELECTED_COLOR
-            : STROKE_CONFIG.DEFAULT_COLOR
-        )
-        .attr(
-          "stroke-width",
-          selectedProvince === provinceName
-            ? STROKE_CONFIG.SELECTED_WIDTH
-            : STROKE_CONFIG.DEFAULT_WIDTH
-        )
+        .attr("stroke", STROKE_CONFIG.DEFAULT_COLOR)
+        .attr("stroke-width", STROKE_CONFIG.DEFAULT_WIDTH)
         .style("transition", "all 0.3s ease");
 
       // เพิ่ม highlight indicator ถ้าถูกเลือก
@@ -216,11 +207,9 @@ export default function ThailandMap({
           // Toggle selection
           if (selectedProvince === provinceName) {
             // Deselect - ส่งค่า null
-            setSelectedProvince(null);
             onProvinceSelected("", []); // Clear selection
           } else {
             // Select - เลือกจังหวัดใหม่
-            setSelectedProvince(provinceName);
             onProvinceSelected(provinceName, mps);
           }
         });
@@ -229,9 +218,30 @@ export default function ThailandMap({
     politicians,
     provinceVoteStats,
     onProvinceSelected,
-    selectedProvince,
     selectedVoteOption,
+    selectedProvince,
   ]);
+
+  // Update stroke when selectedProvince changes
+  useEffect(() => {
+    if (!svgRef.current) return;
+
+    const svg = d3.select(svgRef.current);
+
+    // Reset all strokes to default
+    svg
+      .selectAll(".province-tile rect")
+      .attr("stroke", STROKE_CONFIG.DEFAULT_COLOR)
+      .attr("stroke-width", STROKE_CONFIG.DEFAULT_WIDTH);
+
+    // Highlight selected province
+    if (selectedProvince) {
+      svg
+        .select(`.province-tile[data-province="${selectedProvince}"] rect`)
+        .attr("stroke", STROKE_CONFIG.SELECTED_COLOR)
+        .attr("stroke-width", STROKE_CONFIG.SELECTED_WIDTH);
+    }
+  }, [selectedProvince]);
 
   return (
     <div className="relative w-full h-full flex flex-col gap-3">
