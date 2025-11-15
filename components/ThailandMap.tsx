@@ -307,7 +307,7 @@ export default function ThailandMap({
           ref={svgRef}
           width="100%"
           height="100%"
-          viewBox="-350 0 1200 900"
+          viewBox="-450 0 1200 900"
           preserveAspectRatio="xMidYMid meet"
         />
 
