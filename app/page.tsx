@@ -102,11 +102,14 @@ export default function Home() {
         setFactData(data.factData);
         setVoteDetailData(data.voteDetailData);
         setGroupedPeople(data.groupedPeople);
-        setAllVoteEvents(data.voteEvents);
 
-        // Auto-select the latest vote event
-        if (data.voteEvents.length > 0) {
-          const latestEvent = data.voteEvents[data.voteEvents.length - 1];
+        // Reverse vote events to show latest first
+        const reversedVoteEvents = [...data.voteEvents].reverse();
+        setAllVoteEvents(reversedVoteEvents);
+
+        // Auto-select the latest vote event (now first in reversed array)
+        if (reversedVoteEvents.length > 0) {
+          const latestEvent = reversedVoteEvents[0];
           setSelectedVoteEvent(latestEvent);
         }
 
@@ -298,7 +301,9 @@ export default function Home() {
             {/* Info Panel - Right */}
             <div className="w-[420px] h-full overflow-hidden">
               <InfoPanel
-                key={`${selectedProvince || "no-province"}-${selectedVoteEvent || "no-event"}-${selectedVoteOption || "no-option"}`}
+                key={`${selectedProvince || "no-province"}-${
+                  selectedVoteEvent || "no-event"
+                }-${selectedVoteOption || "no-option"}`}
                 province={selectedProvince}
                 mps={selectedMPs}
                 totalMPs={people.length}
