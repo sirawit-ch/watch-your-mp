@@ -77,6 +77,9 @@ jobs:
 
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        env:
+          NEXT_PUBLIC_BASE_PATH: /watch-your-mp
+          NEXT_PUBLIC_DATA_PATH: /data/new-data
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
