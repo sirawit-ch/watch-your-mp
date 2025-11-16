@@ -6,7 +6,10 @@ export async function loadMetadata(): Promise<{
   timestamp: number;
 } | null> {
   try {
-    const response = await fetch("/data/new-data/metadata.json");
+    const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+    const DATA_PATH = process.env.NEXT_PUBLIC_DATA_PATH || "/data/new-data";
+    const NEW_DATA_PATH = `${BASE_PATH}${DATA_PATH}`;
+    const response = await fetch(`${NEW_DATA_PATH}/metadata.json`);
     if (!response.ok) {
       console.warn("Metadata not found");
       return null;
