@@ -3604,8 +3604,8 @@
     "person_name":"สง่า พรมเมือง",
     "image":null,
     "province":"เชียงราย",
-    "member_of":null,
-    "party_image":null,
-    "party_color":null
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
   }
 ]
