@@ -251,7 +251,13 @@ User Interface (Interactive Map)
 
 ## 🤝 Contributing
 
-This is an academic project. Contributions and suggestions are welcome!
+This is an academic project. Here is our team!
+- รินรดา คงเมือง
+- ศิรวิชญ์ เจริญวุฒิ 
+- ธนชาติ พงศติวัฒนากุล
+- สุวิจักขณ์ ราคา
+- ภาสพล พลายละหาร
+- รชต วรสาร 
 
 ---
 
