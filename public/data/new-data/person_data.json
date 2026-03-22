@@ -1,3 +1,3593 @@
 [
-
+  {
+    "prefix":"นาย",
+    "person_name":"สยาม เพ็งทอง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สยาม-เพ็งทอง.webp",
+    "province":"บึงกาฬ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สรชัด สุจิตต์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สรชัด-สุจิตต์.webp",
+    "province":"สุพรรณบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สรรเพชญ บุญญามณี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สรรเพชญ-บุญญามณี.webp",
+    "province":"สงขลา",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"ดร.",
+    "person_name":"สฤษดิ์ บุตรเนียร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สฤษดิ์-บุตรเนียร.webp",
+    "province":"ปราจีนบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สหัสวัต คุ้มคง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สหัสวัต-คุ้มคง.webp",
+    "province":"ชลบุรี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สังคม แดงโชติ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สังคม-แดงโชติ.webp",
+    "province":"ประจวบคีรีขันธ์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สัญญา นิลสุพรรณ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สัญญา-นิลสุพรรณ.webp",
+    "province":"นครสวรรค์",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สัมพันธ์ มะยูโซ๊ะ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สัมพันธ์-มะยูโซ๊ะ.webp",
+    "province":"นราธิวาส",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สัมฤทธิ์ แทนทรัพย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สัมฤทธิ์-แทนทรัพย์.webp",
+    "province":"ชัยภูมิ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สาเหะมูหามัด อัลอิดรุส",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สาเหะมูหามัด-อัลอิดรุส.webp",
+    "province":"ปัตตานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"พันโท ดร.",
+    "person_name":"สินธพ แก้วพิจิตร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สินธพ-แก้วพิจิตร.webp",
+    "province":"นครปฐม",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"ดร.",
+    "person_name":"สิริพงศ์ อังคสกุลเกียรติ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สิริพงศ์-อังคสกุลเกียรติ.webp",
+    "province":"ศรีสะเกษ",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"สุขสมรวย วันทนียกุล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สุขสมรวย-วันทนียกุล.webp",
+    "province":"อำนาจเจริญ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สุชาติ ชมกลิ่น",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สุชาติ-ชมกลิ่น.webp",
+    "province":"ชลบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"สุดารัตน์ พิทักษ์พรพัลลภ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สุดารัตน์-พิทักษ์พรพัลลภ.webp",
+    "province":"อุบลราชธานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สุทธิชัย จรูญเนตร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สุทธิชัย-จรูญเนตร.webp",
+    "province":"อุบลราชธานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สุพล จุลใส",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สุพล-จุลใส.webp",
+    "province":"ชุมพร",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สุภกร ตันติไพบูลย์ธนะ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สุภกร-ตันติไพบูลย์ธนะ.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"สุภาพร สลับศรี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สุภาพร-สลับศรี.webp",
+    "province":"ยโสธร",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สุรพจน์ เตาะเจริญสุข",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สุรพจน์-เตาะเจริญสุข.webp",
+    "province":"ขอนแก่น",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สุรศักดิ์ ชิงนวรรณ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สุรศักดิ์-ชิงนวรรณ์.webp",
+    "province":"สระแก้ว",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สุรสิทธิ์ วงศ์วิทยานันท์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สุรสิทธิ์-วงศ์วิทยานันท์.webp",
+    "province":"กำแพงเพชร",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"พลตำรวจตรี",
+    "person_name":"สุรินทร์ ปาลาเร่",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สุรินทร์-ปาลาเร่.webp",
+    "province":"สงขลา",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สุไลมาน บือแนปีแน",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สุไลมาน-บือแนปีแน.webp",
+    "province":"ยะลา",
+    "member_of":"สมาชิกพรรคประชาชาติ",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชาติ.webp",
+    "party_color":"#A56F05"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"หทัยรัตน์ เพชรพนมพร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/หทัยรัตน์-เพชรพนมพร.webp",
+    "province":"อุดรธานี",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"หรั่ง ธุระพล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/หรั่ง-ธุระพล.webp",
+    "province":"อุดรธานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"องอาจ ฉัตรชัยพลรัตน์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/องอาจ-ฉัตรชัยพลรัตน์.webp",
+    "province":"ขอนแก่น",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"องอาจ วงษ์ประยูร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/องอาจ-วงษ์ประยูร.webp",
+    "province":"สระบุรี",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อดิพงษ์ ฐิติพิทยา",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อดิพงษ์-ฐิติพิทยา.webp",
+    "province":"บุรีรัมย์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อดิศักดิ์ แก้วมุงคุณทรัพย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อดิศักดิ์-แก้วมุงคุณทรัพย์.webp",
+    "province":"อุดรธานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อนันต์ ปรีดาสุทธิจิตต์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อนันต์-ปรีดาสุทธิจิตต์.webp",
+    "province":"ชลบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อนุชา นาคาศัย",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อนุชา-นาคาศัย.webp",
+    "province":"ชัยนาท",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อนุชา สะสมทรัพย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อนุชา-สะสมทรัพย์.webp",
+    "province":"นครปฐม",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อนุรักษ์ จุรีมาศ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อนุรักษ์-จุรีมาศ.webp",
+    "province":"ร้อยเอ็ด",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อนุรัตน์ ตันบรรจง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อนุรัตน์-ตันบรรจง.webp",
+    "province":"พะเยา",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อนุสรณ์ แก้ววิเชียร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อนุสรณ์-แก้ววิเชียร.webp",
+    "province":"นนทบุรี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"จ่าอากาศเอก",
+    "person_name":"อภิชาติ แก้วโกศล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อภิชาติ-แก้วโกศล.webp",
+    "province":"เพชรบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อรรถกร ศิริลัทธยากร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อรรถกร-ศิริลัทธยากร.webp",
+    "province":"ฉะเชิงเทรา",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อรรถพล วงษ์ประยูร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อรรถพล-วงษ์ประยูร.webp",
+    "province":"สระบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อรรถพล ไตรศรี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อรรถพล-ไตรศรี.webp",
+    "province":"พังงา",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อลงกต มณีกาศ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อลงกต-มณีกาศ.webp",
+    "province":"นครพนม",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"อวยพรศรี เชาวลิต",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อวยพรศรี-เชาวลิต.webp",
+    "province":"นครศรีธรรมราช",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อัคร ทองใจสด",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อัคร-ทองใจสด.webp",
+    "province":"เพชรบูรณ์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อัครนันท์ กัณณ์กิตตินันท์",
+    "image":null,
+    "province":"กาญจนบุรี",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อัครเดช วงษ์พิทักษ์โรจน์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อัครเดช-วงษ์พิทักษ์โรจน์.webp",
+    "province":"ราชบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อัครแสนคีรี โล่ห์วีระ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อัครแสนคีรี-โล่ห์วีระ.webp",
+    "province":"ชัยภูมิ",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อับดุลอายี สาแม็ง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อับดุลอายี-สาแม็ง.webp",
+    "province":"ยะลา",
+    "member_of":"สมาชิกพรรคประชาชาติ",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชาติ.webp",
+    "party_color":"#A56F05"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อาทิตย์ หวังศุภกิจโกศล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อาทิตย์-หวังศุภกิจโกศล.webp",
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อานุภาพ ลิขิตอำนวยชัย",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อานุภาพ-ลิขิตอำนวยชัย.webp",
+    "province":"สมุทรสงคราม",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อามินทร์ มะยูโซ๊ะ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อามินทร์-มะยูโซ๊ะ.webp",
+    "province":"นราธิวาส",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อาสพลธ์ สรรณ์ไตรภพ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อาสพลธ์-สรรณ์ไตรภพ.webp",
+    "province":"ศรีสะเกษ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อำนาจ วิลาวัลย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อำนาจ-วิลาวัลย์.webp",
+    "province":"ปราจีนบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อิทธิพล ชลธราศิริ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อิทธิพล-ชลธราศิริ.webp",
+    "province":"ขอนแก่น",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เกรียงไกร กิตติธเนศวร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เกรียงไกร-กิตติธเนศวร.webp",
+    "province":"นครนายก",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เกียรติคุณ ต้นยาง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เกียรติคุณ-ต้นยาง.webp",
+    "province":"นนทบุรี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เจษฎา ดนตรีเสนาะ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เจษฎา-ดนตรีเสนาะ.webp",
+    "province":"ปทุมธานี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เจเศรษฐ์ ไทยเศรษฐ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เจเศรษฐ์-ไทยเศรษฐ์.webp",
+    "province":"อุทัยธานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เฉลิมพงศ์ แสงดี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เฉลิมพงศ์-แสงดี.webp",
+    "province":"ภูเก็ต",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เชตวัน เตือประโคน",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เชตวัน-เตือประโคน.webp",
+    "province":"ปทุมธานี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เชวงศักดิ์ เร่งไพบูลย์วงษ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เชวงศักดิ์-เร่งไพบูลย์วงษ์.webp",
+    "province":"ชัยภูมิ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เชิงชาย ชาลีรินทร์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เชิงชาย-ชาลีรินทร์.webp",
+    "province":"ชัยภูมิ",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"เทียบจุฑา ขาวขำ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เทียบจุฑา-ขาวขำ.webp",
+    "province":"อุดรธานี",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เท่าพิภพ ลิ้มจิตรกร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เท่าพิภพ-ลิ้มจิตรกร.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เพชรภูมิ อาภรณ์รัตน์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เพชรภูมิ-อาภรณ์รัตน์.webp",
+    "province":"กำแพงเพชร",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"เพชรรัตน์ ใหม่ชมภู",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เพชรรัตน์-ใหม่ชมภู.webp",
+    "province":"เชียงใหม่",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เรืองวิทย์ คูณวัฒนาพงษ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เรืองวิทย์-คูณวัฒนาพงษ์.webp",
+    "province":"สุรินทร์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เลิศศักดิ์ พัฒนชัยกุล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เลิศศักดิ์-พัฒนชัยกุล.webp",
+    "province":"เลย",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เสมอกัน เที่ยงธรรม",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/เสมอกัน-เที่ยงธรรม.webp",
+    "province":"สุพรรณบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เอกราช อุดมอำนวย",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"แนน บุณย์ธิดา สมชัย",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/แนน-บุณย์ธิดา-สมชัย.webp",
+    "province":"อุบลราชธานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"แอนศิริ วลัยกนก",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/แอนศิริ-วลัยกนก.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"โชติวุฒิ ธนาคมานุสรณ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/โชติวุฒิ-ธนาคมานุสรณ์.webp",
+    "province":"สิงห์บุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"โสภณ ซารัมย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/โสภณ-ซารัมย์.webp",
+    "province":"บุรีรัมย์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"โอชิษฐ์ เกียรติก้องชูชัย",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/โอชิษฐ์-เกียรติก้องชูชัย.webp",
+    "province":"ชัยภูมิ",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ไตรเทพ งามกมล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ไตรเทพ-งามกมล.webp",
+    "province":"บุรีรัมย์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ไผ่ ลิกค์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ไผ่-ลิกค์.webp",
+    "province":"กำแพงเพชร",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ตติรัฐ รัตนเศรษฐ",
+    "image":null,
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อัครา พรหมเผ่า",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/อัครา-พรหมเผ่า.webp",
+    "province":"พะเยา",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"กมนทรรศน์ กิตติสุนทรสกุล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/กมนทรรศน์-กิตติสุนทรสกุล.webp",
+    "province":"ระยอง",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"กมลศักดิ์ ลีวาเมาะ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/กมลศักดิ์-ลีวาเมาะ.webp",
+    "province":"นราธิวาส",
+    "member_of":"สมาชิกพรรคประชาชาติ",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชาติ.webp",
+    "party_color":"#A56F05"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"กรวีร์ ปริศนานันทกุล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/กรวีร์-ปริศนานันทกุล.webp",
+    "province":"อ่างทอง",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"กระแสร์ ตระกูลพรพงศ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/กระแสร์-ตระกูลพรพงศ์.webp",
+    "province":"หนองคาย",
+    "member_of":"สมาชิกพรรคพลังประชารัฐ",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/พลังประชารัฐ.webp",
+    "party_color":"#2276EF"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"กฤช ศิลปชัย",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/กฤช-ศิลปชัย.webp",
+    "province":"ระยอง",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"กัณตภณ ดวงอัมพร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/กัณตภณ-ดวงอัมพร.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"กันต์พงษ์ ประยูรศักดิ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/กันต์พงษ์-ประยูรศักดิ์.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"กาญจน์ ตั้งปอง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/กาญจน์-ตั้งปอง.webp",
+    "province":"ตรัง",
+    "member_of":"สมาชิกพรรคประชาธิปัตย์",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาธิปัตย์.webp",
+    "party_color":"#00B2FF"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"กานสินี โอภาสรังสรรค์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/กานสินี-โอภาสรังสรรค์.webp",
+    "province":"สุราษฎร์ธานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"การณิก จันทดา",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/การณิก-จันทดา.webp",
+    "province":"เชียงใหม่",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"กิตติ กิตติธรกุล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/กิตติ-กิตติธรกุล.webp",
+    "province":"กระบี่",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"กิตติ์ธัญญา วาจาดี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/กิตติ์ธัญญา-วาจาดี.webp",
+    "province":"อุบลราชธานี",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"กุลวลี นพอมรบดี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/กุลวลี-นพอมรบดี.webp",
+    "province":"ราชบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"คงกฤษ ฉัตรมาลีรัตน์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/คงกฤษ-ฉัตรมาลีรัตน์.webp",
+    "province":"ระนอง",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"คอซีย์ มามุ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/คอซีย์-มามุ.webp",
+    "province":"ปัตตานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"จตุพร กมลพันธ์ทิพย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/จตุพร-กมลพันธ์ทิพย์.webp",
+    "province":"ราชบุรี",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"จรยุทธ จตุรพรประสิทธิ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/จรยุทธ-จตุรพรประสิทธิ์.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"จักพันธ์ ปิยพรไพบูลย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/จักพันธ์-ปิยพรไพบูลย์.webp",
+    "province":"ประจวบคีรีขันธ์",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"จักรกฤษณ์ ทองศรี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/จักรกฤษณ์-ทองศรี.webp",
+    "province":"บุรีรัมย์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"จำลอง ภูนวนทา",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/จำลอง-ภูนวนทา.webp",
+    "province":"กาฬสินธุ์",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"จิรวัฒน์ ศิริพานิชย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/จิรวัฒน์-ศิริพานิชย์.webp",
+    "province":"มหาสารคาม",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"จิรวุฒิ สิงห์โตทอง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/จิรวุฒิ-สิงห์โตทอง.webp",
+    "province":"ชลบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"จิรัชยา สัพโส",
+    "image":null,
+    "province":"สกลนคร",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"จิราพร สินธุไพร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/จิราพร-สินธุไพร.webp",
+    "province":"ร้อยเอ็ด",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"จีรเดช ศรีวิราช",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/จีรเดช-ศรีวิราช.webp",
+    "province":"พะเยา",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"จุติ ไกรฤกษ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/จุติ-ไกรฤกษ์.webp",
+    "province":"พิษณุโลก",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ฉกาจ พัฒนกิจวิบูลย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ฉกาจ-พัฒนกิจวิบูลย์.webp",
+    "province":"พังงา",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ฉัตร สุภัทรวณิชย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ฉัตร-สุภัทรวณิชย์.webp",
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ชญาภา สินธุไพร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ชญาภา-สินธุไพร.webp",
+    "province":"ร้อยเอ็ด",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชนนพัฒฐ์ นาคสั้ว",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ชนนพัฒฐ์-นาคสั้ว.webp",
+    "province":"สงขลา",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชยพล สท้อนดี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ชยพล-สท้อนดี.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชยุต ภุมมะกาญจนะ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ชยุต-ภุมมะกาญจนะ.webp",
+    "province":"ปราจีนบุรี",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชลธานี เชื้อน้อย",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ชลธานี-เชื้อน้อย.webp",
+    "province":"ลำปาง",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชัชวาล แพทยาไทย",
+    "image":null,
+    "province":"ร้อยเอ็ด",
+    "member_of":"สมาชิกพรรคไทยสร้างไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ไทยสร้างไทย.webp",
+    "party_color":"#7856EC"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชัยวัฒน์ เป้าเปี่ยมทรัพย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ชัยวัฒน์-เป้าเปี่ยมทรัพย์.webp",
+    "province":"ฉะเชิงเทรา",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชาดา ไทยเศรษฐ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ชาดา-ไทยเศรษฐ์.webp",
+    "province":"อุทัยธานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชาตรี หล้าพรหม",
+    "image":null,
+    "province":"สกลนคร",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชูศักดิ์ คีรีมาศทอง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ชูศักดิ์-คีรีมาศทอง.webp",
+    "province":"สุโขทัย",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ซาการียา สะอิ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ซาการียา-สะอิ.webp",
+    "province":"นราธิวาส",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ซูการ์โน มะทา",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ซูการ์โน-มะทา.webp",
+    "province":"ยะลา",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"ญาณีนาถ เข็มนาค",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ญาณีนาถ-เข็มนาค.webp",
+    "province":"อำนาจเจริญ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ฐาปกรณ์ กุลเจริญ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ฐาปกรณ์-กุลเจริญ.webp",
+    "province":"สมุทรปราการ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"ฐิติมา ฉายแสง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ฐิติมา-ฉายแสง.webp",
+    "province":"ฉะเชิงเทรา",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ณัฏฐพล จรัสรพีพงษ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ณัฏฐพล-จรัสรพีพงษ์.webp",
+    "province":"สุรินทร์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ณัฏฐ์ชนน ศรีก่อเกื้อ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ณัฏฐ์ชนน-ศรีก่อเกื้อ.webp",
+    "province":"สงขลา",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ณัฐจิรา อิ่มวิเศษ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ณัฐจิรา-อิ่มวิเศษ.webp",
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ณัฐพงศ์ เปรมพูลสวัสดิ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ณัฐพงศ์-เปรมพูลสวัสดิ์.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ณัฐพงษ์ สุมโนธรรม",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ณัฐพงษ์-สุมโนธรรม.webp",
+    "province":"สมุทรสาคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ณัฐพล โตวิจักษณ์ชัยกุล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ณัฐพล-โตวิจักษณ์ชัยกุล.webp",
+    "province":"เชียงใหม่",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ตรีนุช เทียนทอง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ตรีนุช-เทียนทอง.webp",
+    "province":"สระแก้ว",
+    "member_of":"สมาชิกพรรคพลังประชารัฐ",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/พลังประชารัฐ.webp",
+    "party_color":"#2276EF"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ตวงทิพย์ จินตะเวช",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ตวงทิพย์-จินตะเวช.webp",
+    "province":"อุบลราชธานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ถิรเดช ตั้งมั่นก่อกิจ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ถิรเดช-ตั้งมั่นก่อกิจ.webp",
+    "province":"กระบี่",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ทรงศักดิ์ มุสิกอง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ทรงศักดิ์-มุสิกอง.webp",
+    "province":"นครศรีธรรมราช",
+    "member_of":"สมาชิกพรรคประชาธิปัตย์",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาธิปัตย์.webp",
+    "party_color":"#00B2FF"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ทวี สุระบาล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ทวี-สุระบาล.webp",
+    "province":"ตรัง",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"ทิพา ปวีณาเสถียร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ทิพา-ปวีณาเสถียร.webp",
+    "province":"ลำปาง",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ทิสรัตน์ เลาหพล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ทิสรัตน์-เลาหพล.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ธนพัฒน์ ศรีชนะ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ธนพัฒน์-ศรีชนะ.webp",
+    "province":"ยโสธร",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ธนยศ ทิมสุวรรณ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ธนยศ-ทิมสุวรรณ.webp",
+    "province":"เลย",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ธนัสถ์ ทวีเกื้อกูลกิจ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ธนัสถ์-ทวีเกื้อกูลกิจ.webp",
+    "province":"ตาก",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ธนา กิจไพบูลย์ชัย",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ธนา-กิจไพบูลย์ชัย.webp",
+    "province":"ศรีสะเกษ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ธัญธร ธนินวัฒนาธร",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ธัญธารีย์ สันตพันธุ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ธัญธารีย์-สันตพันธุ์.webp",
+    "province":"อุบลราชธานี",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"ธิวัลรัตน์ อังกินันทน์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ธิวัลรัตน์-อังกินันทน์.webp",
+    "province":"เพชรบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ธีรัจชัย พันธุมาศ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ธีรัจชัย-พันธุมาศ.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"นนท์ ไพศาลลิ้มเจริญกิจ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/นนท์-ไพศาลลิ้มเจริญกิจ.webp",
+    "province":"นนทบุรี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"นพ ชีวานันท์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/นพ-ชีวานันท์.webp",
+    "province":"พระนครศรีอยุธยา",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"นพพล เหลืองทองนารา",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/นพพล-เหลืองทองนารา.webp",
+    "province":"พิษณุโลก",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"นรินทร์ คลังผา",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/นรินทร์-คลังผา.webp",
+    "province":"ลพบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"นรเสฎฐ์ ศิริโรจนกุล",
+    "image":null,
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"นิกร โสมกลาง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/นิกร-โสมกลาง.webp",
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"นิตยา มีศรี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/นิตยา-มีศรี.webp",
+    "province":"สมุทรปราการ",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"นิยม ช่างพินิจ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/นิยม-ช่างพินิจ.webp",
+    "province":"พิษณุโลก",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"นเรศ ธำรงค์ทิพยคุณ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/นเรศ-ธำรงค์ทิพยคุณ.webp",
+    "province":"เชียงใหม่",
+    "member_of":"สมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"บุญชัย กิตติธาราทรัพย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/บุญชัย-กิตติธาราทรัพย์.webp",
+    "province":"เพชรบูรณ์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"บุญยิ่ง นิติกาญจนา",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/บุญยิ่ง-นิติกาญจนา.webp",
+    "province":"ราชบุรี",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"ดร.",
+    "person_name":"บุญลือ ประเสริฐโสภา",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/บุญลือ-ประเสริฐโสภา.webp",
+    "province":"ราชบุรี",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"บุญเลิศ แสงพันธุ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/บุญเลิศ-แสงพันธุ์.webp",
+    "province":"สมุทรปราการ",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ปกรณ์ จีนาคำ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ปกรณ์-จีนาคำ.webp",
+    "province":"แม่ฮ่องสอน",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"ปทิดา ตันติรัตนานนท์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ปทิดา-ตันติรัตนานนท์.webp",
+    "province":"สุรินทร์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ประภัตร โพธสุธน",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ประภัตร-โพธสุธน.webp",
+    "province":"สุพรรณบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ประภาพร ทองปากน้ำ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ประภาพร-ทองปากน้ำ.webp",
+    "province":"สุโขทัย",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ประสาท ตันประเสริฐ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ประสาท-ตันประเสริฐ.webp",
+    "province":"นครสวรรค์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ปรีติ เจริญศิลป์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ปรีติ-เจริญศิลป์.webp",
+    "province":"นนทบุรี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ปรเมษฐ์ จินา",
+    "image":null,
+    "province":"สุราษฎร์ธานี",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ปวิตรา จิตตกิจ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ปวิตรา-จิตตกิจ.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"ปัญญารัตน์ นันทภูษิตานนท์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ปัญญารัตน์-นันทภูษิตานนท์.webp",
+    "province":"นนทบุรี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ปารเมศ วิทยารักษ์สรรค์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ปารเมศ-วิทยารักษ์สรรค์.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ปิยะนุช ยินดีสุข",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ปิยะนุช-ยินดีสุข.webp",
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ปิยะรัฐชย์ ติยะไพรัช",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ปิยะรัฐชย์-ติยะไพรัช.webp",
+    "province":"เชียงราย",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ผกามาศ เจริญพันธ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ผกามาศ-เจริญพันธ์.webp",
+    "province":"สุรินทร์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พงษ์มนู ทองหนัก",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พงษ์มนู-ทองหนัก.webp",
+    "province":"พิษณุโลก",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พชร จันทรรวงทอง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พชร-จันทรรวงทอง.webp",
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พนม โพธิ์แก้ว",
+    "image":null,
+    "province":"กาญจนบุรี",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"พนิดา มงคลสวัสดิ์",
+    "image":null,
+    "province":"สมุทรปราการ",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พรชัย ศรีสุริยันโยธิน",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พรชัย-ศรีสุริยันโยธิน.webp",
+    "province":"บุรีรัมย์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"พรพิมล ธรรมสาร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พรพิมล-ธรรมสาร.webp",
+    "province":"ปทุมธานี",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พลพีร์ สุวรรณฉวี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พลพีร์-สุวรรณฉวี.webp",
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พลากร พิมพะนิตย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พลากร-พิมพะนิตย์.webp",
+    "province":"กาฬสินธุ์",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พัฒนา สัพโส",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พัฒนา-สัพโส.webp",
+    "province":"สกลนคร",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"ดร.",
+    "person_name":"พาณุวัฒณ์ สะสมทรัพย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พาณุวัฒณ์-สะสมทรัพย์.webp",
+    "province":"นครปฐม",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พิชัย ชมภูพล",
+    "image":null,
+    "province":"สุราษฎร์ธานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พิชัย แจ้งจรรยาวงศ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พิชัย-แจ้งจรรยาวงศ์.webp",
+    "province":"สมุทรปราการ",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พิทักษ์เดช เดชเดโช",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พิทักษ์เดช-เดชเดโช.webp",
+    "province":"นครศรีธรรมราช",
+    "member_of":"สมาชิกพรรคประชาธิปัตย์",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาธิปัตย์.webp",
+    "party_color":"#00B2FF"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พิพิธ รัตนรักษ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พิพิธ-รัตนรักษ์.webp",
+    "province":"สุราษฎร์ธานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"พิมพกาญจน์ พลสมัคร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พิมพกาญจน์-พลสมัคร.webp",
+    "province":"อุบลราชธานี",
+    "member_of":"สมาชิกพรรคไทรวมพลัง",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ไทรวมพลัง.webp",
+    "party_color":"#5266AD"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"พิมพฤดา ตันจรารักษ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พิมพฤดา-ตันจรารักษ์.webp",
+    "province":"พระนครศรีอยุธยา",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"พิมพ์กาญจน์ กีรติวิราปกรณ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พิมพ์กาญจน์-กีรติวิราปกรณ์.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"พิมพ์พร พรพฤฒิพันธุ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พิมพ์พร-พรพฤฒิพันธุ์.webp",
+    "province":"เพชรบูรณ์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"พิมพ์ภัทรา วิชัยกุล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พิมพ์ภัทรา-วิชัยกุล.webp",
+    "province":"นครศรีธรรมราช",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พิษณุ พลธี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พิษณุ-พลธี.webp",
+    "province":"ปทุมธานี",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พีระเดช ศิริวันสาณฑ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พีระเดช-ศิริวันสาณฑ์.webp",
+    "province":"นครสวรรค์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"พุธิตา ชัยอนันต์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/พุธิตา-ชัยอนันต์.webp",
+    "province":"เชียงใหม่",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ภราดร ปริศนานันทกุล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ภราดร-ปริศนานันทกุล.webp",
+    "province":"อ่างทอง",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ภัณฑิล น่วมเจิม",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ภัทรพงศ์ ภัทรประสิทธิ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ภัทรพงศ์-ภัทรประสิทธิ์.webp",
+    "province":"พิจิตร",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ภัทรพงษ์ ลีลาภัทร์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ภัทรพงษ์-ลีลาภัทร์.webp",
+    "province":"เชียงใหม่",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ภัสริน รามวงศ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ภัสริน-รามวงศ์.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ภาคภูมิ บูลย์ประมุข",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ภาคภูมิ-บูลย์ประมุข.webp",
+    "province":"ตาก",
+    "member_of":"สมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ภูริวรรธก์ ใจสำราญ",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"มณเฑียร สงฆ์ประชา",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/มณเฑียร-สงฆ์ประชา.webp",
+    "province":"ชัยนาท",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"มนพร เจริญศรี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/มนพร-เจริญศรี.webp",
+    "province":"นครพนม",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"มัลลิกา จิระพันธุ์วาณิช",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/มัลลิกา-จิระพันธุ์วาณิช.webp",
+    "province":"ลพบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ยศวัฒน์ มาไพศาลสิน",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ยศวัฒน์-มาไพศาลสิน.webp",
+    "province":"กาญจนบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ยอดชาย พึ่งพร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ยอดชาย-พึ่งพร.webp",
+    "province":"ชลบุรี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ยูนัยดี วาบา",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ยูนัยดี-วาบา.webp",
+    "province":"ปัตตานี",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"รชตะ ด่านกุล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/รชตะ-ด่านกุล.webp",
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"รวี เล็กอุทัย",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/รวี-เล็กอุทัย.webp",
+    "province":"อุตรดิตถ์",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"รังสรรค์ วันไชยธนวงศ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/รังสรรค์-วันไชยธนวงศ์.webp",
+    "province":"เชียงราย",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"รัชนก สุขประเสริฐ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/รัชนก-สุขประเสริฐ.webp",
+    "province":"สมุทรปราการ",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"รัชนี พลซื่อ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/รัชนี-พลซื่อ.webp",
+    "province":"ร้อยเอ็ด",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"ดร.",
+    "person_name":"รุ่งโรจน์ ทองศรี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/รุ่งโรจน์-ทองศรี.webp",
+    "province":"บุรีรัมย์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ฤกษ์ อยู่ดี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ฤกษ์-อยู่ดี.webp",
+    "province":"เพชรบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ลัทธชัย โชคชัยวัฒนากร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ลัทธชัย-โชคชัยวัฒนากร.webp",
+    "province":"มหาสารคาม",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ล้ำเลิศ พัวพัฒนโชติ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ล้ำเลิศ-พัวพัฒนโชติ.webp",
+    "province":"สุรินทร์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"วชิราภรณ์ กาญจนะ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วชิราภรณ์-กาญจนะ.webp",
+    "province":"สุราษฎร์ธานี",
+    "member_of":"สมาชิกพรรคไทรวมพลัง",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ไทรวมพลัง.webp",
+    "party_color":"#5266AD"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"วรรณิดา นพสิทธิ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วรรณิดา-นพสิทธิ์.webp",
+    "province":"ชลบุรี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วรวงศ์ วรปัญญา",
+    "image":null,
+    "province":"ลพบุรี",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วรศิษฎ์ เลียงประสิทธิ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วรศิษฎ์-เลียงประสิทธิ์.webp",
+    "province":"สตูล",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วรสิทธิ์ กัลป์ตินันท์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วรสิทธิ์-กัลป์ตินันท์.webp",
+    "province":"อุบลราชธานี",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วรโชติ สุคนธ์ขจร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วรโชติ-สุคนธ์ขจร.webp",
+    "province":"เพชรบูรณ์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วัชรพงศ์ คูวิจิตรสุวรรณ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วัชรพงศ์-คูวิจิตรสุวรรณ.webp",
+    "province":"สระบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วัชรพล โตมรศักดิ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วัชรพล-โตมรศักดิ์.webp",
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วัชระพล ขาวขำ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วัชระพล-ขาวขำ.webp",
+    "province":"อุดรธานี",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"วันเพ็ญ พร้อมพัฒน์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วันเพ็ญ-พร้อมพัฒน์.webp",
+    "province":"เพชรบูรณ์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วิชัย สุดสวาสดิ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วิชัย-สุดสวาสดิ์.webp",
+    "province":"ชุมพร",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วิทวัส ติชะวาณิชย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วิทวัส-ติชะวาณิชย์.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วิทวิสิทธิ์ ปันสวนปลูก",
+    "image":null,
+    "province":"ลำพูน",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วินัย ภัทรประสิทธิ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วินัย-ภัทรประสิทธิ์.webp",
+    "province":"พิจิตร",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วิรัช พิมพะนิตย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วิรัช-พิมพะนิตย์.webp",
+    "province":"กาฬสินธุ์",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วิริยะ ทองผา",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วิริยะ-ทองผา.webp",
+    "province":"มุกดาหาร",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"วิลดา อินฉัตร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วิลดา-อินฉัตร.webp",
+    "province":"ศรีสะเกษ",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วีรนันท์ ฮวดศรี",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วีรนันท์-ฮวดศรี.webp",
+    "province":"ขอนแก่น",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วีรวุธ รักเที่ยง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วีรวุธ-รักเที่ยง.webp",
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วีระพล จิตสัมฤทธิ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/วีระพล-จิตสัมฤทธิ์.webp",
+    "province":"ศรีสะเกษ",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ศรัณย์ ทิมสุวรรณ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ศรัณย์-ทิมสุวรรณ.webp",
+    "province":"เลย",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ศศินันท์ ธรรมนิฐินันท์",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ศักดิ์ ซารัมย์",
+    "image":null,
+    "province":"บุรีรัมย์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ศักดิ์สิทธิ์ ขาวทอง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ศักดิ์สิทธิ์-ขาวทอง.webp",
+    "province":"สงขลา",
+    "member_of":"สมาชิกพรรคประชาธิปัตย์",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาธิปัตย์.webp",
+    "party_color":"#00B2FF"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ศิริวัฒน์ ขจรประศาสน์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ศิริวัฒน์-ขจรประศาสน์.webp",
+    "province":"พิจิตร",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ศิริโรจน์ ธนิกกุล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ศิริโรจน์-ธนิกกุล.webp",
+    "province":"สมุทรสาคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ศิวะ พงศ์ธีระดุลย์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ศิวะ-พงศ์ธีระดุลย์.webp",
+    "province":"ชัยภูมิ",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ศุทธสิทธิ์ พจน์ฐศักดิ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ศุทธสิทธิ์-พจน์ฐศักดิ์.webp",
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ศุภชัย นพขำ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ศุภชัย-นพขำ.webp",
+    "province":"ปทุมธานี",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ศุภณัฐ มีนชัยนันท์",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ศุภโชค ศรีสุขจร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/ศุภโชค-ศรีสุขจร.webp",
+    "province":"นครปฐม",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สกล สุนทรวาณิชย์กิจ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สกล-สุนทรวาณิชย์กิจ.webp",
+    "province":"ปทุมธานี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สนอง เทพอักษรณรงค์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สนอง-เทพอักษรณรงค์.webp",
+    "province":"บุรีรัมย์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สมชาติ ประดิษฐพร",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สมชาติ-ประดิษฐพร.webp",
+    "province":"สุราษฎร์ธานี",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"ว่าที่ร้อยตรี",
+    "person_name":"สมชาติ เตชถาวรเจริญ",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สมชาติ-เตชถาวรเจริญ.webp",
+    "province":"ภูเก็ต",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สมบัติ ยะสินธุ์",
+    "image":null,
+    "province":"แม่ฮ่องสอน",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สมยศ พลายด้วง",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สมยศ-พลายด้วง.webp",
+    "province":"สงขลา",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สมศักดิ์ บุญประชม",
+    "image":null,
+    "province":"อุบลราชธานี",
+    "member_of":"สมาชิกพรรคไทรวมพลัง",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ไทรวมพลัง.webp",
+    "party_color":"#5266AD"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สมเกียรติ ตันดิลกตระกูล",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สมเกียรติ-ตันดิลกตระกูล.webp",
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สมเจตน์ ลิมปะพันธุ์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สมเจตน์-ลิมปะพันธุ์.webp",
+    "province":"สุโขทัย",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สมเจตน์ แสงเจริญรัตน์",
+    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สมเจตน์-แสงเจริญรัตน์.webp",
+    "province":"เลย",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ก่อเกียรติ ก่อสูงศักดิ์",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"กาญจนาพร จิระพันธุ์วาณิช",
+    "image":null,
+    "province":"ลพบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"การุณย์ คูเจริญชัยกุล",
+    "image":null,
+    "province":"เชียงใหม่",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"กิตติชัย เอ่งฉ้วน",
+    "image":null,
+    "province":"กระบี่",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"กิตติศักดิ์ พรหมรัตน์",
+    "image":null,
+    "province":"ชุมพร",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ขุนทอง แสนวิเศษ",
+    "image":null,
+    "province":"สระบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"คงกฤช รามศักดิ์",
+    "image":null,
+    "province":"พระนครศรีอยุธยา",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"คมคาย อุดรพิมพ์",
+    "image":null,
+    "province":"มหาสารคาม",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"คัมภีร์ ชื่นบาน",
+    "image":null,
+    "province":"จันทบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"จรัญ จันทร์แก้ว",
+    "image":null,
+    "province":"พัทลุง",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"จอมไกร สวัสดิวงศ์",
+    "image":null,
+    "province":"นครศรีธรรมราช",
+    "member_of":"สมาชิกพรรคประชาธิปัตย์",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาธิปัตย์.webp",
+    "party_color":"#00B2FF"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"จิตรวรรณ หวังศุภกิจโกศล",
+    "image":null,
+    "province":"อุบลราชธานี",
+    "member_of":"สมาชิกพรรคไทรวมพลัง",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ไทรวมพลัง.webp",
+    "party_color":"#5266AD"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"จินณ์ตวรรณ ไตรสรณกุล",
+    "image":null,
+    "province":"ศรีสะเกษ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"จูรี นุ่มแก้ว",
+    "image":null,
+    "province":"สงขลา",
+    "member_of":"สมาชิกพรรคประชาธิปัตย์",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาธิปัตย์.webp",
+    "party_color":"#00B2FF"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เจริญ อภิภัทรโกศล",
+    "image":null,
+    "province":"น่าน",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ฉัตรชัย ปิตุเตชะ",
+    "image":null,
+    "province":"ระยอง",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ชนกนันท์ ศุภศิริ",
+    "image":null,
+    "province":"แพร่",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชนกันต์ ทิมาตฤกะ",
+    "image":null,
+    "province":"บุรีรัมย์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชนสิษฎ์ ยอดฉิม",
+    "image":null,
+    "province":"สมุทรปราการ",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชนะวุธ อุทโท",
+    "image":null,
+    "province":"กาฬสินธุ์",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชนาธิป ศุภศิริ",
+    "image":null,
+    "province":"แพร่",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชยานันท์ เกตุเมฆ",
+    "image":null,
+    "province":"หนองบัวลำภู",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชรัตน์ เนรัญชร",
+    "image":null,
+    "province":"จันทบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ชลณัฏฐ์ โกยกุล",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชลธาร ทรัพย์ไพบูลย์เลิศ",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชลพฤกษ วงศ์อรุณนิยม",
+    "image":null,
+    "province":"นครปฐม",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชัชพีร์ วรรณาพิรัชย์",
+    "image":null,
+    "province":"ลำพูน",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชาญชัย คำจำปา",
+    "image":null,
+    "province":"นครพนม",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชานนท์ ไทยเศรษฐ์",
+    "image":null,
+    "province":"นครสวรรค์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชิงชัย ก่อประภากิจ",
+    "image":null,
+    "province":"ตาก",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชิตพล ไตรสรณกุล",
+    "image":null,
+    "province":"ศรีสะเกษ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชุมพล หลักคำ",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ชูเกียรติ จีนาภักดิ์",
+    "image":null,
+    "province":"กาญจนบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เชาวลิตร แสงอุทัย",
+    "image":null,
+    "province":"ชลบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เชาว์วิชญ์ อินน้อย",
+    "image":null,
+    "province":"น่าน",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ณฐชนน ชนะบูรณาศักดิ์",
+    "image":null,
+    "province":"พิษณุโลก",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ณพัฎน์ จิตตภินันท์กัณตา",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ณรงค์ชัย วีระกุล",
+    "image":null,
+    "province":"อุบลราชธานี",
+    "member_of":"สมาชิกพรรคไทรวมพลัง",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ไทรวมพลัง.webp",
+    "party_color":"#5266AD"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ณัคนางค์ กุลนาถศิริ",
+    "image":null,
+    "province":"สุโขทัย",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ณัฐชาติ วงศ์ประเสริฐ",
+    "image":null,
+    "province":"สุพรรณบุรี",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ณัฐธิดา เล็กอุดากร",
+    "image":null,
+    "province":"บุรีรัมย์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ณัฐพล กลุ่มเหรียญทอง",
+    "image":null,
+    "province":"ขอนแก่น",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ณัฐวัชต์ พิมพะนิตย์",
+    "image":null,
+    "province":"กาฬสินธุ์",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ดาชัย เอกปฐพี",
+    "image":null,
+    "province":"ลำปาง",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ไตรภพ คำเพชร",
+    "image":null,
+    "province":"อุดรธานี",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"กนกพร เดชเดโช",
+    "image":null,
+    "province":"นครศรีธรรมราช",
+    "member_of":"สมาชิกพรรคประชาธิปัตย์",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาธิปัตย์.webp",
+    "party_color":"#00B2FF"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"กรณ์ มีดี",
+    "image":null,
+    "province":"นนทบุรี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"กฤตย์อิชย์ ภาคย์อิชณน์",
+    "image":null,
+    "province":"ตรัง",
+    "member_of":"สมาชิกพรรคประชาธิปัตย์",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาธิปัตย์.webp",
+    "party_color":"#00B2FF"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ไตรสรณคมน์ หนองเรือง",
+    "image":null,
+    "province":"มุกดาหาร",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ทรงพล สุขสมบูรณ์",
+    "image":null,
+    "province":"พระนครศรีอยุธยา",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ทองลี มีหินกอง",
+    "image":null,
+    "province":"ร้อยเอ็ด",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เทพฤทธิ์ ภาษี",
+    "image":null,
+    "province":"สมุทรปราการ",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"",
+    "person_name":"เรืออากาศโท ธนเดช เพ็งสุข",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ธนภัทร ตระกูลภูชัย",
+    "image":null,
+    "province":"ปทุมธานี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ธนรัช จงสุทธานามณี",
+    "image":null,
+    "province":"เชียงราย",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ธนาธาร ประมูลพงษ์",
+    "image":null,
+    "province":"ชลบุรี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ธนิก มาสีพิทักษ์",
+    "image":null,
+    "province":"ขอนแก่น",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"นพพล ผลอำนวย",
+    "image":null,
+    "province":"กำแพงเพชร",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"นรพล ตันติมนตรี",
+    "image":null,
+    "province":"เชียงใหม่",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"นฤพล เลิศปัญญาโรจน์",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"นฤมาศ เปี่ยมบัณฑิต",
+    "image":null,
+    "province":"ชลบุรี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"นันทวัน วิเชียร",
+    "image":null,
+    "province":"นครศรีธรรมราช",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"บดี เทียนทอง",
+    "image":null,
+    "province":"สระแก้ว",
+    "member_of":"สมาชิกพรรคพลังประชารัฐ",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/พลังประชารัฐ.webp",
+    "party_color":"#2276EF"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"บรม เอ่งฉ้วน",
+    "image":null,
+    "province":"สกลนคร",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"บัวเงิน รอดขันเมือง",
+    "image":null,
+    "province":"อุดรธานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"บาฮารุดดีน ยูโซะ",
+    "image":null,
+    "province":"ปัตตานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"บุญจง วงศ์ไตรรัตน์",
+    "image":null,
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"บุญญาภา นาชัยเวียง ปุณณนิฏฐา",
+    "image":null,
+    "province":"กาฬสินธุ์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"บูรฮันธ์ สะเม๊าะ",
+    "image":null,
+    "province":"ปัตตานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"เบญญา มุ่งเจริญพร",
+    "image":null,
+    "province":"สุรินทร์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ประวัติ ทองสมบูรณ์",
+    "image":null,
+    "province":"มหาสารคาม",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ประสิทธิ์ โนทะ",
+    "image":null,
+    "province":"น่าน",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ปราชญา หงอกชัย",
+    "image":null,
+    "province":"ขอนแก่น",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ปะดิธ สังขจาย",
+    "image":null,
+    "province":"พระนครศรีอยุธยา",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ปัญญา ชวนบุญ",
+    "image":null,
+    "province":"สมุทรสาคร",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ปิติกรณ์ บรรณเภสัช",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ปิยวัฒน์ กิตติธเนศวร",
+    "image":null,
+    "province":"นครนายก",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พงษ์พันธ์ เผ่าประทาน",
+    "image":null,
+    "province":"ประจวบคีรีขันธ์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พงษ์ศักดิ์ จ่าแก้ว",
+    "image":null,
+    "province":"สุราษฎร์ธานี",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พงษ์สรณัฐ ทองลี",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พชรกร อรรณนพพร",
+    "image":null,
+    "province":"ขอนแก่น",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พรณรงค์ นิลนะมะ",
+    "image":null,
+    "province":"หนองบัวลำภู",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พศิน ปิตุเตชะ",
+    "image":null,
+    "province":"ระยอง",
+    "member_of":"สมาชิกพรรคประชาธิปัตย์",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาธิปัตย์.webp",
+    "party_color":"#00B2FF"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"พัชราวรรณ ภิญโญ",
+    "image":null,
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พิชญุตม์ พอจิต",
+    "image":null,
+    "province":"อุตรดิตถ์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พิชานนท์ อิงประสาร",
+    "image":null,
+    "province":"ตราด",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พิทักษ์ แสงคำ",
+    "image":null,
+    "province":"เชียงราย",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"พีรพัฒน์ รัชกิจประการ",
+    "image":null,
+    "province":"สตูล",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"เพ็ญภัค รัตนคำฟู",
+    "image":null,
+    "province":"ลำปาง",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ภัทราวดี นิโรจน์",
+    "image":null,
+    "province":"นครสวรรค์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ภุชงค์ สุภัควรางกูร",
+    "image":null,
+    "province":"สุรินทร์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาง",
+    "person_name":"มลธิชา ไชยบาล",
+    "image":null,
+    "province":"เชียงราย",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"มารุต ศรีผึ้ง",
+    "image":null,
+    "province":"นครสวรรค์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"จ่าเอก",
+    "person_name":"ยศสิงห์ เหลี่ยมเลิศ",
+    "image":null,
+    "province":"ฉะเชิงเทรา",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ยุทธนา ศรีตะบุตร",
+    "image":null,
+    "province":"หนองคาย",
+    "member_of":"สมาชิกพรรคพลังประชารัฐ",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/พลังประชารัฐ.webp",
+    "party_color":"#2276EF"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ยุพราช บัวอินทร์",
+    "image":null,
+    "province":"เพชรบูรณ์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"รสรินทร์ ศรัณย์เกตุ",
+    "image":null,
+    "province":"อุตรดิตถ์",
+    "member_of":null,
+    "party_image":null,
+    "party_color":null
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"รุ่งเพชร ศรีกาญจนา",
+    "image":null,
+    "province":"หนองบัวลำภู",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"รุ่งโรจน์ เย็นสบาย",
+    "image":null,
+    "province":"ขอนแก่น",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ฤทธิรงค์ ภูมิสวัสดิ์",
+    "image":null,
+    "province":"มหาสารคาม",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ลักษณารีย์ ดวงตาดำ",
+    "image":null,
+    "province":"แพร่",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ลุตฟี หะยีอีแต",
+    "image":null,
+    "province":"นราธิวาส",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วงศ์วชร ขาวทอง",
+    "image":null,
+    "province":"สงขลา",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"วงศ์อะเคื้อ บุญศล",
+    "image":null,
+    "province":"สกลนคร",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วรท เทอดวีระพงศ์",
+    "image":null,
+    "province":"พัทลุง",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วรายุทธ จงอักษร",
+    "image":null,
+    "province":"ยโสธร",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วัชรพงษ์ ศิริรักษ์",
+    "image":null,
+    "province":"ระยอง",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วิเชียร จงชูวณิชย์",
+    "image":null,
+    "province":"มหาสารคาม",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วิทวัส ไตรสรณกุล",
+    "image":null,
+    "province":"ศรีสะเกษ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วิโรจน์ สาระวงศ์",
+    "image":null,
+    "province":"บึงกาฬ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วิศรุต ปู่เพ็ง",
+    "image":null,
+    "province":"ขอนแก่น",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"วิสุดา วิเชียรศิลป์",
+    "image":null,
+    "province":"กาญจนบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"วุฒากร นุตยกุล",
+    "image":null,
+    "province":"นนทบุรี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ศักดิ์ดา จันทรสุวรรณ",
+    "image":null,
+    "province":"หนองคาย",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ศุภกิจ สีหาภาค",
+    "image":null,
+    "province":"ศรีสะเกษ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"ศุภพานี โพธิ์สุ",
+    "image":null,
+    "province":"นครพนม",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"ศุภศิษย์ กอเจริญยศ",
+    "image":null,
+    "province":"ร้อยเอ็ด",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สมชิด กันธะยา",
+    "image":null,
+    "province":"เชียงใหม่",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สมศักดิ์ แสงอารยะกุล",
+    "image":null,
+    "province":"นครศรีธรรมราช",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"ร้อยตำรวจเอก",
+    "person_name":"สิทธิพัฒน์ ภาวสุทธิ์",
+    "image":null,
+    "province":"ชลบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สิรภพ สมผล",
+    "image":null,
+    "province":"สกลนคร",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"พันเอก",
+    "person_name":"สุขชาต สะสมทรัพย์",
+    "image":null,
+    "province":"นครปฐม",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"สุชาดา ซาง แทนทรัพย์",
+    "image":null,
+    "province":"ชัยภูมิ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สุทัศน์ มีศิริ",
+    "image":null,
+    "province":"นนทบุรี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สุธีระพงษ์ วันไชยธนวงศ์",
+    "image":null,
+    "province":"เชียงราย",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"สุภานันท์ ปัญญาทิพย์",
+    "image":null,
+    "province":"เชียงใหม่",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สุภีรภัทร ภูมิภักดิ์",
+    "image":null,
+    "province":"อุดรธานี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"พลตำรวจโท",
+    "person_name":"สุรพล วิรัตน์โยสินทร์",
+    "image":null,
+    "province":"จันทบุรี",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สุรสิทธิ์ เจียมวิจักษณ์",
+    "image":null,
+    "province":"เชียงราย",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สุริยา แป้นสุขา",
+    "image":null,
+    "province":"บึงกาฬ",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"สุริยา วงศ์อารีย์",
+    "image":null,
+    "province":"อุดรธานี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"สุรีย์ ธัมมาตร",
+    "image":null,
+    "province":"สุรินทร์",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เสกสิทธิ์ แย้มสงวนศักดิ์",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"หนึ่ง ขัติยะนนท์",
+    "image":null,
+    "province":"นครราชสีมา",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาวาอากาศเอก",
+    "person_name":"อธิคุณ คงมี",
+    "image":null,
+    "province":"พัทลุง",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อนุกูล พฤกษานุศักดิ์",
+    "image":null,
+    "province":"สงขลา",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อนุสรณ์ ไกรวัตนุสสรณ์",
+    "image":null,
+    "province":"สมุทรสาคร",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อนุสรณ์ ธรรมใจ",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อภินันท์ สโมสร",
+    "image":null,
+    "province":"นครศรีธรรมราช",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นางสาว",
+    "person_name":"อรทัย เกิดทรัพย์",
+    "image":null,
+    "province":"ภูเก็ต",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อานันท์ อมรินทร์",
+    "image":null,
+    "province":"อุดรธานี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"อิสรพงษ์ อุประ",
+    "image":null,
+    "province":"สกลนคร",
+    "member_of":"สมาชิกพรรคเพื่อไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/เพื่อไทย.webp",
+    "party_color":"#F41724"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เอกชัย สืบสารคาม",
+    "image":null,
+    "province":"ขอนแก่น",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เอกพล ณ พัทลุง",
+    "image":null,
+    "province":"ตรัง",
+    "member_of":"สมาชิกพรรคภูมิใจไทย",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
+    "party_color":"#2C3487"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เอกรัฐ พลซื่อ",
+    "image":null,
+    "province":"ร้อยเอ็ด",
+    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
+    "party_color":"#50c770"
+  },
+  {
+    "prefix":"นาย",
+    "person_name":"เอกศักดิ์ หอมชื่น",
+    "image":null,
+    "province":"ปทุมธานี",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
+  }
 ]
