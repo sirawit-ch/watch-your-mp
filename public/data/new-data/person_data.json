@@ -181,15 +181,6 @@
   },
   {
     "prefix":"นาย",
-    "person_name":"สุรศักดิ์ ชิงนวรรณ์",
-    "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สุรศักดิ์-ชิงนวรรณ์.webp",
-    "province":"สระแก้ว",
-    "member_of":"นายทะเบียนสมาชิกพรรคกล้าธรรม",
-    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/กล้าธรรม.webp",
-    "party_color":"#50c770"
-  },
-  {
-    "prefix":"นาย",
     "person_name":"สุรสิทธิ์ วงศ์วิทยานันท์",
     "image":"https:\/\/politigraph.wevis.info\/assets\/people\/สุรสิทธิ์-วงศ์วิทยานันท์.webp",
     "province":"กำแพงเพชร",
@@ -1240,6 +1231,15 @@
     "member_of":"สมาชิกพรรคภูมิใจไทย",
     "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ภูมิใจไทย.webp",
     "party_color":"#2C3487"
+  },
+  {
+    "prefix":"เรืออากาศโท",
+    "person_name":"ธนเดช เพ็งสุข",
+    "image":null,
+    "province":"กรุงเทพมหานคร",
+    "member_of":"สมาชิกพรรคประชาชน",
+    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
+    "party_color":"#FF5C00"
   },
   {
     "prefix":"นาย",
@@ -2740,15 +2740,6 @@
     "person_name":"เทพฤทธิ์ ภาษี",
     "image":null,
     "province":"สมุทรปราการ",
-    "member_of":"สมาชิกพรรคประชาชน",
-    "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
-    "party_color":"#FF5C00"
-  },
-  {
-    "prefix":"",
-    "person_name":"เรืออากาศโท ธนเดช เพ็งสุข",
-    "image":null,
-    "province":"กรุงเทพมหานคร",
     "member_of":"สมาชิกพรรคประชาชน",
     "party_image":"https:\/\/politigraph.wevis.info\/assets\/organizations\/political-parties\/ประชาชน.webp",
     "party_color":"#FF5C00"
